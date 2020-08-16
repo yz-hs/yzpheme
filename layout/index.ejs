@@ -1,0 +1,31 @@
+<div class="post-index">
+	<div class="header">
+		<div class="title"><%= config.title %></div>
+		<div class="subtitle"><%= config.subtitle %></div>
+	</div>
+	<% page.posts.each(function (post) { %>
+		<div class="post-item">
+			<div class="title">
+				<a href="<%- url_for(post.path) %>"><%= post.title %></a>
+			</div>
+			<div>
+				<% if(post.excerpt){ %>
+					<%- post.excerpt %>
+				<% }else{ %>
+					<i class="fa fa-warning" aria-hidden="true"></i> 本文章无可提供的摘要qwq。
+				<% } %>
+			</div>    
+			<hr />
+			<div class="meta">
+				<i class="fa fa-user" aria-hidden="true"></i>
+				<span><%= config.author %></span>&nbsp;&nbsp;
+				<i class="fa fa-clock-o" aria-hidden="true"></i>
+          		<span><%- date(page.date, " YYYY") %></span>年<span><%- date(page.date, " MM") %></span>月<span><%- date(page.date, " DD") %></span>日
+        		<% if(post.top){ %>
+            		<span>&nbsp;&nbsp;<i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
+        		<% } %>
+      		</div>
+		</div>
+	<% }) %>
+</div>
+<%- partial('_partial/paginator') %>

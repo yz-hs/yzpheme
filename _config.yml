@@ -1,0 +1,68 @@
+# 1:menu
+# "icon" from http://www.fontawesome.com.cn .
+
+menu:
+  Archives: 
+    url: /archives/index.html
+    icon: fa-archive
+  tags: 
+    url: /tags/index.html
+    icon: fa-tags
+  categories: 
+    url: /categories/index.html
+    icon: fa-navicon
+  about: 
+    url: /somepage/about/index.html
+    icon: fa-user
+#  留言: 
+#    url: /somepage/talk/index.html
+#    icon: 
+  友链: 
+    url: /somepage/友链/index.html
+    icon: fa-link
+  项目: 
+    url: /somepage/projects/index.html
+    icon: fa-cog
+  yznazo: 
+    url: /yznazo/index.html
+    icon: fa-gamepad
+
+# 2:article settings
+#
+# Please add the following at the head of the article if you need:
+#
+# ---
+# discomments: true  #There is only "true". Used to disable comments in this article or page.
+# ---
+#
+
+# 3:avatar
+
+avatar:
+  url: /img/avatar.jpg
+
+# 4:background
+
+background:
+  color: ffeef8 #
+  img-url: /img/bgp.jpg
+
+# 5:comments
+# LiveRe comments system
+# You can get your uid from https://livere.com/insight/myCode (General web site)
+comments:
+  enable: true # Comments will be opened on pages other than those containing "discomments: true".
+  livere_uid: MTAyMC80Njg5MS8yMzM5Mg==
+
+# 6:responsive page
+responsive:
+  dividing: 875 #If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.
+
+# 7：short description
+
+short_des: "A cute OIer"
+
+# END:note
+
+# (1) Mathjax is turned on globally.
+# (2) "RSS地址" requires `hexo-generator-feed` plugin to use. Please run `npm install hexo-generator-feed`. 

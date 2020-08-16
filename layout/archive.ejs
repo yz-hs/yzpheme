@@ -1,0 +1,17 @@
+<div class="archive opacity">
+  <% if(is_archive()) {%>
+      <h2 class="text-center">归档</h2>
+  <% }else{ %>
+      <h2 class="text-center">该项目下的文章</h2>
+  <% } %>
+  <ul class="post-archive">
+    <% page.posts.each(function (post) { %>
+      <li class="post-item">
+        <br>
+        <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span>————
+        <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </li>
+    <% }) %>
+  </ul>
+</div>
+<%- partial('_partial/paginator') %>
