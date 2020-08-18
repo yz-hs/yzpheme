@@ -1,5 +1,5 @@
-<!--<% if(page.discomments){ %>
-    <div class="text-center big-text">本页面并未开启评论功能。</div>
+<% if(page.discomments){ %>
+    <div class="big-font">本页面并未开启评论功能。</div>
 <% }else if(theme.comments.enable) { %>
     <script type="text/javascript">
       (function(d, s) {
@@ -12,4 +12,4 @@
       })(document, 'script');
     </script>
     <div id="lv-container" data-id="city" data-uid="<%= theme.comments.livere_uid %>"></div>
-<% } %>-->
+<% } %>

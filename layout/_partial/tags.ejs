@@ -1,0 +1,19 @@
+<div class="post">
+    <div class="header">
+    	<div class="title">标签</div>
+    	<div class="subtitle">目前共有<%= site.tags.length %>个标签。</div>
+    </div>
+    <ul class="post-text for-else tags">
+    <% site.tags.each(function (tag) { %>
+      <div>
+        <span><h2><i class="fa fa-tags fa-fw" aria-hidden="true"></i><%= tag.name %></h2></span>
+        <% tag.posts.forEach(function(post) { %>
+        <li>
+            <span><%= date(post.date, "YYYY-MM-DD") %></span>
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </li>
+        <% }) %>
+      </div>
+    <% }) %>
+    </ul>
+</div>

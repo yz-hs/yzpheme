@@ -1,31 +1,16 @@
 # 1:menu
-# "icon" from http://www.fontawesome.com.cn .
+# Don't add "/"(root).
+# "留言" is on "topbar".
 
 menu:
-  Archives: 
-    url: /archives/index.html
-    icon: fa-archive
-  tags: 
-    url: /tags/index.html
-    icon: fa-tags
-  categories: 
-    url: /categories/index.html
-    icon: fa-navicon
-  about: 
-    url: /somepage/about/index.html
-    icon: fa-user
-#  留言: 
-#    url: /somepage/talk/index.html
-#    icon: 
-  友链: 
-    url: /somepage/友链/index.html
-    icon: fa-link
-  项目: 
-    url: /somepage/projects/index.html
-    icon: fa-cog
-  yznazo: 
-    url: /yznazo/index.html
-    icon: fa-gamepad
+  Archives: archives/index.html
+  tags: tags/index.html
+  categories: categories/index.html
+  about: somepage/about/index.html
+  留言: somepage/talk/index.html
+  友链: somepage/友链/index.html
+  项目: somepage/projects/index.html
+  yznazo: yznazo/index.html
 
 # 2:article settings
 #
@@ -41,11 +26,19 @@ menu:
 avatar:
   url: /img/avatar.jpg
 
-# 4:background
+# 4:menu-icon
+# "icon" from http://www.fontawesome.com.cn .
+# "留言" is on "topbar".
 
-background:
-  color: ffeef8 #
-  img-url: /img/bgp.jpg
+icon:
+  Archives: fa-archive
+  tags: fa-tags
+  categories: fa-navicon
+  about: fa-user
+  留言: fa-bell-o
+  友链: fa-link
+  项目: fa-cog
+  yznazo: fa-gamepad
 
 # 5:comments
 # LiveRe comments system

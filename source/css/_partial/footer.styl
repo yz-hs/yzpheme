@@ -1,0 +1,34 @@
+.footer {
+	background-color: #f1f3f4;
+	border: 1px solid #ddd;
+	padding: 20px;
+	height: 15px;
+	font-size: 15px;
+	margin-left: $dis-sidebar;
+
+	p {
+		margin: 0px;
+	}
+
+	.text-left {
+		float: left;
+		max-width: 50%;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+	}
+
+	.text-right {
+		float: right;
+		max-width: 50%;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+	}
+}
+
+@media screen and (max-width: $pc_pe_dividing) {
+    .footer {
+        margin-left: 0;
+    }
+}

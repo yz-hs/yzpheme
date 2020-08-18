@@ -36,6 +36,11 @@
     <div class="border-text" id="displaytime"><script type="text/javascript" src="/js/displaytime.js"></script></div>
   </div>
 
+  <div class="item">
+  	<div class="title">标签云</div>
+  	<div class="border-text"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#3eff7e', end_color: '#ff97c6'}) %></div>
+  </div>
+
   <% if(is_post()||is_page()){ %>
     <div class="post-toc">
       <div class="title">文章目录</div>

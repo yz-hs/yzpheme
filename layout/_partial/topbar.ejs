@@ -2,7 +2,12 @@
 	<a href="/" class="topbar-title">
 		<i class="fa fa-home" aria-hidden="true"></i> <%= config.title %>
 	</a>
+	<div class="topbar-url">
+	  <% for (name in theme.menu) { %>
+            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link"><i class="fa <%= theme.icon[name] %>" aria-hidden="true"></i></a>
+      <% } %>
+    </div>
 	<a href="<%= theme.menu.留言 %>" class="topbar-comments">
-		<i class="fa fa-bell-o" aria-hidden="true"></i>
+		<i class="fa <%= theme.icon.留言 %>" aria-hidden="true"></i>
 	</a>
 </div>

@@ -17,6 +17,14 @@ body {
 .article {
 	margin-left: $dis-sidebar;
 	width: 82.5% !important;
+	min-height: 800px;
+}
+
+@media screen and (max-width: $pc_pe_dividing) {
+    .article {
+        margin-left: 0;
+        width: 100% !important;
+    }
 }
 
 a {
@@ -37,11 +45,13 @@ img,figure,canvas,iframe{
 	overflow: auto;
 }
 
-pre,ol,li {
-    word-break: break-all;
-    word-wrap: break-word;
+pre {
+    max-width: 80%;
+	white-space: pre-wrap;
 }
 
-pre {
-	white-space: pre-wrap;
+@media screen and (max-width: $pc_pe_dividing) {
+    pre {
+    	max-width: 100%;
+	}
 }

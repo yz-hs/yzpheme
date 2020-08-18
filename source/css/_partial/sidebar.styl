@@ -24,8 +24,9 @@
 	}
 
 	.sidebar-footer {
-		position: relative;
-		top: 100px;
+		position: fixed;
+		width: $sidebar-width;
+		bottom: 0px;
 		background-color: #fff
 		padding: 5px;
 
@@ -70,4 +71,10 @@
     		background-color: rgb(239,239,239);
   		}
 	}
+}
+
+@media screen and (max-width: $pc_pe_dividing) {
+    .sidebar {
+        display: none !important;
+    }
 }

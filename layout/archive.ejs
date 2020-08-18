@@ -1,17 +1,38 @@
-<div class="archive opacity">
-  <% if(is_archive()) {%>
-      <h2 class="text-center">归档</h2>
-  <% }else{ %>
-      <h2 class="text-center">该项目下的文章</h2>
-  <% } %>
-  <ul class="post-archive">
+<div class="post">
+  <div class="header">
+  	<% if (page.path==theme.menu.Archives) { %>
+  	  <div class="title">归档</div>
+  	  <div class="subtitle">目前共有<%= site.posts.length %>篇文章。 继续努力。</div>
+  	<% }else{ %>
+  	  <div class="title">
+  	    <% if (page.category) { %>
+  	      <%= page.category %>
+  	    <% }else if (page.tag) { %>
+  	      <%= page.tag %>
+  	    <% }else{ %>
+  	      <div>此项目</div>
+  	    <% } %>
+  	  </div>
+  	  <div class="subtitle">
+  	    <% if (page.category) { %>
+  	      <div>分类“<%= page.category %>”下有以下文章。 </div>
+  	    <% }else if (page.tag) { %>
+  	      <div>标签“<%= page.tag %>”下有以下文章。 </div>
+  	    <% }else{ %>
+  	      <div>此项目下有以下文章。 </div>
+  	    <% } %>
+  	  </div>
+  	<% } %>
+  </div>
+  
+  <ul class="post-text for-else">
+    <hr />
     <% page.posts.each(function (post) { %>
-      <li class="post-item">
-        <br>
-        <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span>————
-        <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+      <li class="item">
+        <span class="date"><%= date(post.date, "YYYY-MM-DD") %></span>&nbsp;&nbsp;————&nbsp;
+        <a class="title" href="<%- url_for(post.path) %>"><%= post.title %></a><hr />
       </li>
     <% }) %>
   </ul>
-</div>
+  </div>
 <%- partial('_partial/paginator') %>

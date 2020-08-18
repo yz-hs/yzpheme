@@ -1,9 +1,7 @@
-<% if (is_current(theme.menu.categories)) { %>
-<%- partial('_partial/category') %>
-<% } else if (is_current(theme.menu.tags)) { %>
-<%- partial('_partial/tag') %>
+<% if (page.path==theme.menu.categories) { %>
+	<%- partial('_partial/category') %>
+<% } else if (page.path==theme.menu.tags) { %>
+	<%- partial('_partial/tags') %>
 <% } else { %>
-<%- partial('_partial/custom') %>
+	<%- partial('post') %>
 <% } %>
-
-<div class="card comments"><%- partial('_partial/comments') %></div>

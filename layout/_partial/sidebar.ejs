@@ -17,7 +17,7 @@
 
   <div class="list-group">
   	<% for (name in theme.menu) { %>
-  	  <a class="list-group-item" href="<%- url_for(theme.menu[name].url) %>"><i class="fa <%= theme.menu[name].icon %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %></a>
+  	  <a class="list-group-item" href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %></a>
     <% } %>
   </div>
 
