@@ -56,7 +56,7 @@ comments:
 
 # 6:responsive page
 responsive:
-  dividing: 875 #If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.
+  dividing: 1000 #If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.
 
 # 7：short description
 

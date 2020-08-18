@@ -1,33 +1,22 @@
-<div class="post opacity">
-  <div class="text-center">
-    <div class="post-title">
-      <h2 class="title"><%= page.title %></h2>
+<div class="post">
+  <div class="header">
+    <div class="title"><%= page.title %></div>
+    <div class="meta">
+	  <i class="fa fa-user" aria-hidden="true"></i>
+		<span><%= config.author %></span>&nbsp;&nbsp;
+		<i class="fa fa-clock-o" aria-hidden="true"></i>
+    	<span><%- date(page.date, " YYYY") %></span>年<span><%- date(page.date, " MM") %></span>月<span><%- date(page.date, " DD") %></span>日
+    	<% if(page.top){ %>
+    		<span>&nbsp;&nbsp;<i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
+    	<% } %>
     </div>
-
-     <div class="text-center">
-        <span class="post-meta" data-toggle="tooltip" title="发布日期">
-          <span class="glyphicon glyphicon-time"></span>
-          <span class="post-time"><%- date(page.date, " YYYY") %></span>年<span class="post-time"><%- date(page.date, " MM") %></span>月<span class="post-time"><%- date(page.date, " DD") %></span>日
-        </span>
-        <span class="post-meta">|</span>
-        <span class="post-meta" data-toggle="tooltip" title="更新日期">
-          <span class="glyphicon glyphicon-refresh"></span>
-          <span class="post-time"><%- date(page.updated, " YYYY") %></span>年<span class="post-time"><%- date(page.updated, " MM") %></span>月<span class="post-time"><%- date(page.updated, " DD") %></span>日
-        </span>
-        <% if(page.top){ %>
-            <span class="post-meta">| <span class="glyphicon glyphicon-pushpin"></span> 置顶</span>
-        <% } %>
-      </div>
-
-      <script>
-    	  $(function () { $("[data-toggle='tooltip']").tooltip(); });
-	  </script>
-
   </div>
-    <br>
-    <div class="post-content">
+
+  <div class="post-text">
+  	<div class="inner">
       <%- page.content %>
     </div>
+  </div>
 </div>
 
 <div class="card comments"><%- partial('_partial/comments') %></div>

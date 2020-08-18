@@ -3,6 +3,7 @@
 		<div class="title"><%= config.title %></div>
 		<div class="subtitle"><%= config.subtitle %></div>
 	</div>
+	<div>
 	<% page.posts.each(function (post) { %>
 		<div class="post-item">
 			<div class="title">
@@ -27,5 +28,6 @@
       		</div>
 		</div>
 	<% }) %>
+	</div>
 </div>
 <%- partial('_partial/paginator') %>

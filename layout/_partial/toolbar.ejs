@@ -1,66 +1,50 @@
-<!--<div class="toolbar toolbar-text">
-  <div class="toolbar-card opacity">
-	<div class="text-center"><h3>Hitokoto</h3></div>
-	<p id="hitokoto" class="text-center"><%= config.author %>说，除了她以外的人都很强！嘤嘤嘤~~</p>
-	<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
-	<script class="text-center">
-	  fetch('https://v1.hitokoto.cn')
-	    .then(function (res){
-	      return res.json();
-	    })
-	    .then(function (data) {
-	      var hitokoto = document.getElementById('hitokoto');
-	      hitokoto.innerText = '⌈ ' + data.hitokoto + ' ⌋\n' +'————' + data.from ;
-	    })
-	    .catch(function (err) {
-	      console.error(err);
-	    })
-	</script>
-  </div>
-  <div class="toolbar-card opacity">
-  	<div id="displaytime">
-  		<script type="text/javascript" src="/js/displaytime.js"></script>
+<div class="toolbar cell">
+  <!--<div class="sele">
+  	<div class="sele-btn">
+  		<div class="item">
+  			<i class="fa fa-map" aria-hidden="true"></i>
+  		</div>
+  		<div class="item">
+  			<i class="fa fa-clock-o" aria-hidden="true"></i>
+  		</div>
+  		<div class="item">
+  			<i class="fa fa-refresh" aria-hidden="true"></i>
+  		</div>
   	</div>
-  	<div class="text-center">
-  		<a id="timeprogress" onclick="displaytimeprogress();dtpthen();">时间进度条</a>
-		<script>
-		function displaytimeprogress()
-		{
-			var myDate = new Date();
-			var hours=myDate.getHours();
-			var minutes=myDate.getMinutes();
-			minutes=hours*60+minutes;
-			var pro=minutes/14.4;
-			var innerhtml="<div data-toggle=\"tooltip\"  data-placement=\"bottom\" title=\"时间已过去了"+pro.toFixed(2)+"%\"><div class=\"progress\"><div class=\"progress-bar\" style=\"width: "+pro+"%;\"></div></div></div>"
-			document.getElementById("timeprogress").innerHTML = innerhtml;
-		}
-		function dtpthen(){$(function () { $("[data-toggle='tooltip']").tooltip(); });}
-		</script>
-    </div>
-  </div>
-  <div class="toolbar-card opacity">
-  	  <div class="text-center"><h3>喜欢本站</h3></div>
-  	  <div class="text-center"><h5>RSS订阅</h5></div>
-  	  <div type="button" class="btn btn-primary" onclick="window.open('/atom.xml');" style="display:block;margin:0 auto"  data-toggle="tooltip" title="文章RSS地址">文章RSS地址</div>
-  	  <hr>
-  	  <div class="text-center"><h5>收藏本站</h5></div>
-  	  <a class="btn btn-primary" style="cursor:move;display:block;margin:0 auto;" href="javascript:(function(){window.open(&quot;<%= config.url %>&quot;)})()" onclick="swal('提示','请把按钮拖动到书签栏','warning');return false;" data-toggle="tooltip" title="请把按钮拖动到书签栏"><%= config.title %></a>
+  </div>-->
 
-  	  <script>
-    	$(function () { $("[data-toggle='tooltip']").tooltip(); });
-	  </script>
+  <div class="item">
+  	<div class="title">Hitokoto</div>
+    <div id="hitokoto" class="border-text text-center"><%= config.author %>说，除了她以外的人都很强！嘤嘤嘤~~</div>
+    <script>
+    fetch('https://v1.hitokoto.cn')
+      .then(function (res){
+        return res.json();
+      })
+      .then(function (data) {
+        var hitokoto = document.getElementById('hitokoto');
+        hitokoto.innerText = '\t' + data.hitokoto + '\n' +'\n' +'——' + data.from ;
+      })
+      .catch(function (err) {
+        console.error(err);
+      })
+  </script>
+  </div>
+
+  <div class="item">
+  	<div class="title">时钟</div>
+    <div class="border-text" id="displaytime"><script type="text/javascript" src="/js/displaytime.js"></script></div>
   </div>
 
   <% if(is_post()||is_page()){ %>
-    <div class="toolbar-card opacity">
-      <div class="text-center"><h3>文章目录</h3></div>
+    <div class="post-toc">
+      <div class="title">文章目录</div>
       <% if(toc(page.content,{list_number: false})=="") { %>
-        <div class="text-center">目录好像不可用嘤。 >_<</div>
+        <div class="border-text">目录好像不可用嘤。 >_<</div>
       <% }else{ %>
-  	    <%- toc(page.content,{list_number: false}) %>
+  	    <div class="border-text"><%- toc(page.content,{list_number: false}) %></div>
   	  <% } %>
     </div>
-  <% } %>
+  <% } %> 
 
 </div>

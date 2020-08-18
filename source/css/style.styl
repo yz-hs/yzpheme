@@ -11,10 +11,12 @@ body {
 .main {
 	margin: 0 10%;
 	box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+	height: auto;
 }
 
 .article {
 	margin-left: $dis-sidebar;
+	width: 82.5% !important;
 }
 
 a {
@@ -29,6 +31,17 @@ hr {
 	margin: 15px;
 }
 
-* {
-	/*overflow: auto;*/
+img,figure,canvas,iframe{
+	max-height: 100%;
+	max-width: 100%;
+	overflow: auto;
+}
+
+pre,ol,li {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+pre {
+	white-space: pre-wrap;
 }

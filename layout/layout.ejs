@@ -4,16 +4,19 @@
 	<body>
 		<a name="back-to-top"></a>
 		<div class="main">
+			<%- partial('_partial/github') %>
 			<%- partial('_partial/topbar') %>
 			<%- partial('_partial/sidebar') %>
-  			<!--<%- partial('_partial/github') %>
-  			<%- partial('_partial/header') %>
-   			<%- partial('_partial/menubar') %>
-   			<%- partial('_partial/toolbar') %>-->
-    		<div class="article"><%- body %></div>
+			<div class="table article">
+				<div class="row">
+					<!--<div class="cell" style="width: 200px !important;  height: 100%;">占位专用</div>-->
+    				<div><%- body %></div>
+    				<%- partial('_partial/toolbar') %>
+    			</div>
+    		</div>
     		<%- partial('_partial/footer') %>
 		</div>
+		<%- partial('_partial/myjs') %>
   	</body>
-  	<%- partial('_partial/myjs') %>
   	<%- partial('_partial/mathjax') %>
 </html>
