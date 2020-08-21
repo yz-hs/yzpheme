@@ -21,7 +21,7 @@
 				<i class="fa fa-user" aria-hidden="true"></i>
 				<span><%= config.author %></span>&nbsp;&nbsp;
 				<i class="fa fa-clock-o" aria-hidden="true"></i>
-          		<span><%- date(page.date, " YYYY") %></span>年<span><%- date(page.date, " MM") %></span>月<span><%- date(page.date, " DD") %></span>日
+          		<span><%- date(post.date, " YYYY") %></span>年<span><%- date(post.date, " MM") %></span>月<span><%- date(post.date, " DD") %></span>日
         		<% if(post.top){ %>
             		<span>&nbsp;&nbsp;<i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
         		<% } %>

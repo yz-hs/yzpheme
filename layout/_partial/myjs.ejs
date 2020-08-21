@@ -20,8 +20,11 @@
  document.body.addEventListener('input', POWERMODE);
 </script>
 
-<script type="text/javascript">
-        $('pre').addClass('prettyprint').attr('style', 'overflow: auto;');
-</script>
+<script type="text/javascript" src="/js/chaffle.min.js"></script>  
+<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
 
-<script src="/third_party/code-prettify/src/run_prettify.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {$('.chaffle').chaffle();});   //文字变幻
+    hljs.initHighlightingOnLoad();  //高亮
+</script>

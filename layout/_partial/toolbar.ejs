@@ -38,11 +38,11 @@
 
   <div class="item">
   	<div class="title">标签云</div>
-  	<div class="border-text"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#3eff7e', end_color: '#ff97c6'}) %></div>
+  	<div class="border-text"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#bfc6be', end_color: '#000'}) %></div>
   </div>
 
   <% if(is_post()||is_page()){ %>
-    <div class="post-toc">
+    <div class="post-toc" id="wrap">
       <div class="title">文章目录</div>
       <% if(toc(page.content,{list_number: false})=="") { %>
         <div class="border-text">目录好像不可用嘤。 >_<</div>

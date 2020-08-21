@@ -1,23 +1,26 @@
 # 1:menu
 # Don't add "/"(root).
-# "留言" is on "topbar".
+# "吐槽" is on "topbar".
 
 menu:
   Archives: archives/index.html
   tags: tags/index.html
   categories: categories/index.html
   about: somepage/about/index.html
-  留言: somepage/talk/index.html
+  留言: somepage/chat/index.html
   友链: somepage/友链/index.html
   项目: somepage/projects/index.html
   yznazo: yznazo/index.html
+
+吐槽: 
+  url: somepage/吐槽/index.html
 
 # 2:article settings
 #
 # Please add the following at the head of the article if you need:
 #
 # ---
-# discomments: true  #There is only "true". Used to disable comments in this article or page.
+# discomments: true  #Used to disable comments in this article or page.
 # ---
 #
 
@@ -28,28 +31,35 @@ avatar:
 
 # 4:menu-icon
 # "icon" from http://www.fontawesome.com.cn .
-# "留言" is on "topbar".
+# "吐槽" is on "topbar".
 
 icon:
   Archives: fa-archive
   tags: fa-tags
   categories: fa-navicon
   about: fa-user
-  留言: fa-bell-o
+  留言: fa-commenting
   友链: fa-link
   项目: fa-cog
   yznazo: fa-gamepad
+  吐槽: fa-bell-o
 
 # 5:comments
-# LiveRe comments system
-# You can get your uid from https://livere.com/insight/myCode (General web site)
+# Comments will be opened on pages other than those containing "discomments: true".
+
 comments:
-  enable: true # Comments will be opened on pages other than those containing "discomments: true".
+  enable: true 
+  # LiveRe comments system
+  # You can get your uid from https://livere.com/insight/myCode (General web site)
   livere_uid: MTAyMC80Njg5MS8yMzM5Mg==
 
 # 6:responsive page
+#If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.
+
 responsive:
-  dividing: 1000 #If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.
+  dividing_1: 1200 # hide toolbar
+  dividing_2: 800 # hide sidebar
+  dividing_3: 400 # change topbar
 
 # 7：short description
 
@@ -59,3 +69,32 @@ short_des: "A cute OIer"
 
 # (1) Mathjax is turned on globally.
 # (2) "RSS地址" requires `hexo-generator-feed` plugin to use. Please run `npm install hexo-generator-feed`. 
+
+
+
+
+
+
+
+#! ---------------------------------------------------------------
+#! DO NOT EDIT THE FOLLOWING SETTINGS
+#! UNLESS YOU KNOW WHAT YOU ARE DOING
+#! ---------------------------------------------------------------
+
+menu_name:
+  Archives:
+    name: Archives
+  tags:
+    name: tags
+  categories:
+    name: categories
+  about:
+    name: about
+  留言:
+    name: 留言
+  友链:
+    name: 友链
+  项目:
+    name: 项目
+  yznazo:
+    name: yznazo

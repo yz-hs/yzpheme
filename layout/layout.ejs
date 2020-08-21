@@ -9,13 +9,15 @@
 			<%- partial('_partial/sidebar') %>
 			<div class="table article">
 				<div class="row">
-    				<div><%- body %></div>
+    				<div id="wrap"><%- body %></div>
     				<%- partial('_partial/toolbar') %>
     			</div>
     		</div>
     		<%- partial('_partial/footer') %>
+    		<%- partial('_partial/reverse-coloregg') %>
 		</div>
+		<%- partial('_partial/santa') %>
 		<%- partial('_partial/myjs') %>
+		<%- partial('_partial/mathjax') %>
   	</body>
-  	<%- partial('_partial/mathjax') %>
 </html>

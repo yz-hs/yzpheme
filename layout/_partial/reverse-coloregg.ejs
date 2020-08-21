@@ -1,0 +1,39 @@
+<script>  
+if (!Readdata("fool")) {  // 如果没有触发过彩蛋  
+    document.body.classList.add('reverse-coloregg');     // 给 body 增加彩蛋 class  
+    window.setTimeout(function () {     // 定时退出彩蛋  
+        Savedata("fool", "fool");     // 记录彩蛋已被执行  
+        swal("你可以正常访问 Blog 啦！你还可以通过删除 Cookie 再体验一次！呵呵^_^");     // 弹窗（这里可以自己发挥）  
+        document.body.classList.remove('reverse-coloregg');  
+    }, 10000);   // 这里的 10000 代表 10s，也就是经过 10s 后弹窗，并退出彩蛋  
+}  
+  
+// 写入 Cookie  
+function Savedata(key, data) {  
+    key = 'yz_' + key;  
+    data = JSON.stringify(data);  
+    if (window.localStorage) {  
+        localStorage.setItem(key, data);  
+    }  
+}  
+  
+// 读取 Cookie  
+function Readdata(key) {  
+    if (!window.localStorage) return '';  
+    key = 'yz_' + key;  
+    return JSON.parse(localStorage.getItem(key));  
+}  
+</script>  
+  
+<style>  
+/* 彩蛋的样式代码 */  
+.reverse-coloregg {  
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);  
+    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);  
+    transform: matrix(-1, 0, 0, 1, 0, 0);  
+    -o-transform: skew(0deg, 180deg) scale(-1, 1);  
+    filter:progid: DXImageTransform.Microsoft.BasicImage(mirror=1); 
+}  
+
+/*from https://mkblog.cn/1469/*/
+</style>  

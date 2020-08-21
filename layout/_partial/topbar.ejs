@@ -4,10 +4,18 @@
 	</a>
 	<div class="topbar-url">
 	  <% for (name in theme.menu) { %>
-            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link"><i class="fa <%= theme.icon[name] %>" aria-hidden="true"></i></a>
+            <a href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %>" aria-hidden="true"></i></a>
       <% } %>
+      <a href="<%- url_for(theme.吐槽.url) %>"><i class="fa <%= theme.icon.吐槽 %>" aria-hidden="true"></i></a>
     </div>
-	<a href="<%= theme.menu.留言 %>" class="topbar-comments">
-		<i class="fa <%= theme.icon.留言 %>" aria-hidden="true"></i>
+	<a href="<%- url_for(theme.吐槽.url) %>" class="topbar-comments">
+		<i class="fa <%= theme.icon.吐槽 %>" aria-hidden="true"></i>
 	</a>
+	<div class="topbar-full-url">
+		<a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
+		<% for (name in theme.menu) { %>
+            <a href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %>" aria-hidden="true"></i></a>
+        <% } %>
+        <a href="<%- url_for(theme.吐槽.url) %>"><i class="fa <%= theme.icon.吐槽 %>" aria-hidden="true"></i></a>
+	</div>
 </div>

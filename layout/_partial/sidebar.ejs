@@ -1,7 +1,7 @@
 <div class="sidebar cell">
 
   <div class="sidebar-avatar-container">
-  	<img src="<%= theme.avatar.url %>" class="sidebar-avatar" />
+  	<img src="<%= theme.avatar.url %>" class="sidebar-avatar bounce" />
   </div>
 
   <div class="sidebar-author">
@@ -17,7 +17,15 @@
 
   <div class="list-group">
   	<% for (name in theme.menu) { %>
-  	  <a class="list-group-item" href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %></a>
+  	 <a class="list-group-item" href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %>
+  	    <% if(theme.menu_name[name].name=="Archives"){ %>
+  	    	<div class="badge"><%= site.posts.length %></div>
+  	    <% }else if(theme.menu_name[name].name=="tags"){ %>
+  	    	<div class="badge"><%= site.tags.length %></div>
+  	    <% }else if(theme.menu_name[name].name=="categories"){ %>
+  	    	<div class="badge"><%= site.categories.length %></div>
+  	    <% }else{} %>
+      </a>
     <% } %>
   </div>
 
