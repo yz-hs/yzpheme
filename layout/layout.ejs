@@ -3,21 +3,29 @@
 	<%- partial('_partial/head') %>
 	<body>
 		<a name="back-to-top"></a>
+		<div id="siteLoading" class="siteloading siteLoading-active">
+			<div class="loader-inner">
+			<div class="loader-line-wrap"><div class="loader-line"></div></div>
+			<div class="loader-line-wrap"><div class="loader-line"></div></div>
+			<div class="loader-line-wrap"><div class="loader-line"></div></div>
+			<div class="loader-line-wrap"><div class="loader-line"></div></div>
+			<div class="loader-line-wrap"><div class="loader-line"></div></div>
+			</div>
+		</div>
 		<div class="main">
 			<%- partial('_partial/github') %>
 			<%- partial('_partial/topbar') %>
 			<%- partial('_partial/sidebar') %>
 			<div class="table article">
 				<div class="row">
-    				<div id="wrap"><%- body %></div>
-    				<%- partial('_partial/toolbar') %>
+    				<%- body %><%- partial('_partial/toolbar') %>
     			</div>
     		</div>
     		<%- partial('_partial/footer') %>
+    		<%- partial('_partial/mathjax') %>
+			<%- partial('_partial/footerinc') %>
     		<%- partial('_partial/reverse-coloregg') %>
+    		<%- partial('_partial/santa') %>
 		</div>
-		<%- partial('_partial/santa') %>
-		<%- partial('_partial/myjs') %>
-		<%- partial('_partial/mathjax') %>
   	</body>
 </html>

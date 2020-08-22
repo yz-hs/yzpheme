@@ -51,7 +51,7 @@ comments:
   enable: true 
   # LiveRe comments system
   # You can get your uid from https://livere.com/insight/myCode (General web site)
-  livere_uid: MTAyMC80Njg5MS8yMzM5Mg==
+  livere_uid: 
 
 # 6:responsive page
 #If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.

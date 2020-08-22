@@ -1,0 +1,68 @@
+/*  table  */
+
+.table {
+    display: table;
+}
+.row {
+    display: table-row;
+}
+.cell {
+    display: table-cell;
+}
+
+@media screen and (max-width: $pc_pe_dividing_1) {
+    .table,.row,.cell {
+        display: block;
+    }
+}
+
+/*  Shady  */
+
+.text-shady {
+	color: #000;
+	background-color: #000;
+
+	&:hover {
+		color: #fff;
+	}
+
+	.black:hover {
+		color: #000;
+	}
+}
+
+/*  alert  */
+
+.text-alert {
+	padding:.6em .9em;
+	border-radius:.3em;
+	margin:1em auto;
+	line-height:1.6em;
+	display:block;
+	background-color:#f0f9eb;
+	color:#67c23a;
+}
+.text-alert a {
+	color:inherit!important;
+	text-decoration:underline;
+}
+.text-alert a:hover{opacity:.5;}
+
+.text-alert.fa:before{margin-right:.3em;} /* For http://www.fontawesome.com.cn/ */
+
+.text-alert.success {
+	background-color:#f0f9eb;
+	color:#67c23a;
+}
+.text-alert.info {
+	background-color:#f4f4f5;
+	color:#909399;
+}
+.text-alert.warning {
+	background-color:#fdf6ec;
+	color:#e6a23c;
+}
+.text-alert.danger {
+	background-color:#fef0f0;
+	color:#f56c6c;
+}

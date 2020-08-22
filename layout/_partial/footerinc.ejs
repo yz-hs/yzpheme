@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="/js/ctitle.js"></script>
 <script type="text/javascript" src="/js/clicklove.js"></script>
 <script type="text/javascript" src="/js/colored-egg.js"></script>
@@ -27,4 +29,5 @@
 <script type="text/javascript">
 	$(document).ready(function() {$('.chaffle').chaffle();});   //文字变幻
     hljs.initHighlightingOnLoad();  //高亮
+    setTimeout(function(){siteLoading.classList.remove('siteLoading-active')},0);  //加载动画
 </script>
