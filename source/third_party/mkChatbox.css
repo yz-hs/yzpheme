@@ -147,12 +147,3 @@
 .mk-chat-box .tips .tips-danger{
     background-color: #d9534f;
 }
-
-/*滚动条美化*/
-.mk-chat-box::-webkit-scrollbar{width:8px;height:8px}
-.mk-chat-box::-webkit-scrollbar-button:vertical{display:none}
-.mk-chat-box::-webkit-scrollbar-track:vertical{background-color:transparent;}
-.mk-chat-box::-webkit-scrollbar-track-piece{background-color:transparent;}
-.mk-chat-box::-webkit-scrollbar-thumb:vertical{background-color:rgba(204,204,204,.3);border-radius:8px}
-.mk-chat-box::-webkit-scrollbar-thumb:vertical:hover,
-.mk-chat-box::-webkit-scrollbar-thumb:vertical:active {background-color: #8C8C8C}

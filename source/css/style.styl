@@ -25,6 +25,7 @@ body {
 	width: 83.5% !important;
 	min-height: 800px;
 	background-color: #f1f3f4;
+	display: table;
 
 	a {
   		color: #3498db;
@@ -39,6 +40,7 @@ body {
     .article {
     	margin-left: $dis-sidebar_2;
         width: 77.4% !important;
+        display: block;
     }
 }
 
@@ -46,5 +48,17 @@ body {
     .article {
         margin-left: 0;
         width: 100% !important;
+        display: block;
+    }
+}
+
+.article-cell-body {
+	display: table-cell;
+	vertical-align: top;
+}
+
+@media screen and (max-width: $pc_pe_dividing_1) {
+    .article-cell-body {
+    	display: block;
     }
 }

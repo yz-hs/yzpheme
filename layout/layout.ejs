@@ -16,10 +16,9 @@
 			<%- partial('_partial/github') %>
 			<%- partial('_partial/topbar') %>
 			<%- partial('_partial/sidebar') %>
-			<div class="table article">
-				<div class="row">
-    				<%- body %><%- partial('_partial/toolbar') %>
-    			</div>
+			<div class="article">
+    			<div class="article-cell-body"><%- body %></div>
+    			<%- partial('_partial/toolbar') %>
     		</div>
     		<%- partial('_partial/footer') %>
     		<%- partial('_partial/mathjax') %>

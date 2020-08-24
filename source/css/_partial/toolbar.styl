@@ -3,6 +3,8 @@
 	border: 1px solid #ddd;
 	background-color: #fff;
 	width: 220px;
+	height: 100%;
+	display: table-cell;
 
 	.item {
 		padding: 15px;
@@ -10,11 +12,6 @@
 		.title {
 			font-weight: 700;
 			margin-bottom: 5px;
-		}
-
-		.border-text {
-			border: 1px solid #ddd;
-			padding: 10px;
 		}
 
 		.text {
@@ -28,9 +25,8 @@
 	
 	.post-toc {
 		position: sticky;
-		top: 30px;
-		padding: 30px;
-
+		top: 40px;
+		padding: 15px;
 		.title {
 			font-weight: 700;
 			margin-bottom: 5px;
@@ -44,8 +40,44 @@
 		ol {
 			padding-inline-start: 20px;
 		}
-	}	
+	}
 
+	.toolbar-tab-page {
+		li {list-style-type: none;}
+		.tb-hide {display: none;}
+		.tb-tabTitle >ul {
+			overflow: hidden;
+			padding: 0px;
+			margin: 0px;
+		}
+		.tb-tabTitle >ul >li {
+			float: left; 
+			height: 20px; 
+			font-size: 20px;
+			padding: 20px 0px;
+			margin: 0px;
+			line-height: 30px; 
+			cursor:pointer;
+			width: $toolbar-sele-item-width;
+			text-align: center;
+		}
+		.tb-current {border-bottom: 1px solid #555;}
+		.tb-tabContent >div {
+			border-top: 1px solid #ddd; 
+			padding: 15px;
+			padding-bottom: 25px;
+			overflow: auto;
+		}
+		.sidetitle {
+			color: rgb(152, 166, 173);
+			font-size: 10px;
+			font-weight: 500;
+		}
+		a {
+			text-decoration:none;
+			color: rgb(119, 119, 119);
+		}
+	}
 }
 
 @media screen and (max-width: $pc_pe_dividing_1) {

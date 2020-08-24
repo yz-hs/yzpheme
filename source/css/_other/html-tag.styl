@@ -1,3 +1,5 @@
+/*  引用  */
+
 blockquote {
     margin: 1.6em;
     padding: 13px 26px;
@@ -5,10 +7,14 @@ blockquote {
     background-color: #f3f5f7
 }
 
+/*  链接  */
+
 a {
 	text-decoration:none;
 	color: rgb(119, 119, 119);
 }
+
+/*  分鸽线  */
 
 hr {
 	border-style: solid;
@@ -17,16 +23,16 @@ hr {
 	margin: 15px;
 }
 
+/*  防止溢出  */
+
 img,figure,canvas,iframe{
 	max-height: 100%;
 	max-width: 100%;
 	overflow: auto;
 }
-
 pre,code {
     max-width: 500px;
     margin: auto;
-	/*white-space: pre-wrap;*/
 	overflow: auto;
 }
 
@@ -34,6 +40,39 @@ pre,code {
     pre,code {
     	max-width: 100%;
 	}
+}
+
+/*  提示框  */
+
+fieldset {
+    border: 2px solid rgb(221, 221, 221);
+    border-radius: .3em;
+    padding: 1em 1.13em;
+}
+fieldset >legend {
+    background-color: #eb5055;
+    color: #fff;
+    border-radius: .2em;
+    padding: .2em .5em;
+    font-size: .9em;
+}
+
+/*  展开折叠  */
+
+summary:focus {
+    outline-style: none;
+}
+
+summary:hover {
+    background-color: #eee;
+}
+
+details >summary {
+	border-radius: 25px;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 10px;
+    border-style: none;
 }
 
 /*Button*/
