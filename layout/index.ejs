@@ -3,7 +3,6 @@
 		<div class="title"><%= config.title %></div>
 		<div class="subtitle"><%= config.subtitle %></div>
 	</div>
-	<div>
 	<% page.posts.each(function (post) { %>
 		<div class="post-item">
 			<div class="title">
@@ -21,13 +20,12 @@
 				<i class="fa fa-user" aria-hidden="true"></i>
 				<span><%= config.author %></span>&nbsp;&nbsp;&nbsp;&nbsp;
 				<i class="fa fa-clock-o" aria-hidden="true"></i>
-          		<span><%- date(post.date, " YYYY") %></span>年<span><%- date(post.date, " MM") %></span>月<span><%- date(post.date, " DD") %></span>日
+          		<span><%- date(post.date, " YYYY ") %>年<%- date(post.date, " MM ") %>月<%- date(post.date, " DD ") %>日</span>
         		<% if(post.top){ %>
             		<span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
         		<% } %>
       		</div>
 		</div>
 	<% }) %>
-	</div>
 </div>
 <%- partial('_partial/paginator') %>

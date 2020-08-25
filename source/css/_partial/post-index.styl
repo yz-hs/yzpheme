@@ -1,14 +1,14 @@
 .post-index {
 	z-index: $post-z-index2;
-	background-color: #f1f3f4;
+	background-color: $dark-grey;
 	width: $post-width;
 	
 	.header {
-		background-color: #fff;
-		color: #000;
+		background-color: $white;
+		color: $text-dark-color;
 		font-weight: 300;
 		padding: 25px;
-		border-bottom: 1px solid #ddd;
+		border-bottom: 1px solid $border-color;
 
 		.title {
 			font-size: 30px;
@@ -17,7 +17,7 @@
 
 		.subtitle {
 			padding: 3px;
-			color: rgb(152, 166, 173);
+			color: $text-light-color;
 			font-size: 15px;
 			font-weight: 500;
 		}
@@ -26,8 +26,8 @@
 	.post-item {
 		margin: 20px;
 		padding: 30px;
-		background-color: #fff;
-		border: 1px solid #ddd;
+		background-color: $white;
+		border: 1px solid $border-color;
 		border-radius: 5px;
 
 		.title {
@@ -37,17 +37,13 @@
 
 		.meta {
 			padding: 3px;
-			color: rgb(152, 166, 173);
+			color: $text-light-color;
 			font-size: 14px;
 			font-weight: 500;
 		}
 
-		a {
-			color: rgb(119, 119, 119);
-		}
-
 		&:hover {
-			box-shadow: 0px 0px 15px #ccc;
+			box-shadow: 0px 0px 15px $black-grey;
 		}
 	}
 }

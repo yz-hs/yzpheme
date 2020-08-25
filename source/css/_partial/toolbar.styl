@@ -1,7 +1,7 @@
 .toolbar {
 	z-index: $toolbar-z-index;
-	border: 1px solid #ddd;
-	background-color: #fff;
+	border: 1px solid $border-color;
+	background-color: $white;
 	width: 220px;
 	height: 100%;
 	display: table-cell;
@@ -11,15 +11,11 @@
 
 		.title {
 			font-weight: 700;
-			margin-bottom: 5px;
+			margin-bottom: 10px;
 		}
 
 		.text {
-			padding: 10px;
-		}
-
-		.text-center {
-			text-align: center;
+			padding: 5px;
 		}
 	}
 	
@@ -33,13 +29,23 @@
 		}
 
 		.border-text {
-			border: 1px solid #ddd;
+			border: 1px solid $border-color;
 			padding: 5px;
 		}
 
 		ol {
 			padding-inline-start: 20px;
 		}
+		a {
+  			color: $art-link-color;
+		}
+		a:hover {
+  			color: $art-link-hover-color;
+		}
+	}
+
+	.toolbar-tag-cloud {
+		a {word-break: keep-all;}
 	}
 
 	.toolbar-tab-page {
@@ -61,23 +67,50 @@
 			width: $toolbar-sele-item-width;
 			text-align: center;
 		}
-		.tb-current {border-bottom: 1px solid #555;}
+		.tb-current {border-bottom: 1px solid $light-black;}
 		.tb-tabContent >div {
-			border-top: 1px solid #ddd; 
+			border-top: 1px solid $border-color; 
 			padding: 15px;
 			padding-bottom: 25px;
 			overflow: auto;
 		}
 		.sidetitle {
-			color: rgb(152, 166, 173);
+			color: $text-light-color;
 			font-size: 10px;
 			font-weight: 500;
 		}
-		a {
-			text-decoration:none;
-			color: rgb(119, 119, 119);
-		}
 	}
+
+	.list-group {
+  		margin-bottom: 20px;
+  		padding-left: 0px;
+	}
+
+	.list-group-item {
+		position: relative;
+  		display: block;
+  		padding: 10px 15px;
+  		margin-bottom: -1px;
+ 		background-color: $white;
+ 		color: $text-color;
+ 		border: 1px solid $border-color; 
+
+ 		.badge {
+ 			float: right;
+			padding: 3px 6px 3px 6px;
+			color: $white;
+			background-color: $badge-color;
+			border-radius: 20px;
+			font-size: 12px;
+ 		}
+	}
+	.list-group-item:first-child {
+    	border-radius: 15px 15px 0px 0px;
+  	}
+  	.list-group-item:last-child {
+   		margin-bottom: 0;
+    	border-radius: 0px 0px 15px 15px;
+  	}
 }
 
 @media screen and (max-width: $pc_pe_dividing_1) {

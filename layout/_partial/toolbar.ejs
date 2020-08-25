@@ -76,12 +76,19 @@
   </div>
 
   
-
-  
+  <div class="item">
+  	<div class="title">博客信息</div>
+    <div class="text list-group">
+  	  <div class="list-group-item"><i class="fa fa-file fa-fw" aria-hidden="true"></i>&nbsp;文章数目<div class="badge"><%= site.posts.length %></div></div>
+  	  <div class="list-group-item"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp;访客数目<div class="badge"><span id="busuanzi_value_site_uv"></span></div></div>
+  	  <div class="list-group-item"><i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;总访问量<div class="badge"><span id="busuanzi_value_site_pv"></span></div></div>
+  	  <div class="list-group-item"><i class="fa fa-font fa-fw" aria-hidden="true"></i>&nbsp;本站字数<div class="badge"><%= totalcount(site) %><!-- npm i hexo-wordcount --save --></span></div></div>
+    </div>
+  </div>
 
   <div class="item">
   	<div class="title">标签云</div>
-  	<div class="text"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#bfc6be', end_color: '#000'}) %></div>
+  	<div class="text toolbar-tag-cloud"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#bfc6be', end_color: '#000'}) %></div>
   </div>
 
   <% if(is_post()||is_page()){ %>
