@@ -1,23 +1,22 @@
 .post {
 	z-index: $post-z-index;
-	background-color: $dark-grey;
-	width: $post-width;
+	background-color: $post-bg-color;
 
 	.header {
-		background-color: $white;
-		color: $text-dark-color;
+		background-color: $post-header-bg-color;
 		font-weight: 300;
 		padding: 25px;
-		border-bottom: 1px solid $border-color;
+		border-bottom: 1px solid $post-header-border-bottom-color;
 
 		.title {
 			font-size: 30px;
+			color: $post-header-title-color;
 			padding: 3px;
 		}
 
 		.meta {
 			padding: 3px;
-			color: $text-light-color;
+			color: $post-header-meta-color;
 			font-size: 14px;
 			font-weight: 500;
 		}
@@ -25,8 +24,8 @@
 
 	.breadcrumb {
 		margin: 20px;
-		background-color: $white;
-		border: 1px solid $border-color;
+		background-color: $post-breadcrumb-bg-color;
+		border: 1px solid $post-breadcrumb-border-color;
 		border-radius: 5px;
 		padding: 10px;
 		height: 15px;
@@ -42,15 +41,15 @@
 
 	.post-text {
 		margin: 20px;
-		background-color: $white;
-		border: 1px solid $border-color;
+		background-color: $post-text-bg-color;
+		border: 1px solid $post-text-border-color;
 		border-radius: 5px;
 		padding: 30px;
 		a {
-  			color: $art-link-color;
+  			color: $post-text-link-color;
 		}
 		a:hover {
-  			color: $art-link-hover-color;
+  			color: $post-text-link-hover-color;
 		}
 	}
 
@@ -59,15 +58,15 @@
 		height: 35px;
 		font-size: 15px;
 		.prev {
-			background-color: $white;
-			border: 1px solid $border-color;
+			background-color: $post-prev-bg-color;
+			border: 1px solid $post-prev-border-color;
 			border-radius: 20px;
 			padding: 10px;
 			float: left;
 		}
 		.next {
-			background-color: $white;
-			border: 1px solid $border-color;
+			background-color: $post-next-bg-color;
+			border: 1px solid $post-next-border-color;
 			border-radius: 20px;
 			padding: 10px;
 			float: right;

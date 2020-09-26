@@ -1,7 +1,7 @@
 .toolbar {
 	z-index: $toolbar-z-index;
-	border: 1px solid $border-color;
-	background-color: $white;
+	border: 1px solid $toolbar-border-color;
+	background-color: $toolbar-bg-color;
 	width: 220px;
 	height: 100%;
 	display: table-cell;
@@ -21,27 +21,36 @@
 	
 	.post-toc {
 		position: sticky;
-		top: 40px;
+		top: 60px;
 		padding: 15px;
 		.title {
 			font-weight: 700;
 			margin-bottom: 5px;
 		}
 
-		.border-text {
-			border: 1px solid $border-color;
-			padding: 5px;
+		ol {
+			margin: 5px 0px;
+  			padding-left: 0px;
+		}
+		li {
+  			display: block;
+  			padding: 8px;
+  			margin-bottom: -1px;
+ 			background-color: $toolbar-post-toc-bg-color;
+ 			color: $toolbar-post-toc-color;
+ 			border: 1px solid $toolbar-post-toc-border-color;
+
+ 			span {
+ 				word-wrap: break-word;
+			}
 		}
 
-		ol {
-			padding-inline-start: 20px;
-		}
-		a {
-  			color: $art-link-color;
-		}
-		a:hover {
-  			color: $art-link-hover-color;
-		}
+		li:first-child {
+    		border-radius: 10px 10px 0px 0px;
+  		}
+  		li:last-child {
+    		border-radius: 0px 0px 10px 10px;
+  		}
 	}
 
 	.toolbar-tag-cloud {
@@ -67,15 +76,19 @@
 			width: $toolbar-sele-item-width;
 			text-align: center;
 		}
-		.tb-current {border-bottom: 1px solid $light-black;}
+		.tb-current {border-bottom: 1px solid $toolbar-tab-page-current-border-bottom-color;}
 		.tb-tabContent >div {
-			border-top: 1px solid $border-color; 
+			border-top: 1px solid $toolbar-tab-page-tabContent-border-top-color;
 			padding: 15px;
 			padding-bottom: 25px;
 			overflow: auto;
 		}
+		.title {
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
 		.sidetitle {
-			color: $text-light-color;
+			color: $toolbar-tab-page-sidetitle-color;
 			font-size: 10px;
 			font-weight: 500;
 		}
@@ -91,15 +104,15 @@
   		display: block;
   		padding: 10px 15px;
   		margin-bottom: -1px;
- 		background-color: $white;
- 		color: $text-color;
- 		border: 1px solid $border-color; 
+ 		background-color: $toolbar-list-group-item-bg-color;
+ 		color: $toolbar-list-group-item-color;
+ 		border: 1px solid $toolbar-list-group-item-border-color; 
 
  		.badge {
  			float: right;
 			padding: 3px 6px 3px 6px;
-			color: $white;
-			background-color: $badge-color;
+			color: $toolbar-list-group-item-badge-color;
+			background-color: $toolbar-list-group-item-badge-bg-color;
 			border-radius: 20px;
 			font-size: 12px;
  		}

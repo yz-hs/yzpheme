@@ -11,7 +11,7 @@
       <div>
       	
 <!--  1-tab  -->
-<span>随机文章</span><span class="sidetitle">回味旧文</span>
+<span class="title">随机文章</span><span class="sidetitle">回味旧文</span>
 <div class="item"><%- list_posts({
 	orderby: 'random',
 	style: 'block',
@@ -28,7 +28,7 @@
       	
 <!--  2-tab  -->
 
-<span>最新更新</span><span class="sidetitle">不要忽略旧文章的更新哦</span>
+<span class="title">最新更新</span><span class="sidetitle">不要忽略旧文章的更新哦</span>
 <div class="item"><%- list_posts({
 	orderby: 'updated',
 	style: 'block',
@@ -46,7 +46,7 @@
 
 <!--  3-tab  -->
 
-  <span>其他</span><span class="sidetitle">杂物</span>
+  <span class="title">其他</span><span class="sidetitle">杂物</span>
   
   <div class="item">
     <div class="text" id="displaytime"><script type="text/javascript" src="/js/displaytime.js"></script></div>
@@ -86,19 +86,15 @@
     </div>
   </div>
 
-  <div class="item">
-  	<div class="title">标签云</div>
-  	<div class="text toolbar-tag-cloud"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#bfc6be', end_color: '#000'}) %></div>
-  </div>
-
-  <% if(is_post()||is_page()){ %>
+  <% if(toc(page.content,{list_number: false})){ %><!-- 标签可能太多，影响目录 -->
     <div class="post-toc">
       <div class="title">文章目录</div>
-      <% if(toc(page.content,{list_number: false})=="") { %>
-        <div class="text">目录好像不可用嘤。 >_<</div>
-      <% }else{ %>
-  	    <div class="text"><%- toc(page.content,{list_number: false}) %></div>
-  	  <% } %>
+      <%- toc(page.content,{list_number: false}) %>
+    </div>
+  <% }else{ %>
+    <div class="item">
+      <div class="title">标签云</div>
+      <div class="text toolbar-tag-cloud"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#bfc6be',  end_color: '#000'}) %></div>
     </div>
   <% } %> 
 

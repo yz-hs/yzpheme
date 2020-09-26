@@ -35,10 +35,13 @@
 
   <div class="sidebar-footer">
   	<div class="item">
-  		<a href="#back-to-top"><i class="fa fa-hand-o-up" aria-hidden="true"></i><div class="mini-text">回到顶部</div></a>
+  		<a href="#back-to-top"><i class="fa fa-hand-o-up" aria-hidden="true"></i><div class="mini-text">顶部</div></a>
   	</div>
   	<div class="item">
-  		<a href="/atom.xml"><i class="fa fa-feed" aria-hidden="true"></i><div class="mini-text">RSS地址</div></a>
+  		<a href="/atom.xml"><i class="fa fa-feed" aria-hidden="true"></i><div class="mini-text">RSS</div></a>
+  	</div>
+  	<div class="item">
+  		<a href="javascript:(function(){window.open(&quot;<%= config.url %>&quot;)})()" onclick="swal('提示','请把图标拖动到书签栏','warning');return false;"><i class="fa fa-bookmark" aria-hidden="true"></i><div class="mini-text">收藏</div></a>
   	</div>
   </div>
 </div>

@@ -3,7 +3,7 @@
 	width: $sidebar-width_1;
 	height: 100%;
 	z-index: $sidebar-z-index;
-	background-color: $white;
+	background-color: $sidebar-bg-color;
 
 	.sidebar-avatar {
 		border-radius: 50%;
@@ -36,7 +36,7 @@
 		position: fixed;
 		width: $sidebar-width_1;
 		bottom: 0px;
-		background-color: $light-grey;
+		background-color: $sidebar-footer-bg-color;
 		padding: 10px 0px;
 
 		.item {
@@ -47,7 +47,7 @@
 	}
 
 	.mini-text {
-		color: $text-light-color;
+		color: $sidebar-text-mini-text-color;
 		font-size: 12px;
 		font-weight: 500;
 	}
@@ -57,27 +57,28 @@
   		padding-left: 0;
 	}
 
+
 	.list-group-item {
 		position: relative;
   		display: block;
   		padding: 10px 15px;
   		margin-bottom: -1px;
- 		background-color: $white;
- 		color: $text-color;
+ 		background-color: $sidebar-list-group-item-bg-color;
+ 		color: $sidebar-list-group-item-color;
 
   		&:hover,
   		&:focus {
     		text-decoration: none;
-    		color: $text-color;
-    		background-color: $dark-grey;
+    		color: $sidebar-list-group-item-hover-color;
+    		background-color: $sidebar-list-group-item-hover-bg-color;
   		}
 	}
 
 	.badge {
         float: right;
 		padding: 3px 6px 3px 6px;
-		color: $white;
-		background-color: $badge-color;
+		color: $sidebar-badge-color;
+		background-color: $sidebar-badge-bg-color;
 		border-radius: 20px;
 		font-size: 15px;
 	}
