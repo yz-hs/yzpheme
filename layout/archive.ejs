@@ -20,14 +20,17 @@
   	  </div>
   </div>
   
-  <ul class="post-text for-else">
-    <hr />
+  <div class="post-text">
+  	<ol class="achieve">
     <% page.posts.each(function (post) { %>
-      <li class="item">
-        <span class="date"><%= date(post.date, "YYYY-MM-DD") %></span>&nbsp;&nbsp;————&nbsp;
-        <a class="title" href="<%- url_for(post.path) %>"><%= post.title %></a><hr />
+      <li>
+        <b class="date"><%= date(post.date, "YYYY-MM-DD") %></b>
+        <a class="title" href="<%- url_for(post.path) %>"><%= post.title %></a>
       </li>
     <% }) %>
-  </ul>
+    </ol>
   </div>
-<%- partial('_partial/paginator') %>
+
+  <%- partial('_partial/paginator') %>
+  
+</div>

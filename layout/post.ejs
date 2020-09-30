@@ -3,15 +3,18 @@
     <div class="title"><%= page.title %></div>
     <div class="meta">
 	  <i class="fa fa-user" aria-hidden="true"></i>
-	  <span><%= config.author %></span>&nbsp;&nbsp;&nbsp;&nbsp;
-	  <i class="fa fa-clock-o" aria-hidden="true"></i>
-      <span><%- date(page.date, " YYYY ") %>年<%- date(page.date, " MM ") %>月<%- date(page.date, " DD ") %>日</span>&nbsp;&nbsp;&nbsp;&nbsp;
-      <i class="fa fa-font" aria-hidden="true"></i>
-      <span><%= wordcount(page.content) %></span>&nbsp;&nbsp;&nbsp;&nbsp;
-      <i class="fa fa-eye fa-fw" aria-hidden="true"></i>
-      <span id="busuanzi_value_page_pv"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+	  <span><%= config.author %></span>
+	  &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-clock-o" aria-hidden="true"></i>
+      <span><%- date(page.date, " YYYY ") %>年<%- date(page.date, " MM ") %>月<%- date(page.date, " DD ") %>日</span>
+      &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-font" aria-hidden="true"></i>
+      <span><%= wordcount(page.content) %></span>
+      &nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye fa-fw" aria-hidden="true"></i>
+      <span id="busuanzi_value_page_pv"></span>
       <% if(page.top){ %>
-        <i class="fa fa-thumb-tack" aria-hidden="true"></i> <span>置顶</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
+      <% } %>
+      <% if(page.password){ %>
+        &nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fa fa-lock" aria-hidden="true"></i> 加密</span>
       <% } %>
     </div>
   </div>
@@ -37,6 +40,6 @@
   	<% } %>
   </div>
 
-</div>
+  <%- partial('_partial/comments') %>
 
-<%- partial('_partial/comments') %>
+</div>

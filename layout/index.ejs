@@ -18,14 +18,19 @@
 			<hr />
 			<div class="meta">
 				<i class="fa fa-user" aria-hidden="true"></i>
-				<span><%= config.author %></span>&nbsp;&nbsp;&nbsp;&nbsp;
-				<i class="fa fa-clock-o" aria-hidden="true"></i>
+				<span><%= config.author %></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-clock-o" aria-hidden="true"></i>
           		<span><%- date(post.date, " YYYY ") %>年<%- date(post.date, " MM ") %>月<%- date(post.date, " DD ") %>日</span>
         		<% if(post.top){ %>
-            		<span>&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
+            		&nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
         		<% } %>
+        		<% if(post.password){ %>
+        			&nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fa fa-lock" aria-hidden="true"></i> 加密</span>
+      			<% } %>
       		</div>
 		</div>
 	<% }) %>
+
+	<%- partial('_partial/paginator') %>
+
 </div>
-<%- partial('_partial/paginator') %>

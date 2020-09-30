@@ -126,3 +126,74 @@ $(function(){
 	font-size: 10px;
 	font-weight: 500;
 }
+
+/*  进度条  */
+
+.progress-con {
+    width: 100%;
+    background-color: #ddd;
+
+    .progress {
+    	text-align: right;
+    	padding-right: 20px;
+    	line-height: 30px;
+    	color: white;
+	}
+}
+
+/* 时间线 */
+
+.timeline 
+{
+	position: relative;
+	list-style: none;
+	padding-left: 1.2em !important;
+	margin-left: .3em !important;
+	border-left: .2em solid #eee;
+	color: #303133;
+	
+	a {
+		color: #000 !important;
+
+		&:hover {
+			color: #777 !important;
+		}
+	}
+}
+
+.timeline b {
+	font-size: .9em;
+	font-weight: normal;
+	color: #909399;
+	display: block;
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.timeline b::after {
+	content: '';
+	position: absolute;
+	top: .38em;
+	left: -2em;
+	width: .8em;
+	height: .8em;
+	border-radius: 50%;
+	background-color: #fff;
+	border: .14em solid #ccc;
+	box-shadow: m.15em .15em 0 rgba(255,255,255,1),-0.15em -0.15em 0 rgba(255,255,255,1);
+}
+
+.timeline li {
+	list-style: none;
+	line-height: 100%;
+}
+
+.timeline li:hover b::after {
+	border-color: #eb5055;
+
+}
+
+.timeline li:hover b {
+	color: #eb5055;
+}

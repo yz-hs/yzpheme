@@ -1,0 +1,54 @@
+.achieve 
+{
+	position: relative;
+	list-style: none;
+	padding-left: 1.2em !important;
+	margin-left: .3em !important;
+	border-left: .2em solid #eee;
+	color: #303133;
+
+	a {
+		color: #000 !important;
+
+		&:hover {
+			color: #777 !important;
+		}
+	}
+}
+
+.achieve b {
+	font-size: .9em;
+	font-weight: normal;
+	color: #909399;
+	display: block;
+	position: relative;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.achieve b::after {
+	content: '';
+	position: absolute;
+	top: .38em;
+	left: -2em;
+	width: .8em;
+	height: .8em;
+	border-radius: 50%;
+	background-color: #fff;
+	border: .14em solid #ccc;
+	box-shadow: m.15em .15em 0 rgba(255,255,255,1),-0.15em -0.15em 0 rgba(255,255,255,1);
+}
+
+.achieve li {
+	list-style: none;
+	line-height: 100%;
+}
+
+.achieve li:hover b::after {
+	border-color: #eb5055;
+
+}
+
+.achieve li:hover b {
+	color: #eb5055;
+}
