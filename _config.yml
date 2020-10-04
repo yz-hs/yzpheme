@@ -7,10 +7,10 @@ menu:
   tags: tags/index.html
   categories: categories/index.html
   about: somepage/about/index.html
-  留言: somepage/chat/index.html
-  友链: somepage/友链/index.html
+  #留言: somepage/chat/index.html
+  #友链: somepage/友链/index.html
   项目: somepage/projects/index.html
-  yznazo: yznazo/index.html
+  #yznazo: yznazo/index.html
 
 吐槽: 
   url: somepage/吐槽/index.html

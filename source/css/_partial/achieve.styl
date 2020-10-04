@@ -5,13 +5,13 @@
 	padding-left: 1.2em !important;
 	margin-left: .3em !important;
 	border-left: .2em solid #eee;
-	color: #303133;
-
+	color: rgb(119, 119, 119);
+	
 	a {
-		color: #000 !important;
+		color: $achieve-a-color !important;
 
 		&:hover {
-			color: #777 !important;
+			color: $achieve-a-hover-color !important;
 		}
 	}
 }
@@ -19,11 +19,11 @@
 .achieve b {
 	font-size: .9em;
 	font-weight: normal;
-	color: #909399;
 	display: block;
 	position: relative;
 	margin-top: 20px;
 	margin-bottom: 10px;
+	color: #909399;
 }
 
 .achieve b::after {
@@ -44,11 +44,11 @@
 	line-height: 100%;
 }
 
-.achieve li:hover b::after {
+.timeline li:hover b::after {
 	border-color: #eb5055;
 
 }
 
-.achieve li:hover b {
+.timeline li:hover b {
 	color: #eb5055;
 }

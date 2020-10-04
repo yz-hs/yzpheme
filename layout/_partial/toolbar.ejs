@@ -18,7 +18,7 @@
 	separator: '<br /><br />',
 	amount: 6,
 	transform(str) {
-    	return '<i class="fa fa-random fa-fw fa-pull-left fa-border fa-lg" aria-hidden="true"></i> '+str;
+    	return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true"></i> '+str;
   	}
 }) %></div>
 <!--  END 1-tab  -->
@@ -28,14 +28,14 @@
       	
 <!--  2-tab  -->
 
-<span class="title">最新更新</span><span class="sidetitle">不要忽略旧文章的更新哦</span>
+<span class="title">最新更新</span><span class="sidetitle">旧文章的更新</span>
 <div class="item"><%- list_posts({
 	orderby: 'updated',
 	style: 'block',
 	separator: '<br /><br />',
 	amount: 6,
 	transform(str) {
-    	return '<i class="fa fa-refresh fa-fw fa-pull-left fa-border fa-lg" aria-hidden="true"></i> '+str;
+    	return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true"></i> '+str;
   	}
 }) %></div>
 
@@ -57,7 +57,7 @@
 		var minutes=myDate.getMinutes();
 		minutes=hours*60+minutes;
 		var pro=minutes/14.4;
-		var innerhtml="<div class=\"progress-con\"><div class=\"progress\" title=\"时间已过去了"+pro.toFixed(2)+"%\"style=\"width: "+pro/100.0+"%; background-color: #4caf50; color: #4caf50;\">|</div></div>"
+		var innerhtml="<div class=\"progress-con\"><div class=\"progress\" title=\"时间已过去了"+pro.toFixed(2)+"%\"style=\"width: "+pro+"%; background-color: #4caf50; color: #4caf50;\">|</div></div>"
 		document.getElementById("timeprogress").innerHTML = innerhtml;
 	</script>
   </div>
@@ -104,7 +104,7 @@
   <% }else{ %>
     <div class="item">
       <div class="title">标签云</div>
-      <div class="text toolbar-tag-cloud"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#bfc6be',  end_color: '#000'}) %></div>
+      <div class="text toolbar-tag-cloud"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#bfc6be',  end_color: '#444'}) %></div>
     </div>
   <% } %> 
 
