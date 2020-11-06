@@ -63,9 +63,16 @@ responsive:
   dividing_2: 800 # hide sidebar
   dividing_3: 400 # change topbar
 
-# 7：short description
+# 7:short description
 
 short_des: "A cute OIer"
+
+# 8:display site warning
+
+site_warning:
+  enable: true
+  text: '注意：本 Blog 原域名 orzyz.tk 已过期。'
+  type: danger   # You can set it danger|warning|info|success , or default.
 
 # END:note
 
