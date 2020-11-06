@@ -5,7 +5,12 @@
 		<div class="subtitle"><%= config.subtitle %></div>
 	</div>
 	<% page.posts.each(function (post) { %>
-		<div class="post-item">
+	  <% if(post.bgimg){ %>
+		<div class="post-bgimg-item" style="background-image: url(<%= post.bgimg %>);">
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><div class="inner">
+	  <% }else{ %>
+		<div class="post-item"><div>
+	  <% } %>
 			<div class="title">
 				<a href="<%- url_for(post.path) %>"><%= post.title %></a>
 			</div>
@@ -29,7 +34,7 @@
         			&nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fa fa-lock" aria-hidden="true"></i> 加密</span>
       			<% } %>
       		</div>
-		</div>
+		</div></div>
 	<% }) %>
 
 	<%- partial('_partial/paginator') %>

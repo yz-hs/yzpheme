@@ -90,34 +90,55 @@
 /*  标签页  */
 
 .tab-page {
-	li,ul,li {margin: 0px; padding: 0px;}
-	li {list-style-type: none;}
+	box-shadow: 0px 0px 15px #ddd;
+
 	.hide {display: none;}
-	.tabTitle ul {overflow: hidden;}
-	.tabTitle ul li {float: left; border: 1px solid #abcdef; border-bottom: none; height: 30px; line-height: 30px; padding: 0 15px; margin-right: 3px; cursor:pointer;}
-	.current {background: #abcdef; color:#fff;}
-	.tabContent div {border: 1px solid #abcdef; height: 350px; padding: 15px;overflow: auto;}
+	.tabTitle >ul {
+		overflow: hidden;
+		padding: 0px;
+		margin: 0px;
+		list-style-type: none;
+	}
+	.tabTitle >ul >li {
+		float: left; 
+		height: 20px; 
+		font-size: 20px;
+		padding: 20px 10px;
+		margin: 0px;
+		line-height: 30px; 
+		cursor: pointer;
+		text-align: center;
+
+		&:first-child {
+			padding-left: 20px;
+		}
+	}
+	.current {border-bottom: 1px solid $toolbar-tab-page-current-border-bottom-color;}
+	.tabContent >div {
+		border-top: 1px solid $toolbar-tab-page-tabContent-border-top-color;
+		padding: 15px;
+		padding-bottom: 25px;
+		overflow: auto;
+	}
+}
 
 /* need js:
 
 $(function(){
-  var ali = $('.tabTitle ul li');
-  var aDiv = $('.tabContent div');
-  var timeId = null;
-  ali.mouseover(function(){
-    var _this = $(this);
-    timeId = setTimeout(function(){
-      _this.addClass('current').siblings().removeClass('current');
-      var index = _this.index();
-      aDiv.eq(index).show().siblings().hide();
-    },300);
-  }).mouseout(function(){
-    clearTimeout(timeId);
+      var ali = $('.tb-tabTitle>ul>li');
+      var aDiv = $('.tb-tabContent>div');
+      var timeId = null;
+      ali.click(function(){
+        var _this = $(this);
+        timeId = setTimeout(function(){
+          _this.addClass('tb-current').siblings().removeClass('tb-current');
+          var index = _this.index();
+          aDiv.eq(index).show().siblings().hide();
+        });
+      });
   });
-});
 
 */
-}
 
 /*  注解文字  */
 

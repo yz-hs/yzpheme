@@ -113,15 +113,13 @@
       var ali = $('.tb-tabTitle>ul>li');
       var aDiv = $('.tb-tabContent>div');
       var timeId = null;
-      ali.mouseover(function(){
+      ali.click(function(){
         var _this = $(this);
         timeId = setTimeout(function(){
           _this.addClass('tb-current').siblings().removeClass('tb-current');
           var index = _this.index();
           aDiv.eq(index).show().siblings().hide();
-        },300);
-      }).mouseout(function(){
-        clearTimeout(timeId);
+        });
       });
   });
   </script>
