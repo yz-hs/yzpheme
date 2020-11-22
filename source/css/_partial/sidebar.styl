@@ -69,11 +69,19 @@
 
   		&:hover,
   		&:focus {
-    		text-decoration: none;
     		color: $sidebar-list-group-item-hover-color;
     		background-color: $sidebar-list-group-item-hover-bg-color;
   		}
 	}
+
+	.list-group-item-current {
+		position: relative;
+  		display: block;
+  		padding: 10px 15px;
+  		margin-bottom: -1px;
+  		color: $sidebar-list-group-item-current-color;
+    	background-color: $sidebar-list-group-item-current-bg-color;
+  	}
 
 	.badge {
         float: right;

@@ -26,12 +26,7 @@ menu:
 # ---
 #
 
-# 3:avatar
-
-avatar:
-  url: /img/avatar.jpg
-
-# 4:menu-icon
+# 3:menu-icon
 # "icon" from http://www.fontawesome.com.cn .
 # "吐槽" is on "topbar".
 
@@ -46,38 +41,68 @@ icon:
   yznazo: fa-gamepad
   吐槽: fa-bell-o
 
-# 5:comments
+# 4:comments
 # Comments will be opened on pages other than those containing "discomments: true".
 
 comments:
-  enable: true 
   # LiveRe comments system
   # You can get your uid from https://livere.com/insight/myCode (General web site)
-  livere_uid: MTAyMC80Njg5MS8yMzM5Mg==
+  livere:
+    enable: false
+    uid: MTAyMC80Njg5MS8yMzM5Mg==
+  # gitalk comments system
+  # see: https://github.com/gitalk/gitalk
+  # setting: please edit ./layout/_partial/comments.ejs
+  gitalk:
+    enable: true
 
-# 6:responsive page
+# 5:responsive
 #If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.
 
 responsive:
   dividing_1: 1200 # hide toolbar
   dividing_2: 800 # hide sidebar
-  dividing_3: 400 # change topbar
+  dividing_3: 480 # change topbar and margin/padding
 
-# 7:short description
-
-short_des: "A cute OIer"
-
-# 8:display site warning
+# 6:display site warning
 
 site_warning:
   enable: true
   text: '注意：本 Blog 原域名 orzyz.tk 已过期。'
   type: danger   # You can set it danger|warning|info|success , or default.
 
+# 7:footer
+
+footer:
+  left: 'Copyright ©2018-2020 yz-hs. All rights reserved.'
+  right: 'Theme is <a href="https://github.com/yz-hs/yzpheme">yzpheme</a>,by yz-hs.'
+
+# 8:copyright
+
+copyright:
+  enable: post  # You can set it all|post|disable , or default(disable).
+                # all:displayed at the end of every page.
+                # post:only displayed at the end of every post.
+  statement: '本博客所有文章除特别声明外，均允许规范转载。转载请注明出处！当然也可对文章出处进行考证，在下方评论区评论！'
+
+# 9:others
+
+# if a post has no <!--more-->
+post_default_excerpt: '<i class="fa fa-warning" aria-hidden="true"></i> 本文章无可提供的摘要qwq。'
+
+# short description
+short_des: "A cute OIer"
+
+# avatar
+avatar:
+  url: /img/avatar.jpg
+
 # END:note
 
 # (1) Mathjax is turned on globally.
 # (2) "RSS地址" requires `hexo-generator-feed` plugin to use. Please run `npm install hexo-generator-feed`. 
+# (3) "wordcount" requires `hexo-wordcount` plugin to use. Please run `npm i hexo-wordcount --save`.
+# (4) "文章置顶" 事实上是按照文章的 top 值排序，并加上 "置顶" 标签。请参看 ./_doc/top.md .
 
 
 

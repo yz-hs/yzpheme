@@ -15,10 +15,10 @@
 <div class="item"><%- list_posts({
 	orderby: 'random',
 	style: 'block',
-	separator: '<br /><br />',
+	separator: '<hr class="separator" />',
 	amount: 6,
 	transform(str) {
-    	return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true"></i> '+str;
+    	return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true" style="height: 30px;border: none;"></i> '+str;
   	}
 }) %></div>
 <!--  END 1-tab  -->
@@ -32,10 +32,10 @@
 <div class="item"><%- list_posts({
 	orderby: 'updated',
 	style: 'block',
-	separator: '<br /><br />',
+	separator: '<hr class="separator" />',
 	amount: 6,
 	transform(str) {
-    	return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true"></i> '+str;
+    	return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true" style="height: 30px;border: none;"></i> '+str;
   	}
 }) %></div>
 
@@ -99,7 +99,7 @@
   <% if(toc(page.content,{list_number: false})){ %><!-- 标签可能太多，影响目录 -->
     <div class="post-toc">
       <div class="title">文章目录</div>
-      <%- toc(page.content,{list_number: false}) %>
+      <%- toc(page.content,{list_number: false,max_depth: 3}) %>
     </div>
   <% }else{ %>
     <div class="item">

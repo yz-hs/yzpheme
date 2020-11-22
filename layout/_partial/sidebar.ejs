@@ -19,7 +19,11 @@
 
   <div class="list-group">
   	<% for (name in theme.menu) { %>
-  	 <a class="list-group-item" href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %>
+  	 <% if(url_for(page.path)==url_for(theme.menu[name])) { %>
+  	   <a class="list-group-item-current" href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %>
+  	 <% }else{ %>
+  	   <a class="list-group-item" href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %>
+  	 <% } %>
   	    <% if(theme.menu_name[name].name=="Archives"){ %>
   	    	<div class="badge"><%= site.posts.length %></div>
   	    <% }else if(theme.menu_name[name].name=="tags"){ %>

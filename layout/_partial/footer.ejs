@@ -1,4 +1,159 @@
 <div class="footer">
-  <p class="text-left">Copyright ©2018-2020 yz-hs. All rights reserved.</p>
-  <p class="text-right">Theme is <a href="https://github.com/yz-hs/yzpheme">yzpheme</a>,by yz-hs.</p>
+  <p class="text-left"><%- theme.footer.left %></p>
+  <p class="text-right"><%- theme.footer.right %></p>
 </div>
+
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="/js/ctitle.js"></script>
+<script type="text/javascript" src="/js/clicklove.js"></script>
+<script type="text/javascript" src="/js/colored-egg.js"></script>
+<script type="text/javascript" src="/js/SmoothScroll.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!--
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="/js/firework.js"></script>
+-->
+
+<!--<script type="text/javascript" src="/js/values.js"></script>-->
+
+<!--<script type="text/javascript" src="/js/particle.js"></script>-->
+<!--<script type="text/javascript" src="/js/snow.js"></script>-->
+
+<script src="/js/activate-power-mode.js"></script>
+<script>
+ POWERMODE.colorful = true; // 控制开启/开启礼花特效  
+ POWERMODE.shake = true; // 控制开启/关闭屏幕震动特效  
+ document.body.addEventListener('input', POWERMODE);
+</script>
+
+<script type="text/javascript" src="/js/chaffle.min.js"></script>  
+<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {$('.chaffle').chaffle();});   //文字变幻
+    hljs.initHighlightingOnLoad();  //高亮
+    setTimeout(function(){siteLoading.classList.remove('siteLoading-active')},0);  //加载动画
+</script>
+
+<!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": { 
+        preferredFont: "TeX", 
+        availableFonts: ["STIX","TeX"], 
+        linebreaks: { automatic:true }, 
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) 
+    },
+    tex2jax: { 
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ], 
+        processEscapes: true, 
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {  
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, 
+        Macros: { href: "{}" } 
+    },
+    messageStyle: "none"
+    }); 
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += 'has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<script>  
+if (!Readdata("fool")) {
+    document.body.classList.add('reverse-coloregg');
+    window.setTimeout(function () {
+        Savedata("fool", "fool");
+        swal("你可以正常访问 Blog 啦！你还可以通过删除 Cookie 再体验一次！呵呵^_^");
+        document.body.classList.remove('reverse-coloregg');  
+    }, 10000);
+}  
+   
+function Savedata(key, data) {  
+    key = 'yz_' + key;  
+    data = JSON.stringify(data);  
+    if (window.localStorage) {  
+        localStorage.setItem(key, data);  
+    }  
+}  
+  
+function Readdata(key) {  
+    if (!window.localStorage) return '';  
+    key = 'yz_' + key;  
+    return JSON.parse(localStorage.getItem(key));  
+}  
+</script>  
+  
+<style>  
+	
+.reverse-coloregg {  
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);  
+    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);  
+    transform: matrix(-1, 0, 0, 1, 0, 0);  
+    -o-transform: skew(0deg, 180deg) scale(-1, 1);  
+    filter:progid: DXImageTransform.Microsoft.BasicImage(mirror=1); 
+}  
+
+/*from https://mkblog.cn/1469/*/
+</style>  
+
+<script>
+//	$(document).ready(function(){
+//    	$("div.post-text>p>a").append(" <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i>");
+//	});
+//链接后加图标
+//不好看，弃置
+</script>
+
+<a class="santa-container" onclick="santacoloredegg()">
+  <div class="santa" id="santa-colored-egg">
+    <div class="santa-body">
+        <div class="santa-head">
+            <div class="santa-ear"></div>
+            <div class="santa-ear"></div>
+            <div class="santa-hat"></div>
+            <div class="santa-eye"></div>
+            <div class="santa-eye"></div>
+            <div class="santa-nose"></div>
+            <div class="santa-mouth"></div>
+        </div>
+    </div>
+  </div>
+</a>
+
+<script type="text/javascript">
+	function santacoloredegg() {
+		document.getElementById("santa-colored-egg").innerHTML = 
+		"<div class=\"santa-body\" style=\"font-size: 500px;\">"+
+		"<div class=\"santa-head\">"+
+		"<div class=\"santa-ear\"></div>"+
+		"<div class=\"santa-ear\"></div>"+
+		"<div class=\"santa-hat\"></div>"+
+		"<div class=\"santa-eye\"></div>"+
+		"<div class=\"santa-eye\"></div>"+
+		"<div class=\"santa-nose\"></div>"+
+		"<div class=\"santa-mouth\"></div>"+
+		"</div></div>";
+		swal("由于你触碰了圣诞老人，他快气炸了！快快刷新让他平静下来！");
+	}
+</script>

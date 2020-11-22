@@ -15,5 +15,12 @@ $toolbar-sele-item-width                   = 33.333%; // ( 100% / item-num 3 )
 $topbar-z-index                            = 999;
 
 @import "_variable/colors/white";
-@import "_variable/schemes/opacity";
-//@import "_variable/schemes/grayscale";
+//@import "_variable/colors/night";
+//@import "_variable/colors/std";
+
+//@import "_variable/spacial/grayscale";
+
+@media screen and (min-width: $pc_pe_dividing_2) {
+    @import "_variable/spacial/opacity";
+    //建议在小屏幕上不开启透明样式。
+}

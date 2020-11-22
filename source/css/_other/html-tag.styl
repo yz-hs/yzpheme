@@ -1,11 +1,19 @@
 /*  引用  */
 
 blockquote {
-    margin: 1.6em;
     padding: 10px 20px;
     border-left: 3px solid #dde6e9;
     background-color: $blockquote-color;
     word-break: break-all;
+}
+
+@media screen and (max-width: $pc_pe_dividing_3) {
+    blockquote {
+    	margin-block-start: 1em;
+    	margin-block-end: 1em;
+    	margin-inline-start: 10px;
+    	margin-inline-end: 10px;
+    }
 }
 
 /*  图片  */
@@ -16,10 +24,18 @@ img {
     opacity: 1;
 }
 
+/* 列表 */
+
+@media screen and (max-width: $pc_pe_dividing_3) {
+    ol,ul {
+    	padding-inline-start: 15px;
+    }
+}
+
 /*  链接  */
 
 a {
-	text-decoration:none;
+	text-decoration: none;
 	color: $a-color;
 }
 
@@ -28,8 +44,8 @@ a {
 hr {
 	border-style: solid;
     border-color: $hr-color;
-	border-width: 1px;
-	margin: 15px;
+	border-width: .1px;
+	margin: 10px;
 }
 
 /*  防止溢出  */
@@ -43,6 +59,7 @@ pre,code {
     max-width: 500px;
     margin: auto;
 	overflow: auto;
+	line-height: 120%;
 }
 
 @media screen and (max-width: $pc_pe_dividing_1) {

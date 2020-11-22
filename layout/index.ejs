@@ -1,13 +1,13 @@
-<div class="post-index">
+<div class="post">
 	<%- partial('_partial/warning') %>
 	<div class="header">
 		<div class="title"><%= config.title %></div>
-		<div class="subtitle"><%= config.subtitle %></div>
+		<div class="meta"><%= config.subtitle %></div>
 	</div>
 	<% page.posts.each(function (post) { %>
 	  <% if(post.bgimg){ %>
 		<div class="post-bgimg-item" style="background-image: url(<%= post.bgimg %>);">
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><div class="inner">
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><div class="inner">
 	  <% }else{ %>
 		<div class="post-item"><div>
 	  <% } %>
@@ -18,20 +18,18 @@
 				<% if(post.excerpt){ %>
 					<%- post.excerpt %>
 				<% }else{ %>
-					<i class="fa fa-warning" aria-hidden="true"></i> 本文章无可提供的摘要qwq。
+					<%- theme.post_default_excerpt %>
 				<% } %>
 			</div>    
 			<hr />
 			<div class="meta">
-				<i class="fa fa-user" aria-hidden="true"></i>
-				<span><%= config.author %></span>
-				&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-clock-o" aria-hidden="true"></i>
-          		<span><%- date(post.date, " YYYY ") %>年<%- date(post.date, " MM ") %>月<%- date(post.date, " DD ") %>日</span>
+				<span><i class="fa fa-user" aria-hidden="true"></i> <%= config.author %></span>
+				<span><i class="fa fa-clock-o" aria-hidden="true"></i><%- date(post.date, " YYYY ") %>年<%- date(post.date, " MM ") %>月<%- date(post.date, " DD ") %>日</span>
         		<% if(post.top){ %>
-            		&nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
+            		<span><i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
         		<% } %>
         		<% if(post.password){ %>
-        			&nbsp;&nbsp;&nbsp;&nbsp;<span><i class="fa fa-lock" aria-hidden="true"></i> 加密</span>
+        			<span><i class="fa fa-lock" aria-hidden="true"></i> 加密</span>
       			<% } %>
       		</div>
 		</div></div>
