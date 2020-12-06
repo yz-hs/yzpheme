@@ -78,6 +78,11 @@
 </script>
 <!-- 通过连接CDN加载MathJax的js代码 -->
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<style type="text/css">
+	*.has-jax {
+		overflow-x: auto;
+	}
+</style>
 
 <script>  
 if (!Readdata("fool")) {
@@ -125,8 +130,8 @@ function Readdata(key) {
 //不好看，弃置
 </script>
 
-<a class="santa-container" onclick="santacoloredegg()">
-  <div class="santa" id="santa-colored-egg">
+<a class="santa-container" id="santa-colored-egg">
+  <div class="santa" onclick="santacoloredegg()">
     <div class="santa-body">
         <div class="santa-head">
             <div class="santa-ear"></div>
@@ -144,6 +149,7 @@ function Readdata(key) {
 <script type="text/javascript">
 	function santacoloredegg() {
 		document.getElementById("santa-colored-egg").innerHTML = 
+		"<div class=\"santa\" onclick=\"santaremove()\">"+
 		"<div class=\"santa-body\" style=\"font-size: 500px;\">"+
 		"<div class=\"santa-head\">"+
 		"<div class=\"santa-ear\"></div>"+
@@ -153,7 +159,11 @@ function Readdata(key) {
 		"<div class=\"santa-eye\"></div>"+
 		"<div class=\"santa-nose\"></div>"+
 		"<div class=\"santa-mouth\"></div>"+
-		"</div></div>";
+		"</div></div></div>";
 		swal("由于你触碰了圣诞老人，他快气炸了！快快刷新让他平静下来！");
+	}
+
+	function santaremove() {
+		document.getElementById("santa-colored-egg").innerHTML = "";
 	}
 </script>

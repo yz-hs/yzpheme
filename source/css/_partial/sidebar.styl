@@ -1,5 +1,6 @@
 .sidebar {
 	position: fixed;
+	overflow-y: auto;
 	width: $sidebar-width_1;
 	height: 100%;
 	z-index: $sidebar-z-index;
@@ -72,7 +73,16 @@
     		color: $sidebar-list-group-item-hover-color;
     		background-color: $sidebar-list-group-item-hover-bg-color;
   		}
-	}
+  	}
+
+  	.list-group-empty {
+  		position: relative;
+  		display: block;
+  		padding: 10px 15px;
+  		margin-bottom: -1px;
+ 		background-color: $sidebar-list-group-item-bg-color;
+ 		color: $sidebar-list-group-item-color;
+  	}
 
 	.list-group-item-current {
 		position: relative;
@@ -84,6 +94,7 @@
   	}
 
 	.badge {
+		font-weight: bold;
         float: right;
 		padding: 3px 6px 3px 6px;
 		color: $sidebar-badge-color;
@@ -125,4 +136,9 @@
     .sidebar {
         display: none !important;
     }
+}
+
+.sidebar::-webkit-scrollbar {
+	width: 0;
+	height: 0;
 }

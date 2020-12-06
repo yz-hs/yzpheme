@@ -7,10 +7,10 @@ menu:
   tags: tags/index.html
   categories: categories/index.html
   about: somepage/about/index.html
-  #留言: somepage/chat/index.html
-  #友链: somepage/友链/index.html
+  留言: somepage/chat/index.html
+  友链: somepage/link/index.html
   项目: somepage/projects/index.html
-  #yznazo: yznazo/index.html
+  yznazo: yznazo/index.html
 
 吐槽: 
   url: somepage/吐槽/index.html
@@ -67,7 +67,7 @@ responsive:
 # 6:display site warning
 
 site_warning:
-  enable: true
+  enable: false
   text: '注意：本 Blog 原域名 orzyz.tk 已过期。'
   type: danger   # You can set it danger|warning|info|success , or default.
 
@@ -95,7 +95,7 @@ short_des: "A cute OIer"
 
 # avatar
 avatar:
-  url: /img/avatar.jpg
+  url: /img/new-avatar.jpg
 
 # END:note
 
@@ -103,6 +103,7 @@ avatar:
 # (2) "RSS地址" requires `hexo-generator-feed` plugin to use. Please run `npm install hexo-generator-feed`. 
 # (3) "wordcount" requires `hexo-wordcount` plugin to use. Please run `npm i hexo-wordcount --save`.
 # (4) "文章置顶" 事实上是按照文章的 top 值排序，并加上 "置顶" 标签。请参看 ./_doc/top.md .
+# (5) "blog-encrypt" requires `hexo-blog-encrypt` plugin to use. Please run `npm install --save hexo-blog-encrypt`.
 
 
 

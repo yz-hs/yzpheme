@@ -14,8 +14,15 @@
     <br /><br />
 </blockquote>
 <br />
+
 <div class="end-post-meta">
-	<i class="fa fa-refresh" aria-hidden="true"></i> 最后更新： <%- date(page.updated, " YYYY ") %>年<%- date(page.updated, " MM ") %>月<%- date(page.updated, " DD ") %>日
+	<% page.tags.each(function (tag) { %>
+		<span><a href="/tags/<%= tag.name %>"><i class="fa fa-tag" aria-hidden="true"></i> <%= tag.name %></a></span>
+	<% }) %>
+</div>
+
+<div class="end-post-meta">
+	<span><i class="fa fa-refresh" aria-hidden="true"></i> 最后更新： <%- date(page.updated, " YYYY ") %>年<%- date(page.updated, " MM ") %>月<%- date(page.updated, " DD ") %>日</span>
 </div>
 
 
