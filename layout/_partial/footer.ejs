@@ -84,6 +84,8 @@
 	}
 </style>
 
+
+<% if(theme.colored_eggs.reverse) { %>
 <script>  
 if (!Readdata("fool")) {
     document.body.classList.add('reverse-coloregg');
@@ -122,6 +124,8 @@ function Readdata(key) {
 /*from https://mkblog.cn/1469/*/
 </style>  
 
+<% } %>
+
 <script>
 //	$(document).ready(function(){
 //    	$("div.post-text>p>a").append(" <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i>");
@@ -129,6 +133,8 @@ function Readdata(key) {
 //链接后加图标
 //不好看，弃置
 </script>
+
+<% if(theme.colored_eggs.santa){ %>
 
 <a class="santa-container" id="santa-colored-egg">
   <div class="santa" onclick="santacoloredegg()">
@@ -167,3 +173,5 @@ function Readdata(key) {
 		document.getElementById("santa-colored-egg").innerHTML = "";
 	}
 </script>
+
+<% } %>

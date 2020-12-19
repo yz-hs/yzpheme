@@ -24,6 +24,21 @@
     </div>
   </div>
 
+  <% if(page.bgimg) { %>
+
+  <div class="post-text" style="padding:0;background-image: url(<%= page.bgimg %>);background-size: cover;">
+  	<% if(page.height){ %>
+		<% for(var i=1;i<=page.height;i++) { %>
+			<br />
+		<% } %>
+		<br /><br /><br /><br /><br /><br /><br /><br />
+	<% }else{ %>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+	<% } %>
+  </div>
+
+  <% } %>
+
   <div class="post-text">
     <%- page.content %>
 

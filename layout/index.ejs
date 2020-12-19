@@ -6,11 +6,26 @@
 	</div>
 	<% page.posts.each(function (post) { %>
 	  <% if(post.bgimg){ %>
-		<div class="post-bgimg-item" style="background-image: url(<%= post.bgimg %>);">
-			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><div class="inner">
+		<div class="post-bgimg-item" style="background-image: url(<%= post.bgimg %>);" onclick="window.location.href = <%- url_for(post.path) %>">
+			<% if(post.height){ %>
+				<% for(var i=1;i<=post.height;i++) { %>
+					<br />
+				<% } %>
+				<div class="inner">
+			<% }else{ %>
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><div class="inner">
+			<% } %>
 	  <% }else{ %>
-		<div class="post-item"><div>
+		<div class="post-item" onclick="window.location.href = <%- url_for(post.path) %>"><div>
+			<% if(post.disfa){}else{ %>
+				<% if(post.faname){ %>
+			  		<i class="fa <%- post.faname %> fa-2x fa-pull-left fa-border" aria-hidden="true"></i>
+			  	<% }else{ %>
+			  		<i class="fa fa-user fa-2x fa-pull-left fa-border" aria-hidden="true"></i>
+			  	<% } %>
+			<% } %>
 	  <% } %>
+	  		
 			<div class="title">
 				<a href="<%- url_for(post.path) %>"><%= post.title %></a>
 			</div>

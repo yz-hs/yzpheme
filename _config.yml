@@ -1,6 +1,12 @@
+#! ---------------------------------------------------------------
+#! WARNING THERE ARE MANY
+#! CHINGLISH IN THIS YAML
+#! ---------------------------------------------------------------
+
 # 1:menu
-# Don't add "/"(root).
+# Don't add root.
 # "吐槽" is on "topbar".
+# Please edit it (index.html or not) if there's something wrong.
 
 menu:
   Archives: archives/index.html
@@ -22,9 +28,15 @@ menu:
 # Please add the following at the head of the article if you need:
 #
 # ---
-# discomments: true  #Used to disable comments in this article or page.
+# discomments: true                # Used to disable comments in this article or page.
+# bgimg: /path/to/your/pic.img     # Set backgound img for post card.
+# top: [number]                    # Set post display order.
+# height: [number]                 # If backgound img is set, it set post card's height.
+# disfa: true                      # Used to disable Font Awesome in post card.
+# faname: [string]                 # Set Font Awesome in post card. Default "fa-user".
 # ---
 #
+# Note: "bgimg" conflicts with "faname", and "bgimg" has higher priority.
 
 # 3:menu-icon
 # "icon" from http://www.fontawesome.com.cn .
@@ -83,6 +95,7 @@ copyright:
   enable: post  # You can set it all|post|disable , or default(disable).
                 # all:displayed at the end of every page.
                 # post:only displayed at the end of every post.
+                
   statement: '本博客所有文章除特别声明外，均允许规范转载。转载请注明出处！当然也可对文章出处进行考证，在下方评论区评论！'
 
 # 9:others
@@ -97,6 +110,14 @@ short_des: "A cute OIer"
 avatar:
   url: /img/new-avatar.jpg
 
+# font-family
+font_family: Saira, DengXian, sans-serif;
+
+# colored-eggs
+colored_eggs:
+  santa: true
+  reverse: true
+
 # END:note
 
 # (1) Mathjax is turned on globally.
@@ -104,6 +125,7 @@ avatar:
 # (3) "wordcount" requires `hexo-wordcount` plugin to use. Please run `npm i hexo-wordcount --save`.
 # (4) "文章置顶" 事实上是按照文章的 top 值排序，并加上 "置顶" 标签。请参看 ./_doc/top.md .
 # (5) "blog-encrypt" requires `hexo-blog-encrypt` plugin to use. Please run `npm install --save hexo-blog-encrypt`.
+# (6) Setting your 'path-to-your-blog/_config.yml'.per_page 0 is recommended.
 
 
 

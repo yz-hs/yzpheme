@@ -22,8 +22,18 @@
   
   <div class="post-text">
   	<ol class="timeline">
+  	<% var lastyear=0,lastmonth=0; %>
     <% page.posts.each(function (post) { %>
       <li>
+      	<% var year=post.date.year(),month=post.date.month(); %>
+      	<% if(lastyear != year){ %>
+      		<h1><%= year %></h1>
+      		<% lastyear=year; %>
+      	<% } %>
+      	<% if(lastmonth != month){ %>
+      		<h2><%= month+1 %></h2>
+      		<% lastmonth=month; %>
+      	<% } %>
         <b class="date"><%= date(post.date, "YYYY-MM-DD") %></b>
         <a class="title" href="<%- url_for(post.path) %>"><%= post.title %></a>
       </li>
