@@ -4,47 +4,44 @@
 </div>
 
 
-
-
-
-
-<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="/js/ctitle.js"></script>
-<script type="text/javascript" src="/js/clicklove.js"></script>
-<script type="text/javascript" src="/js/colored-egg.js"></script>
-<script type="text/javascript" src="/js/SmoothScroll.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-<!--
-<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
-<script type="text/javascript" src="/js/firework.js"></script>
+<!-- 
+!#                                                 #!
+!#                     页面效果                     #!
+!#                                                 #!
 -->
 
-<!--<script type="text/javascript" src="/js/values.js"></script>-->
+<script type="text/javascript" src="/js/ctitle.js"></script> <!--标题改动-->
 
-<!--<script type="text/javascript" src="/js/particle.js"></script>-->
-<!--<script type="text/javascript" src="/js/snow.js"></script>-->
+<!--<script type="text/javascript" src="/js/clicklove.js"></script>--> <!--点击爱心-->
+
+<script type="text/javascript" src="/js/colored-egg.js"></script> <!--控制台输出彩蛋-->
+
+<!--<script type="text/javascript" src="/js/snow.js"></script>--> <!--前景下雪  注：与“点击烟花”冲突-->
+
+<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 99999; pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="/js/firework.js"></script> <!--点击烟花-->
+
+<!--<script type="text/javascript" src="/js/values.js"></script>--> <!--点击社会主义核心价值观-->
+
+<!--<script type="text/javascript" src="/js/particle.js"></script>--> <!--背景粒子-->
+
+<script type="text/javascript" src="/js/sakura.js"></script> <!--前景樱花-->
 
 <script src="/js/activate-power-mode.js"></script>
 <script>
  POWERMODE.colorful = true; // 控制开启/开启礼花特效  
  POWERMODE.shake = true; // 控制开启/关闭屏幕震动特效  
  document.body.addEventListener('input', POWERMODE);
-</script>
+</script> <!--文字输入特效-->
 
-<script type="text/javascript" src="/js/chaffle.min.js"></script>  
-<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
-<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
 
-<script type="text/javascript">
-	$(document).ready(function() {$('.chaffle').chaffle();});   //文字变幻
-    hljs.initHighlightingOnLoad();  //高亮
-    setTimeout(function(){siteLoading.classList.remove('siteLoading-active')},0);  //加载动画
-</script>
 
-<!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<!-- 
+!#                                                 #!
+!#                     MathJax                     #!
+!#                                                 #!
+-->
+
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
     "HTML-CSS": { 
@@ -67,7 +64,6 @@
     messageStyle: "none"
     }); 
 </script>
-<!-- 给MathJax元素添加has-jax class -->
 <script type="text/x-mathjax-config">
     MathJax.Hub.Queue(function() {
         var all = MathJax.Hub.getAllJax(), i;
@@ -76,7 +72,6 @@
         }
     });
 </script>
-<!-- 通过连接CDN加载MathJax的js代码 -->
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 <style type="text/css">
 	*.has-jax {
@@ -84,6 +79,12 @@
 	}
 </style>
 
+
+<!-- 
+!#                                                 #!
+!#                 首次访问reverse                  #!
+!#                                                 #!
+-->
 
 <% if(theme.colored_eggs.reverse) { %>
 <script>  
@@ -110,9 +111,7 @@ function Readdata(key) {
     return JSON.parse(localStorage.getItem(key));  
 }  
 </script>  
-  
 <style>  
-	
 .reverse-coloregg {  
     -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);  
     -moz-transform: matrix(-1, 0, 0, 1, 0, 0);  
@@ -121,18 +120,17 @@ function Readdata(key) {
     filter:progid: DXImageTransform.Microsoft.BasicImage(mirror=1); 
 }  
 
-/*from https://mkblog.cn/1469/*/
+/*本部分代码来自 https://mkblog.cn/1469/*/
 </style>  
-
 <% } %>
 
-<script>
-//	$(document).ready(function(){
-//    	$("div.post-text>p>a").append(" <i class=\"fa fa-external-link\" aria-hidden=\"true\"></i>");
-//	});
-//链接后加图标
-//不好看，弃置
-</script>
+
+<!-- 
+!#                                                 #!
+!#                  看板圣诞老人                    #!
+!#                                                 #!
+-->
+
 
 <% if(theme.colored_eggs.santa){ %>
 
@@ -173,5 +171,25 @@ function Readdata(key) {
 		document.getElementById("santa-colored-egg").innerHTML = "";
 	}
 </script>
-
 <% } %>
+
+
+<!-- 
+!#                                                 #!
+!#                      其他                        #!
+!#                                                 #!
+-->
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript" src="/js/SmoothScroll.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script type="text/javascript" src="/js/chaffle.min.js"></script>
+<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {$('.chaffle').chaffle();});   //文字变幻
+    hljs.initHighlightingOnLoad();  //高亮
+    setTimeout(function(){siteLoading.classList.remove('siteLoading-active')},0);  //加载动画
+</script>

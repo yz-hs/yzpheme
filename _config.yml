@@ -93,15 +93,30 @@ footer:
 
 copyright:
   enable: post  # You can set it all|post|disable , or default(disable).
-                # all:displayed at the end of every page.
-                # post:only displayed at the end of every post.
+                # all: displayed at the end of every page.
+                # post: only displayed at the end of every post.
                 
   statement: '本博客所有文章除特别声明外，均允许规范转载。转载请注明出处！当然也可对文章出处进行考证，在下方评论区评论！'
 
 # 9:others
 
-# if a post has no <!--more-->
-post_default_excerpt: '<i class="fa fa-warning" aria-hidden="true"></i> 本文章无可提供的摘要qwq。'
+# post excerpt
+post_excerpt:
+  mode: noexcerpt        # You can set it excerpt|noexcerpt , or default(excerpt).
+                       # excerpt: if a post has "<!--more-->",display it.
+                       # onexcerpt: all posts are considered as having no excerpt.
+
+  ifdefault: false     # if it is true,then if a post has no "<!--more-->",display "post_default_excerpt".
+                       # else display part of content.
+
+  display: text        # You can set it html|text , or default(text).
+                       # html: HTML tags will remain.
+                       # text: HTML tags will not remain.
+
+  post_default_excerpt: '<i class="fa fa-warning" aria-hidden="true"></i> 本文章无可提供的摘要qwq。'
+  length_excerpt: 200   # The length of "part of content".Default 30.
+
+  # !WARNING!: If display part of content and HTML tags remain, there will be some wrong. 
 
 # short description
 short_des: "A cute OIer"
