@@ -171,14 +171,14 @@ $(function(){
 	list-style: none;
 	padding-left: 1.2em !important;
 	margin-left: .3em !important;
-	border-left: .2em solid #eee;
-	color: rgb(119, 119, 119) !important;
+	border-left: .2em solid $timeline-line-color;
+	color: $text-color !important;
 	
 	a {
-		color: #000 !important;
+		color: $post-text-link-color !important;
 
 		&:hover {
-			color: #777 !important;
+			color: $post-text-link-hover-color !important;
 		}
 	}
 }
@@ -190,7 +190,7 @@ $(function(){
 	position: relative;
 	margin-top: 20px;
 	margin-bottom: 10px;
-	color: #909399;
+	color: $timeline-b-color;
 }
 
 .timeline b::after {
@@ -201,8 +201,8 @@ $(function(){
 	width: .8em;
 	height: .8em;
 	border-radius: 50%;
-	background-color: #fff;
-	border: .14em solid #ccc;
+	background-color: $timeline-circle-bg-color;
+	border: .14em solid $timeline-circle-color;
 	box-shadow: m.15em .15em 0 rgba(255,255,255,1),-0.15em -0.15em 0 rgba(255,255,255,1);
 }
 
@@ -212,10 +212,10 @@ $(function(){
 }
 
 .timeline li:hover b::after {
-	border-color: #eb5055;
+	border-color: $timeline-hover-b-color;
 
 }
 
 .timeline li:hover b {
-	color: #eb5055;
+	color: $timeline-hover-b-color;
 }

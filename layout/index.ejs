@@ -41,7 +41,7 @@
 						<% if(theme.post_excerpt.display=="html"){ %>
 							<%- truncate(post.content,{length:theme.post_excerpt.length_excerpt}) %>
 						<% }else{ %>
-							<%- strip_html(truncate(post.content,{length:theme.post_excerpt.length_excerpt})) %>
+							<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
 						<% } %>
 					<% } %>
 				<% }else{ %>
@@ -61,7 +61,7 @@
 						<% if(theme.post_excerpt.display=="html"){ %>
 							<%- truncate(post.content,{length:theme.post_excerpt.length_excerpt}) %>
 						<% }else{ %>
-							<%- strip_html(truncate(post.content,{length:theme.post_excerpt.length_excerpt})) %>
+							<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
 						<% } %>
 					<% } %>
 				<% } %>

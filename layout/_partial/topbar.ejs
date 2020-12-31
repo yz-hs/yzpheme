@@ -16,6 +16,7 @@
 	<a href="/" class="topbar-title">
 		<i class="fa fa-home" aria-hidden="true"></i> <%= config.title %>
 	</a>
+
 	<div class="topbar-url">
 	  <% for (name in theme.menu) { %>
             <a href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %>" aria-hidden="true"></i></a>

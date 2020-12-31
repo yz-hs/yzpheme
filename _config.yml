@@ -3,6 +3,11 @@
 #! CHINGLISH IN THIS YAML
 #! ---------------------------------------------------------------
 
+# 0:white-theme
+# A special theme.
+
+WHITE: false
+
 # 1:menu
 # Don't add root.
 # "吐槽" is on "topbar".
@@ -80,8 +85,10 @@ responsive:
 
 site_warning:
   enable: false
-  text: '注意：本 Blog 原域名 orzyz.tk 已过期。'
+  text: '<i class="fa fa-check-circle-o" aria-hidden="true"></i> Happy new year!'
   type: danger   # You can set it danger|warning|info|success , or default.
+  bgcolor: ce3027  # If it's set,the color will be changed.
+  color:
 
 # 7:footer
 
@@ -102,7 +109,7 @@ copyright:
 
 # post excerpt
 post_excerpt:
-  mode: noexcerpt        # You can set it excerpt|noexcerpt , or default(excerpt).
+  mode: excerpt        # You can set it excerpt|noexcerpt , or default(excerpt).
                        # excerpt: if a post has "<!--more-->",display it.
                        # onexcerpt: all posts are considered as having no excerpt.
 
@@ -114,7 +121,7 @@ post_excerpt:
                        # text: HTML tags will not remain.
 
   post_default_excerpt: '<i class="fa fa-warning" aria-hidden="true"></i> 本文章无可提供的摘要qwq。'
-  length_excerpt: 200   # The length of "part of content".Default 30.
+  length_excerpt: 100   # The length of "part of content".Default 30.
 
   # !WARNING!: If display part of content and HTML tags remain, there will be some wrong. 
 

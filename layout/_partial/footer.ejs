@@ -10,6 +10,8 @@
 !#                                                 #!
 -->
 
+<script type="text/javascript" src="/js/binft.js"></script> <!--sidebar的“short description”的滚动效果，加入`id="#binft"`即可。-->
+
 <script type="text/javascript" src="/js/ctitle.js"></script> <!--标题改动-->
 
 <!--<script type="text/javascript" src="/js/clicklove.js"></script>--> <!--点击爱心-->
@@ -18,6 +20,8 @@
 
 <!--<script type="text/javascript" src="/js/snow.js"></script>--> <!--前景下雪  注：与“点击烟花”冲突-->
 
+<script type="text/javascript" src="/js/snow-2.js"></script> <!--前景下雪——样式二（其实这个版本飘什么都行）-->
+
 <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 99999; pointer-events: none;" ></canvas> 
 <script type="text/javascript" src="/js/firework.js"></script> <!--点击烟花-->
 
@@ -25,7 +29,7 @@
 
 <!--<script type="text/javascript" src="/js/particle.js"></script>--> <!--背景粒子-->
 
-<script type="text/javascript" src="/js/sakura.js"></script> <!--前景樱花-->
+<!--<script type="text/javascript" src="/js/sakura.js"></script>--> <!--前景樱花-->
 
 <script src="/js/activate-power-mode.js"></script>
 <script>
@@ -187,9 +191,12 @@ function Readdata(key) {
 <script type="text/javascript" src="/js/chaffle.min.js"></script>
 <link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
 <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
-
+<!--<script src="http://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>-->
 <script type="text/javascript">
 	$(document).ready(function() {$('.chaffle').chaffle();});   //文字变幻
     hljs.initHighlightingOnLoad();  //高亮
     setTimeout(function(){siteLoading.classList.remove('siteLoading-active')},0);  //加载动画
+    //jQuery(document).ready(function($) {
+	//	$(document).pjax('a[target!=_blank][pjax!="no"]', '#main-container', {fragment:'#main-container', timeout:6000});
+	//});
 </script>

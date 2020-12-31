@@ -24,6 +24,6 @@ yzpheme  是一个 hexo 主题。本主题由[ yz-hs ](https://github.com/yz-hs/
 
 - 平滑滚动
 
-- 自带三种配色（`std`、`white`、`night`）与两种特殊样式，可自行编辑
+- 自带四种配色（`std`、`white`、`night`、`red`）与两种特殊样式，可自行编辑
 
 - 可以给文章卡片设置图片背景
