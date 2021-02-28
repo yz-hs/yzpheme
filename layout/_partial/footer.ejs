@@ -3,43 +3,6 @@
   <p class="text-right"><%- theme.footer.right %></p>
 </div>
 
-
-<!-- 
-!#                                                 #!
-!#                     页面效果                     #!
-!#                                                 #!
--->
-
-<script type="text/javascript" src="/js/binft.js"></script> <!--sidebar的“short description”的滚动效果，加入`id="#binft"`即可。-->
-
-<script type="text/javascript" src="/js/ctitle.js"></script> <!--标题改动-->
-
-<!--<script type="text/javascript" src="/js/clicklove.js"></script>--> <!--点击爱心-->
-
-<script type="text/javascript" src="/js/colored-egg.js"></script> <!--控制台输出彩蛋-->
-
-<!--<script type="text/javascript" src="/js/snow.js"></script>--> <!--前景下雪  注：与“点击烟花”冲突-->
-
-<script type="text/javascript" src="/js/snow-2.js"></script> <!--前景下雪——样式二（其实这个版本飘什么都行）-->
-
-<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 99999; pointer-events: none;" ></canvas> 
-<script type="text/javascript" src="/js/firework.js"></script> <!--点击烟花-->
-
-<!--<script type="text/javascript" src="/js/values.js"></script>--> <!--点击社会主义核心价值观-->
-
-<!--<script type="text/javascript" src="/js/particle.js"></script>--> <!--背景粒子-->
-
-<!--<script type="text/javascript" src="/js/sakura.js"></script>--> <!--前景樱花-->
-
-<script src="/js/activate-power-mode.js"></script>
-<script>
- POWERMODE.colorful = true; // 控制开启/开启礼花特效  
- POWERMODE.shake = true; // 控制开启/关闭屏幕震动特效  
- document.body.addEventListener('input', POWERMODE);
-</script> <!--文字输入特效-->
-
-
-
 <!-- 
 !#                                                 #!
 !#                     MathJax                     #!
@@ -68,20 +31,9 @@
     messageStyle: "none"
     }); 
 </script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += 'has-jax';
-        }
-    });
-</script>
+
 <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<style type="text/css">
-	*.has-jax {
-		overflow-x: auto;
-	}
-</style>
+
 
 
 <!-- 
@@ -168,11 +120,14 @@ function Readdata(key) {
 		"<div class=\"santa-nose\"></div>"+
 		"<div class=\"santa-mouth\"></div>"+
 		"</div></div></div>";
-		swal("由于你触碰了圣诞老人，他快气炸了！快快刷新让他平静下来！");
+		swal.fire("注意","由于你触碰了圣诞老人，他快气炸了！\n快快刷新让他平静下来！\n若再触碰，他会气炸的 qwq！");
 	}
 
 	function santaremove() {
 		document.getElementById("santa-colored-egg").innerHTML = "";
+		swal.fire("注意","圣诞老人已气炸。 R.I.P.\n同时页面效果清除一些。")
+		$("canvas").hide();
+		$("meting-js").hide();
 	}
 </script>
 <% } %>
@@ -185,18 +140,69 @@ function Readdata(key) {
 -->
 
 <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script type="text/javascript" src="/js/SmoothScroll.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="/js/SmoothScroll.js"></script>
 <script type="text/javascript" src="/js/chaffle.min.js"></script>
-<link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">  
+<link href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.5.0/styles/vs2015.min.css" rel="stylesheet">
 <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
-<!--<script src="http://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>-->
+<script src="https://cdn.bootcdn.net/ajax/libs/limonte-sweetalert2/10.12.5/sweetalert2.all.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/sketch.js/1.1/sketch.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function() {$('.chaffle').chaffle();});   //文字变幻
-    hljs.initHighlightingOnLoad();  //高亮
-    setTimeout(function(){siteLoading.classList.remove('siteLoading-active')},0);  //加载动画
-    //jQuery(document).ready(function($) {
-	//	$(document).pjax('a[target!=_blank][pjax!="no"]', '#main-container', {fragment:'#main-container', timeout:6000});
-	//});
+    hljs.initHighlighting();
+    $(document).ready(function() {
+    	$('.chaffle').chaffle();
+    });
+    displaytime();
+	$(document).pjax('a[target!=_blank][pjax!="no"]', '#main-container', {fragment:'#main-container', timeout:6000});
+	$(document).on('pjax:complete', function() {
+		MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+		document.querySelectorAll('pre code').forEach((block) => {
+    		hljs.highlightBlock(block);
+    	});
+		$('.chaffle').chaffle();
+		displaytime();
+		binft(document.getElementById('binft'));
+    });//pjax
 </script>
+
+
+<!-- 
+!#                                                 #!
+!#                     页面效果                     #!
+!#                                                 #!
+-->
+
+<script type="text/javascript" src="/js/binft.js"></script> <!--sidebar的“short description”的滚动效果，加入`id="#binft"`即可。-->
+
+<script type="text/javascript" src="/js/ctitle.js"></script> <!--标题改动-->
+
+<!--<script type="text/javascript" src="/js/clicklove.js"></script>--> <!--点击爱心-->
+
+<script type="text/javascript" src="/js/colored-egg.js"></script> <!--控制台输出彩蛋-->
+
+<!--<script type="text/javascript" src="/js/snow.js"></script>--> <!--前景下雪  注：与“点击烟花”冲突-->
+
+<!--<script type="text/javascript" src="/js/snow-2.js"></script>--> <!--前景下雪——样式二（其实这个版本飘什么都行）-->
+
+<!--<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 99999;pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="/js/firework.js"></script> 点击烟花-->
+
+<div id="clickCanvas" style=" position: fixed;left: 0;top: 0;z-index: 99999;pointer-events: none;"></div>
+<script type="text/javascript" src="/js/clickple.js"></script> <!--点击烟花2-->
+
+<!--<script type="text/javascript" src="/js/values.js"></script>--> <!--点击社会主义核心价值观-->
+
+<!--<script type="text/javascript" src="/js/particle.js"></script>--> <!--背景粒子-->
+
+<!--<script type="text/javascript" src="/js/sakura.js"></script> 前景樱花-->
+
+<script src="/js/activate-power-mode.js"></script>
+<script>
+ POWERMODE.colorful = true; // 控制开启/开启礼花特效  
+ POWERMODE.shake = true; // 控制开启/关闭屏幕震动特效  
+ document.body.addEventListener('input', POWERMODE);
+</script> <!--文字输入特效-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>
+<meting-js server="netease" type="playlist" id="2948937407" fixed="true"></meting-js> <!-- 底部播放器-->

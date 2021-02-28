@@ -9,9 +9,8 @@
     </div>
     <div class="tb-tabContent">
       <div>
-      	
 <!--  1-tab  -->
-<span class="title">随机文章</span><span class="sidetitle">回味旧文</span>
+<div class="title">随机文章<span class="sidetitle">回味旧文</span></div>
 <div class="item"><%- list_posts({
 	orderby: 'random',
 	style: 'block',
@@ -22,13 +21,10 @@
   	}
 }) %></div>
 <!--  END 1-tab  -->
-
       </div>
       <div class="tb-hide">
-      	
 <!--  2-tab  -->
-
-<span class="title">最新更新</span><span class="sidetitle">旧文章的更新</span>
+<div class="title">最新更新<span class="sidetitle">旧文章的更新</span></div>
 <div class="item"><%- list_posts({
 	orderby: 'updated',
 	style: 'block',
@@ -38,18 +34,13 @@
     	return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true" style="height: 30px;border: none;"></i> '+str;
   	}
 }) %></div>
-
 <!--  END 2-tab  -->
-
       </div>
       <div class="tb-hide">
-
 <!--  3-tab  -->
-
-  <span class="title">其他</span><span class="sidetitle"><a href="javascript:document.body.contentEditable='true';document.designMode='on';void(0);" title="彩蛋：点击，可以编辑本页面！不过，不要利用这个功能来制造虚假信息！" target="_self">杂物</a></span>
-  
+  <div class="title">其他<a href="javascript:document.body.contentEditable='true';document.designMode='on';void(0);" title="彩蛋：点击，可以编辑本页面！不过，不要利用这个功能来制造虚假信息！" target="_self" class="sidetitle">杂物</a></div>
   <div class="item">
-    <div class="text" id="displaytime"><script type="text/javascript" src="/js/displaytime.js"></script></div>
+    <div id="displaytime"><script type="text/javascript" src="/js/displaytime.js"></script></div>
     <div id="timeprogress"></div>
 	<script>
 		var myDate = new Date();
@@ -61,9 +52,8 @@
 		document.getElementById("timeprogress").innerHTML = innerhtml;
 	</script>
   </div>
-
   <div class="item">
-    <div id="hitokoto" class="text"><%= config.author %>说，除了她以外的人都很强！嘤嘤嘤~~</div>
+    <div id="hitokoto"><%= config.author %>说，除了她以外的人都很强！嘤嘤嘤~~</div>
     <script>
     fetch('https://v1.hitokoto.cn')
       .then(function (res){
@@ -78,37 +68,30 @@
       })
     </script>
   </div>
-  <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=18412635&auto=1&height=32"></iframe>
-
 <!--  END 3-tab  -->
-
       </div>
     </div>
   </div>
-
-  
   <div class="item">
   	<div class="title">博客信息</div>
-    <div class="text list-group">
+    <div class="list-group">
   	  <div class="list-group-item"><i class="fa fa-file fa-fw" aria-hidden="true"></i>&nbsp;文章数目<div class="badge"><%= site.posts.length %></div></div>
-  	  <div class="list-group-item"><i class="fa fa-users fa-fw" aria-hidden="true"></i>&nbsp;访客数目<div class="badge"><span id="busuanzi_value_site_uv"></span></div></div>
-  	  <div class="list-group-item"><i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;总访问量<div class="badge"><span id="busuanzi_value_site_pv"></span></div></div>
-  	  <div class="list-group-item"><i class="fa fa-font fa-fw" aria-hidden="true"></i>&nbsp;本站字数<div class="badge"><%= totalcount(site) %><!-- npm i hexo-wordcount --save --></span></div></div>
+  	  <div class="list-group-item"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i>&nbsp;最近更新<div class="badge"><%= date(page.updated, "MM-DD") %></div></div>
+  	  <div class="list-group-item"><i class="fa fa-user-o fa-fw" aria-hidden="true"></i>&nbsp;本站作者<div class="badge"><%= config.author %></div></div>
+  	  <div class="list-group-item"><i class="fa fa-font fa-fw" aria-hidden="true"></i>&nbsp;本站字数<div class="badge"><%= totalcount(site) %><!--npm i hexo-wordcount --save--></span></div></div>
     </div>
   </div>
-
   <% if(toc(page.content,{list_number: false})){ %><!-- 标签可能太多，影响目录 -->
     <div class="post-toc">
       <div class="title">文章目录</div>
-      <%- toc(page.content,{list_number: false,max_depth: 3}) %>
+      <%- toc(page.content,{list_number: false,max_depth: page.tocd?page.tocd:3}) %>
     </div>
   <% }else{ %>
     <div class="item">
       <div class="title">标签云</div>
-      <div class="text toolbar-tag-cloud"><%- tagcloud({min_font: 20, max_font: 40, amount: 200, color: true, start_color: '#bfc6be',  end_color: '#444'}) %></div>
+      <div class="toolbar-tag-cloud"><%- tagcloud({min_font: 15, max_font: 35, amount: 200, color: true, start_color: theme.tag_cloud.from,  end_color: theme.tag_cloud.to}) %></div>
     </div>
   <% } %> 
-
   <script>
     $(function(){
       var ali = $('.tb-tabTitle>ul>li');
@@ -124,5 +107,4 @@
       });
   });
   </script>
-
 </div>

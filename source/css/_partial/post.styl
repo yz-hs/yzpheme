@@ -1,7 +1,8 @@
 .post {
 	z-index: $post-z-index;
 	background-color: $post-bg-color;
-	line-height: 140%;
+	line-height: 150%;
+	letter-spacing: 1.3px;
 
 	.header {
 		background-color: $post-header-bg-color;
@@ -10,10 +11,12 @@
 		border-bottom: 1px solid $post-header-border-bottom-color;
 
 		.title {
-			font-size: 30px;
+			font-size: 30px !important;
+			font-weight: inherit !important;
 			color: $post-header-title-color;
 			padding: 3px;
 			line-height: 100%;
+			margin: 0 !important;
 		}
 
 		.meta {
@@ -36,10 +39,13 @@
 		border: 1px solid $post-item-border-color;
 		border-radius: 7px;
 		box-shadow: 0px 0px 15px $post-item-shadow-color;
+		display: block;
 		
 		.title {
-			font-size: 25px;
-			margin-bottom: 10px;
+			font-size: 25px !important;
+			font-weight: inherit !important;
+			margin: 0 !important;
+			margin-bottom: 10px !important;
 			line-height: 100%;
 		}
 
@@ -58,6 +64,8 @@
 			display: inline-block;
 			margin-right: 10px;
 		}
+
+		blockquote { border: none; }
 	}
 
 	.post-bgimg-item {
@@ -65,17 +73,21 @@
 		border-radius: 7px;
 		background-size: cover;
 		box-shadow: 0px 0px 15px $post-item-shadow-color;
-
-		*{color: #fff !important;}
+		display: block;
+		color: #fff;
 
 		.inner {
 			padding: 30px;
-			background: linear-gradient(180deg,transparent,rgba(0,0,0,.8));
+			background: linear-gradient(180deg,transparent,$post-item-bottom-shadow-color);
 			border-radius: 7px;
 
+			a{ color: inherit; }
+
 			.title {
-				font-size: 25px;
-				margin-bottom: 10px;
+				font-size: 25px !important;
+				font-weight: inherit !important;
+				margin: 0 !important;
+				margin-bottom: 10px !important;
 				line-height: 100%;
 			}
 
@@ -94,6 +106,8 @@
 		&:hover {
 			box-shadow: 0px 0px 15px $post-item-hover-shadow-color;
 		}
+
+		blockquote { border: none; }
 	}
 
 	.breadcrumb {
@@ -143,6 +157,12 @@
 			line-height: 100%;
 			background: linear-gradient(to bottom,transparent 60%,$h-bg-color 0) no-repeat;
 			display: table;
+    		font-weight: 100;
+
+    		&:before {
+    			content: '# ';
+    			color: $h-cross-color;
+    		}
 		}
 	}
 
@@ -173,6 +193,7 @@
 			border-radius: 20px;
 			padding: 10px;
 			float: left;
+			color: $post-prev-color;
 		}
 		.next {
 			background-color: $post-next-bg-color;
@@ -180,6 +201,7 @@
 			border-radius: 20px;
 			padding: 10px;
 			float: right;
+			color: $post-next-color;
 		}
 
 		a {display: block;}

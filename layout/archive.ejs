@@ -1,6 +1,6 @@
 <div class="post">
   <div class="header">
-  	  <div class="title">
+  	  <h1 class="title">
   	    <% if (page.category) { %>
   	      <%= page.category %>
   	    <% }else if (page.tag) { %>
@@ -8,14 +8,14 @@
   	    <% }else{ %>
   	      <div>归档</div>
   	    <% } %>
-  	  </div>
+  	  </h1>
   	  <div class="meta">
   	    <% if (page.category) { %>
   	      <div>分类“<%= page.category %>”下有以下文章。 </div>
   	    <% }else if (page.tag) { %>
   	      <div>标签“<%= page.tag %>”下有以下文章。 </div>
   	    <% }else{ %>
-  	      <div>目前共有<%= site.posts.length %>篇文章。 继续努力。</div>
+  	      <div>目前共有 <%= site.posts.length %> 篇文章。 继续努力。</div>
   	    <% } %>
   	  </div>
   </div>

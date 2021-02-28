@@ -1,11 +1,10 @@
 <div class="post">
   <div class="header">
-    <div class="title"><%= page.title %></div>
+    <h1 class="title"><%= page.title %></h1>
     <div class="meta">
 	  <span><i class="fa fa-user" aria-hidden="true"></i> <%= config.author %></span>
-	  <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%- date(page.date, " YYYY ") %>年<%- date(page.date, " MM ") %>月<%- date(page.date, " DD ") %>日</span>
+	  <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= date(page.date, "YYYY 年 MM 月 DD 日") %></span>
       <span><i class="fa fa-font" aria-hidden="true"></i> <%= wordcount(page.content) %></span>
-      <span><i class="fa fa-eye fa-fw" aria-hidden="true"></i> <span id="busuanzi_value_page_pv"></span></span>
       <% if(page.top){ %>
         <span><i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
       <% } %>
@@ -14,7 +13,6 @@
       <% } %>
     </div>
   </div>
-
   <div class="breadcrumb">
     <div class="url">
       <a href="/"><i class="fa fa-home" aria-hidden="true"></i> 主页</a> / <%= page.title %>
@@ -23,9 +21,7 @@
       分享到：<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%= page.permalink %>&title=<%= page.title %>&site=<%= config.url %>"><i class="fa fa-qq" aria-hidden="true"></i></a>
     </div>
   </div>
-
   <% if(page.bgimg) { %>
-
   <div class="post-text" style="padding:0;background-image: url(<%= page.bgimg %>);background-size: cover;">
   	<% if(page.height){ %>
 		<% for(var i=1;i<=page.height;i++) { %>
@@ -36,15 +32,11 @@
 		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 	<% } %>
   </div>
-
   <% } %>
-
   <div class="post-text">
     <%- page.content %>
-
     <%- partial('_partial/end-post') %>
   </div>
-
   <% if(is_post()){ %>
     <div class="prevnext">
   	  <% if(page.prev){ %>
@@ -54,7 +46,5 @@
   	  <% } %>
     </div>
   <% } %>
-
   <%- partial('_partial/comments') %>
-
 </div>

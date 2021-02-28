@@ -3,7 +3,7 @@
     var $flakes = ['🏮','🧨','🧧'],
     $rnd = new Date().getSeconds() % 3;
     $choice = $flakes[$rnd],
-    $flake = $('<div id="snowbox" />').css({'position': 'fixed','z-index':'9999', 'top': '-50px'}).html($choice),
+    $flake = $('<div id="snowbox" />').css({'position': 'fixed','z-index':'9999', 'top': '-50px'}).html('❄'),
     documentHeight  = $(document).height(),
     documentWidth   = $(document).width(),
     defaults = {
@@ -39,6 +39,6 @@ $(function(){
     $.fn.snow({ 
         minSize: 5, /* 定义雪花最小尺寸 */
         maxSize: 50,/* 定义雪花最大尺寸 */
-        newOn: 300  /* 定义密集程度，数字越小越密集 */
+        newOn: 1500  /* 定义密集程度，数字越小越密集 */
     });
 });

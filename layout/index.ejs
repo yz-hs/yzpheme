@@ -1,48 +1,44 @@
 <div class="post">
-	<%- partial('_partial/warning') %>
+	<% if(theme.site_warning.enable){ %>
+		<div class="text-alert <%= theme.site_warning.type %>" style="padding: 15px; margin: 0px; border-radius: 0px;<% if(theme.site_warning.bgcolor){ %>background-color: #<%- theme.site_warning.bgcolor %> <% } %> <% if(theme.site_warning.color){ %>color: #<%- theme.site_warning.color %> <% } %> ">
+		<%- theme.site_warning.text %>
+		</div>
+	<% } %>
 	<div class="header">
-		<div class="title"><%= config.title %></div>
+		<h1 class="title"><%= theme.title %></h1>
 		<div class="meta"><%= config.subtitle %></div>
 	</div>
 	<% page.posts.each(function (post) { %>
 	  <% if(post.bgimg){ %>
-		<div class="post-bgimg-item" style="background-image: url(<%= post.bgimg %>);" onclick="window.location.href = <%- url_for(post.path) %>">
+		<div class="post-bgimg-item" style="background-image: url(<%= post.bgimg %>);">
 			<% if(post.height){ %>
 				<% for(var i=1;i<=post.height;i++) { %>
 					<br />
 				<% } %>
-				<div class="inner">
+				<div class="inner" style="<%if(post.color){%>color:#<%-post.color%><%}%>">
 			<% }else{ %>
-				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><div class="inner">
+				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><div class="inner" style="<%if(post.color){%>color:#<%-post.color%><%}%>">
 			<% } %>
 	  <% }else{ %>
-		<div class="post-item" onclick="window.location.href = <%- url_for(post.path) %>"><div>
+		<div class="post-item" style="<%if(post.color){%>color:#<%-post.color%><%}%>"><div>
 			<% if(post.disfa){}else{ %>
 				<% if(post.faname){ %>
-			  		<i class="fa <%- post.faname %> fa-2x fa-pull-left fa-border" aria-hidden="true"></i>
+			  		<i class="fa <%- post.faname %> fa-2x fa-pull-left fa-border fa-fw" aria-hidden="true"></i>
 			  	<% }else{ %>
-			  		<i class="fa fa-user fa-2x fa-pull-left fa-border" aria-hidden="true"></i>
+			  		<i class="fa fa-user-o fa-2x fa-pull-left fa-border fa-fw" aria-hidden="true"></i>
 			  	<% } %>
 			<% } %>
 	  <% } %>
 	  		
-			<div class="title">
+			<h2 class="title">
 				<a href="<%- url_for(post.path) %>"><%= post.title %></a>
-			</div>
+			</h2>
 			<div>
 				<% if(theme.post_excerpt.mode=="noexcerpt"){ %>
 					<% if(theme.post_excerpt.ifdefault){ %>
-						<% if(theme.post_excerpt.display=="html"){ %>
-							<%- theme.post_excerpt.post_default_excerpt %>
-						<% }else{ %>
-							<%- strip_html(theme.post_excerpt.post_default_excerpt) %>
-						<% } %>
+						<%- theme.post_excerpt.post_default_excerpt %>
 					<% }else{ %>
-						<% if(theme.post_excerpt.display=="html"){ %>
-							<%- truncate(post.content,{length:theme.post_excerpt.length_excerpt}) %>
-						<% }else{ %>
-							<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
-						<% } %>
+						<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
 					<% } %>
 				<% }else{ %>
 					<% if(post.excerpt){ %>
@@ -52,32 +48,25 @@
 							<%- strip_html(post.excerpt) %>
 						<% } %>
 					<% }else if(theme.post_excerpt.ifdefault){ %>
-						<% if(theme.post_excerpt.display=="html"){ %>
-							<%- theme.post_excerpt.post_default_excerpt %>
-						<% }else{ %>
-							<%- strip_html(theme.post_excerpt.post_default_excerpt) %>
-						<% } %>
+						<%- theme.post_excerpt.post_default_excerpt %>
 					<% }else{ %>
-						<% if(theme.post_excerpt.display=="html"){ %>
-							<%- truncate(post.content,{length:theme.post_excerpt.length_excerpt}) %>
-						<% }else{ %>
-							<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
-						<% } %>
+						<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
 					<% } %>
 				<% } %>
 			</div>    
 			<hr />
 			<div class="meta">
 				<span><i class="fa fa-user" aria-hidden="true"></i> <%= config.author %></span>
-				<span><i class="fa fa-clock-o" aria-hidden="true"></i><%- date(post.date, " YYYY ") %>年<%- date(post.date, " MM ") %>月<%- date(post.date, " DD ") %>日</span>
-        		<% if(post.top){ %>
+				<span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= date(post.date, "YYYY 年 MM 月 DD 日") %></span>
+				<% if(post.top){ %>
             		<span><i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
         		<% } %>
         		<% if(post.password){ %>
         			<span><i class="fa fa-lock" aria-hidden="true"></i> 加密</span>
       			<% } %>
       		</div>
-		</div></div>
+		</div>
+	</div>
 	<% }) %>
 
 	<%- partial('_partial/paginator') %>

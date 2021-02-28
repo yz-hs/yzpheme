@@ -7,16 +7,7 @@
 	display: table-cell;
 
 	.item {
-		padding: 15px;
-
-		.title {
-			font-weight: 700;
-			margin-bottom: 10px;
-		}
-
-		.text {
-			padding: 5px;
-		}
+		padding: 12px;
 
 		.separator {
 			border-color: $toolbar-bg-color;
@@ -26,11 +17,7 @@
 	.post-toc {
 		position: sticky;
 		top: 60px;
-		padding: 15px;
-		.title {
-			font-weight: 700;
-			margin-bottom: 5px;
-		}
+		padding: 9px 13px;
 
 		ol {
 			margin: 5px 0px;
@@ -58,7 +45,7 @@
 	}
 
 	.toolbar-tag-cloud {
-		a {word-break: keep-all;}
+		a {display: inline-block; margin: 2px; padding: 2px; border-radius: 10px; background-color: $toolbar-tag-cloud-bg-color;}
 	}
 
 	.toolbar-tab-page {
@@ -87,18 +74,20 @@
 			padding-bottom: 25px;
 			overflow: auto;
 		}
-		.title {
-			font-weight: 700;
-			margin-bottom: 10px;
-		}
 		.sidetitle {
-			color: $toolbar-tab-page-sidetitle-color;
+			color: $toolbar-tab-page-sidetitle-color !important;
 			font-size: 10px;
 			font-weight: 500;
 		}
 		.fa-border {
 			border-color: $toolbar-fa-border-color !important;
 		}
+	}
+
+	.item .title,.toolbar-tab-page .title,.post-toc .title {
+		color: $toolbar-title-color !important;
+		font-weight: 500;
+		margin-bottom: 10px;
 	}
 
 	.list-group {
@@ -109,7 +98,7 @@
 	.list-group-item {
 		position: relative;
   		display: block;
-  		padding: 10px 15px;
+  		padding: 9px 13px;
   		margin-bottom: -1px;
  		background-color: $toolbar-list-group-item-bg-color;
  		color: $toolbar-list-group-item-color;

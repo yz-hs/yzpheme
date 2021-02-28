@@ -5,22 +5,23 @@
 <html>
 	<%- partial('_partial/head') %>
 	<body>
+		<script type="text/javascript">
+			if(document.referrer.indexOf("<%- config.url %>")==-1 && document.referrer.indexOf("<%- theme.hs_url %>")==-1 && window.location.href.indexOf("cieu_is_cute")==-1)
+			{
+				let url = window.location.href;
+				window.history.pushState(null, '', url);
+				window.location.href="<%- theme.first_page %>";
+			}
+		</script>
 		<a name="back-to-top"></a>
-		<div id="siteLoading" class="siteloading siteLoading-active">
-			<div class="loader-inner">
-			<div class="loader-line-wrap"><div class="loader-line"></div></div>
-			<div class="loader-line-wrap"><div class="loader-line"></div></div>
-			<div class="loader-line-wrap"><div class="loader-line"></div></div>
-			<div class="loader-line-wrap"><div class="loader-line"></div></div>
-			<div class="loader-line-wrap"><div class="loader-line"></div></div>
-			</div>
-		</div>
 		<div class="main">
 			<%- partial('_partial/topbar') %>
-			<%- partial('_partial/sidebar') %>
-			<div class="article">
-    			<div class="article-cell-body"><%- body %></div>
-    			<%- partial('_partial/toolbar') %>
+			<div id="main-container">
+				<%- partial('_partial/sidebar') %>
+				<div class="article">
+    				<div class="article-cell-body"><%- body %></div>
+    				<%- partial('_partial/toolbar') %>
+    			</div>
     		</div>
     		<%- partial('_partial/footer') %>
 		</div>

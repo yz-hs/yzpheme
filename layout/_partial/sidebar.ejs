@@ -1,22 +1,13 @@
 <div class="sidebar">
-
   <div class="sidebar-avatar-container">
   	<img src="<%= theme.avatar.url %>" class="sidebar-avatar bounce" />
   </div>
-
   <div class="sidebar-author">
     <%= config.author %><br />
     <div class="mini-text" id="binft"><%= theme.short_des %></div>
   </div>
-
-  <br />
-
   <div class="sidebar-list-container">
-  
-  <div class="mini-text">导航</div>
-
-  <br />
-
+  <div class="mini-text">导航</div><br>
   <div class="list-group">
   	<% for (name in theme.menu) { %>
   	 <% if(url_for(page.path)==url_for(theme.menu[name])) { %>
@@ -41,9 +32,7 @@
       <div class="list-group-empty"></div>
       <div class="list-group-empty"></div>
   </div>
-
   </div>
-
   <div class="sidebar-footer">
   	<div class="item">
   		<a href="#back-to-top"><i class="fa fa-hand-o-up" aria-hidden="true"></i><div class="mini-text">顶部</div></a>

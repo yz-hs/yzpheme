@@ -80,10 +80,10 @@
 ::-webkit-scrollbar {
 	width: 7px;
 	height: 7px;
-	background-color: #F5F5F5;
+	background-color: $scrollbar-bg-color;
 }
 ::-webkit-scrollbar-thumb {
-	background-color: #F90;
+	background-color: $scrollbar-color;
 	background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.2) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.2) 50%,rgba(255,255,255,.2) 75%,transparent 75%,transparent);
 	border-radius: 10px;
 }
@@ -144,8 +144,8 @@ $(function(){
 /*  注解文字  */
 
 .text-comments {
-	color: $text-light-color;
-	font-size: 10px;
+	color: $text-color;
+	font-size: 8px;
 	font-weight: 500;
 }
 
@@ -218,4 +218,10 @@ $(function(){
 
 .timeline li:hover b {
 	color: $timeline-hover-b-color;
+}
+
+/* SweetAlert 优先级更改 */
+
+.swal2-container {
+	z-index: 10000 !important;
 }

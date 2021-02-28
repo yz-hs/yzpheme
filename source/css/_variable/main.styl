@@ -14,14 +14,22 @@ $toolbar-z-index                           = 2;
 $toolbar-sele-item-width                   = 33.333%; // ( 100% / item-num 3 )
 $topbar-z-index                            = 5;
 
-//@import "_variable/colors/white";
-//@import "_variable/colors/night";
-//@import "_variable/colors/std";
-@import "_variable/colors/red";
+if hexo-config('color_schemes') == "white"
+	@import "_variable/colors/white";
+else if hexo-config('color_schemes') == "wcolor"
+	@import "_variable/colors/wcolor";
+else if hexo-config('color_schemes') == "night"
+	@import "_variable/colors/night";
+else if hexo-config('color_schemes') == "red"
+	@import "_variable/colors/red";
+else if hexo-config('color_schemes') == "none"
+	var donothing
+else
+	@import "_variable/colors/std";
 
-//@import "_variable/spacial/grayscale";
-
-@media screen and (min-width: $pc_pe_dividing_2) {
-    @import "_variable/spacial/opacity";
-    //建议在小屏幕上不开启透明样式。
-}
+if hexo-config('spacial') == "grayscale"
+	@import "_variable/spacial/grayscale";
+else if hexo-config('spacial') == "invert"
+	@import "_variable/spacial/invert";
+else if hexo-config('spacial') == "opacity"
+	@import "_variable/spacial/opacity";

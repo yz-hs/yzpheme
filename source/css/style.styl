@@ -12,8 +12,15 @@ body {
 	background-color: rgb(239,239,239);
 	color: $text-color;
 	margin: 0px;
-	font-family: hexo-config-uq('font_family');
+	font-family: hexo-config-uq('font');
+	font-size: 16.5px;
 	-webkit-font-smoothing: antialiased;
+	font-weight: 100;
+	background-image: url(hexo-config('bg-url'));
+	background-attachment: fixed;
+  	background-repeat: no-repeat;
+  	background-position: 50% 50%;
+  	background-size: cover;
 }
 
 *::selection {
@@ -38,6 +45,7 @@ body {
 	width: 84% !important;
 	min-height: 800px;
 	display: table;
+	table-layout: fixed;
 	background-color: $post-bg-color;
 }
 

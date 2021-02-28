@@ -6,25 +6,19 @@
 	font-size: 15px;
 	margin-left: $dis-sidebar_1;
 
-	p {
-		margin: 0px;
-	}
+	* { color: $footer-color; }
 
-	.text-left {
-		float: left;
+	p { margin: 0px; }
+
+	.text-left,.text-right {
 		max-width: 50%;
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
 
-	.text-right {
-		float: right;
-		max-width: 50%;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
+	.text-left { float: left; }
+	.text-right { float: right; }
 }
 
 @media screen and (max-width: $pc_pe_dividing_1) {

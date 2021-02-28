@@ -19,7 +19,7 @@ menu:
   categories: categories/index.html
   about: somepage/about/index.html
   留言: somepage/chat/index.html
-  友链: somepage/link/index.html
+  链接: somepage/link/index.html
   项目: somepage/projects/index.html
   yznazo: yznazo/index.html
 
@@ -37,8 +37,10 @@ menu:
 # bgimg: /path/to/your/pic.img     # Set backgound img for post card.
 # top: [number]                    # Set post display order.
 # height: [number]                 # If backgound img is set, it set post card's height.
+# color: [string]                  # Set post card's context color. Default "#fff" or $text-color.
 # disfa: true                      # Used to disable Font Awesome in post card.
 # faname: [string]                 # Set Font Awesome in post card. Default "fa-user".
+# tocd: [number]                   # Set toc depth.
 # ---
 #
 # Note: "bgimg" conflicts with "faname", and "bgimg" has higher priority.
@@ -53,7 +55,7 @@ icon:
   categories: fa-navicon
   about: fa-user
   留言: fa-commenting
-  友链: fa-link
+  链接: fa-link
   项目: fa-cog
   yznazo: fa-gamepad
   吐槽: fa-bell-o
@@ -66,12 +68,16 @@ comments:
   # You can get your uid from https://livere.com/insight/myCode (General web site)
   livere:
     enable: false
-    uid: MTAyMC80Njg5MS8yMzM5Mg==
+    uid: 
   # gitalk comments system
   # see: https://github.com/gitalk/gitalk
-  # setting: please edit ./layout/_partial/comments.ejs
   gitalk:
     enable: true
+    clientID: "''"
+    clientSecret: "''"
+    repo: "''"
+    owner: "''"
+    admin: "['']"
 
 # 5:responsive
 #If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.
@@ -84,17 +90,18 @@ responsive:
 # 6:display site warning
 
 site_warning:
-  enable: false
-  text: '<i class="fa fa-check-circle-o" aria-hidden="true"></i> Happy new year!'
-  type: danger   # You can set it danger|warning|info|success , or default.
-  bgcolor: ce3027  # If it's set,the color will be changed.
+  enable: true
+  text: '<i class="fa fa-check-circle-o" aria-hidden="true"></i> cieu 已开启学术模式。注：yz-hs -> cieu'
+  type: success  # You can set it danger|warning|info|success , or default.
+  bgcolor:       # If it's set,the color will be changed.
   color:
 
 # 7:footer
+# You can't edit it.qwq.
 
 footer:
-  left: 'Copyright ©2018-2020 yz-hs. All rights reserved.'
-  right: 'Theme is <a href="https://github.com/yz-hs/yzpheme">yzpheme</a>,by yz-hs.'
+  left: 'Copyright ©2018-2021 cieu. All rights reserved.'
+  right: 'Theme is <a href="https://github.com/yz-hs/yzpheme">yzpheme</a>,by cieu.'
 
 # 8:copyright
 
@@ -105,25 +112,36 @@ copyright:
                 
   statement: '本博客所有文章除特别声明外，均允许规范转载。转载请注明出处！当然也可对文章出处进行考证，在下方评论区评论！'
 
-# 9:others
 
-# post excerpt
+
+# 9:post excerpt
 post_excerpt:
   mode: excerpt        # You can set it excerpt|noexcerpt , or default(excerpt).
                        # excerpt: if a post has "<!--more-->",display it.
-                       # onexcerpt: all posts are considered as having no excerpt.
+                       # noexcerpt: all posts are considered as having no excerpt.
 
   ifdefault: false     # if it is true,then if a post has no "<!--more-->",display "post_default_excerpt".
                        # else display part of content.
 
-  display: text        # You can set it html|text , or default(text).
-                       # html: HTML tags will remain.
+  display: html        # You can set it html|text , or default(text).
+                       # html: HTML tags will remain.(Only a post has "<!--more-->")
                        # text: HTML tags will not remain.
 
   post_default_excerpt: '<i class="fa fa-warning" aria-hidden="true"></i> 本文章无可提供的摘要qwq。'
   length_excerpt: 100   # The length of "part of content".Default 30.
 
   # !WARNING!: If display part of content and HTML tags remain, there will be some wrong. 
+
+# 10:tag-cloud color
+
+tag_cloud:
+  from: "#fff"
+  to: "#fff"
+
+# 11:others
+
+# site=title
+title: cieu's Blog
 
 # short description
 short_des: "A cute OIer"
@@ -132,13 +150,35 @@ short_des: "A cute OIer"
 avatar:
   url: /img/new-avatar.jpg
 
-# font-family
-font_family: Saira, DengXian, sans-serif;
+# font,only one
+font: Montserrat
 
 # colored-eggs
 colored_eggs:
   santa: true
   reverse: true
+
+# first page
+# When somebody visit your blog,it sets the first page(your custom page).
+# Chinese: 你应当在通过这个页面访问你的 Blog 的链接上加入 `?cieu_is_cute`，否则会不停地加载这个页面。
+# 请参看 ./_doc/first_page_demo.index .
+first_page: /blog
+
+# run server url
+hs_url: localhost:4000
+
+# color schemes
+# value: white | wcolor | night | std | red | none (default std; "none" is very spacial)
+color_schemes: wcolor
+
+# spacial
+# value: none | grayscale | invert | opacity (default: none)
+# 注：   没有  |  白事用   | 阴间特效 |   小透明
+spacial: none
+
+# background image url
+
+bg-url: /img/new-bgp.jpg
 
 # END:note
 
@@ -148,6 +188,7 @@ colored_eggs:
 # (4) "文章置顶" 事实上是按照文章的 top 值排序，并加上 "置顶" 标签。请参看 ./_doc/top.md .
 # (5) "blog-encrypt" requires `hexo-blog-encrypt` plugin to use. Please run `npm install --save hexo-blog-encrypt`.
 # (6) Setting your 'path-to-your-blog/_config.yml'.per_page 0 is recommended.
+# (7) hexo-neat   hexo-generator-sitemap   ...
 
 
 
@@ -171,8 +212,8 @@ menu_name:
     name: about
   留言:
     name: 留言
-  友链:
-    name: 友链
+  链接:
+    name: 链接
   项目:
     name: 项目
   yznazo:
