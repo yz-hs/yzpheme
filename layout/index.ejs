@@ -25,7 +25,7 @@
 				<% if(post.faname){ %>
 			  		<i class="fa <%- post.faname %> fa-2x fa-pull-left fa-border fa-fw" aria-hidden="true"></i>
 			  	<% }else{ %>
-			  		<i class="fa fa-user-o fa-2x fa-pull-left fa-border fa-fw" aria-hidden="true"></i>
+			  		<i class="fa fa-file-text fa-2x fa-pull-left fa-border fa-fw" aria-hidden="true"></i>
 			  	<% } %>
 			<% } %>
 	  <% } %>
@@ -57,12 +57,12 @@
 			<hr />
 			<div class="meta">
 				<span><i class="fa fa-user" aria-hidden="true"></i> <%= config.author %></span>
-				<span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= date(post.date, "YYYY 年 MM 月 DD 日") %></span>
+				<span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= date(post.date,theme.time_format) %></span>
 				<% if(post.top){ %>
-            		<span><i class="fa fa-thumb-tack" aria-hidden="true"></i> 置顶</span>
+            		<span><i class="fa fa-thumb-tack" aria-hidden="true"></i> <%= __('Posts.Top') %></span>
         		<% } %>
         		<% if(post.password){ %>
-        			<span><i class="fa fa-lock" aria-hidden="true"></i> 加密</span>
+        			<span><i class="fa fa-lock" aria-hidden="true"></i> <%= __('Posts.Password') %></span>
       			<% } %>
       		</div>
 		</div>

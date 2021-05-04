@@ -6,16 +6,16 @@
   	    <% }else if (page.tag) { %>
   	      <%= page.tag %>
   	    <% }else{ %>
-  	      <div>归档</div>
+  	      <div><%= __('Menu.Archives') %></div>
   	    <% } %>
   	  </h1>
   	  <div class="meta">
   	    <% if (page.category) { %>
-  	      <div>分类“<%= page.category %>”下有以下文章。 </div>
+  	      <div><%= _p('Archives.Categories',page.category) %></div>
   	    <% }else if (page.tag) { %>
-  	      <div>标签“<%= page.tag %>”下有以下文章。 </div>
+  	      <div><%= _p('Archives.Tags',page.tag) %></div>
   	    <% }else{ %>
-  	      <div>目前共有 <%= site.posts.length %> 篇文章。 继续努力。</div>
+  	      <div><%= _p('Archives.Archives',site.posts.length)%></div>
   	    <% } %>
   	  </div>
   </div>

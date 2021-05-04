@@ -5,15 +5,6 @@
 <html>
 	<%- partial('_partial/head') %>
 	<body>
-		<script type="text/javascript">
-			if(document.referrer.indexOf("<%- config.url %>")==-1 && document.referrer.indexOf("<%- theme.hs_url %>")==-1 && window.location.href.indexOf("cieu_is_cute")==-1)
-			{
-				let url = window.location.href;
-				window.history.pushState(null, '', url);
-				window.location.href="<%- theme.first_page %>";
-			}
-		</script>
-		<a name="back-to-top"></a>
 		<div class="main">
 			<%- partial('_partial/topbar') %>
 			<div id="main-container">

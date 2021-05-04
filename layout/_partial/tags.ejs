@@ -1,7 +1,7 @@
 <div class="post">
     <div class="header">
-    	<div class="title">标签</div>
-    	<div class="meta">目前共有<%= site.tags.length %>个标签。</div>
+    	<div class="title"><%= __('Menu.Tags') %></div>
+    	<div class="meta"><%= _p('Tags',site.tags.length) %></div>
     </div>
     <ul class="post-text tags">
     <% site.tags.each(function (tag) { %>

@@ -1,7 +1,7 @@
 <div class="post">
     <div class="header">
-    	<h1 class="title">分类</h1>
-    	<div class="meta">目前共有<%= site.categories.length %>个分类。</div>
+    	<h1 class="title"><%= __('Menu.Categories') %></h1>
+    	<div class="meta"><%= _p('Categories',site.categories.length) %></div>
     </div>
     <div class="post-text big-font"><%- list_categories()%></div>
 </div>

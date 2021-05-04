@@ -9,31 +9,17 @@
 !#                                                 #!
 -->
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-    "HTML-CSS": { 
-        preferredFont: "TeX", 
-        availableFonts: ["STIX","TeX"], 
-        linebreaks: { automatic:true }, 
-        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50) 
-    },
-    tex2jax: { 
-        inlineMath: [ ["$", "$"], ["\\(","\\)"] ], 
-        processEscapes: true, 
-        ignoreClass: "tex2jax_ignore|dno",
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {  
-        equationNumbers: { autoNumber: "AMS" },
-        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } }, 
-        Macros: { href: "{}" } 
-    },
-    messageStyle: "none"
-    }); 
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
 </script>
-
-<script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
 
 <!-- 
@@ -154,16 +140,44 @@ function Readdata(key) {
     displaytime();
 	$(document).pjax('a[target!=_blank][pjax!="no"]', '#main-container', {fragment:'#main-container', timeout:6000});
 	$(document).on('pjax:complete', function() {
-		MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+		MathJax.typeset();
 		document.querySelectorAll('pre code').forEach((block) => {
     		hljs.highlightBlock(block);
     	});
 		$('.chaffle').chaffle();
 		displaytime();
 		binft(document.getElementById('binft'));
+
+		var back = document.getElementById('backtop')
+    	back.style.display ='none'
+    	document.onscroll = function(){
+        	if (document.documentElement.scrollTop > 100){
+        	    back.style.display = 'block'
+       		}else{
+        	    back.style.display = 'none'
+        	}
+   		};
+    	back.onclick = function(){
+       		document.documentElement.scrollTop = 0
+       	}//back2top
+
     });//pjax
 </script>
 
+<script>
+    var back = document.getElementById('backtop')
+    back.style.display ='none'
+    document.onscroll = function(){
+        if (document.documentElement.scrollTop > 100){
+            back.style.display = 'block'
+        }else{
+            back.style.display = 'none'
+        }
+    };
+    back.onclick = function(){
+        document.documentElement.scrollTop = 0
+    }//back2top for no pjax
+</script>
 
 <!-- 
 !#                                                 #!

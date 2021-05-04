@@ -9,15 +9,14 @@ $post-z-index                              = 3;
 $sidebar-z-index                           = 4;
 $sidebar-width_1                           = 13.45%;
 $sidebar-width_2                           = 19%;
-$sidebar-footer-item-width                 = 33.333%; // ( 100% / item-num 3 )
 $toolbar-z-index                           = 2;
-$toolbar-sele-item-width                   = 33.333%; // ( 100% / item-num 3 )
 $topbar-z-index                            = 5;
+$swal2-z-index                             = 10000;
 
 if hexo-config('color_schemes') == "white"
 	@import "_variable/colors/white";
-else if hexo-config('color_schemes') == "wcolor"
-	@import "_variable/colors/wcolor";
+else if hexo-config('color_schemes') == "trans"
+	@import "_variable/colors/trans";
 else if hexo-config('color_schemes') == "night"
 	@import "_variable/colors/night";
 else if hexo-config('color_schemes') == "red"

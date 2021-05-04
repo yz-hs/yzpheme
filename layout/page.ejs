@@ -1,6 +1,6 @@
-<% if (page.path==theme.menu.categories) { %>
+<% if (is_category()||page.type=="categories") { %>
 	<%- partial('_partial/category') %>
-<% } else if (page.path==theme.menu.tags) { %>
+<% } else if (is_tag()||page.type=="tags") { %>
 	<%- partial('_partial/tags') %>
 <% } else { %>
 	<%- partial('post') %>

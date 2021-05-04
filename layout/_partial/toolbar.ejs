@@ -11,29 +11,32 @@
       <div>
 <!--  1-tab  -->
 <div class="title">随机文章<span class="sidetitle">回味旧文</span></div>
-<div class="item"><%- list_posts({
-	orderby: 'random',
-	style: 'block',
-	separator: '<hr class="separator" />',
-	amount: 6,
-	transform(str) {
-    	return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true" style="height: 30px;border: none;"></i> '+str;
-  	}
+<div class="item">
+	<%- list_posts({
+		orderby: 'random',
+		style: 'block',
+		separator: '<hr class="separator" />',
+		amount: 6,
+		transform(str) {
+    		return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true" style="height: 30px;border: none;"></i> '+str;
+  		}
 }) %></div>
 <!--  END 1-tab  -->
       </div>
       <div class="tb-hide">
 <!--  2-tab  -->
 <div class="title">最新更新<span class="sidetitle">旧文章的更新</span></div>
-<div class="item"><%- list_posts({
-	orderby: 'updated',
-	style: 'block',
-	separator: '<hr class="separator" />',
-	amount: 6,
-	transform(str) {
-    	return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true" style="height: 30px;border: none;"></i> '+str;
-  	}
-}) %></div>
+<div class="item">
+	<%- list_posts({
+		orderby: 'updated',
+		style: 'block',
+		separator: '<hr class="separator" />',
+		amount: 6,
+		transform(str) {
+    		return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true" style="height: 30px;border: none;"></i> '+str;
+  		}
+	}) %>
+</div>
 <!--  END 2-tab  -->
       </div>
       <div class="tb-hide">

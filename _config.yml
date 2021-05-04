@@ -10,21 +10,18 @@ WHITE: false
 
 # 1:menu
 # Don't add root.
-# "吐槽" is on "topbar".
 # Please edit it (index.html or not) if there's something wrong.
 
-menu:
+Menu:
   Archives: archives/index.html
-  tags: tags/index.html
-  categories: categories/index.html
-  about: somepage/about/index.html
-  留言: somepage/chat/index.html
-  链接: somepage/link/index.html
-  项目: somepage/projects/index.html
-  yznazo: yznazo/index.html
+  Tags: tags/index.html
+  Categories: categories/index.html
+  About: somepage/about/index.html
+  Message_board: somepage/chat/index.html
+  Links: somepage/link/index.html
+  Projects: somepage/projects/index.html
 
-吐槽: 
-  url: somepage/吐槽/index.html
+Topbar: somepage/吐槽/index.html
 
 # About toolbar menu, please edit source code.
 
@@ -39,7 +36,7 @@ menu:
 # height: [number]                 # If backgound img is set, it set post card's height.
 # color: [string]                  # Set post card's context color. Default "#fff" or $text-color.
 # disfa: true                      # Used to disable Font Awesome in post card.
-# faname: [string]                 # Set Font Awesome in post card. Default "fa-user".
+# faname: [string]                 # Set Font Awesome in post card. Default "fa-file-text".
 # tocd: [number]                   # Set toc depth.
 # ---
 #
@@ -51,14 +48,13 @@ menu:
 
 icon:
   Archives: fa-archive
-  tags: fa-tags
-  categories: fa-navicon
-  about: fa-user
-  留言: fa-commenting
-  链接: fa-link
-  项目: fa-cog
-  yznazo: fa-gamepad
-  吐槽: fa-bell-o
+  Tags: fa-tags
+  Categories: fa-navicon
+  About: fa-user
+  Message_board: fa-commenting
+  Links: fa-link
+  Projects: fa-cog
+  Topbar: fa-bell-o
 
 # 4:comments
 # Comments will be opened on pages other than those containing "discomments: true".
@@ -91,7 +87,7 @@ responsive:
 
 site_warning:
   enable: true
-  text: '<i class="fa fa-check-circle-o" aria-hidden="true"></i> cieu 已开启学术模式。注：yz-hs -> cieu'
+  text: '<i class="fa fa-volume-up" aria-hidden="true"></i> 欢迎来到 cieu 的博客！希望我们能相互交流，共同进步～'
   type: success  # You can set it danger|warning|info|success , or default.
   bgcolor:       # If it's set,the color will be changed.
   color:
@@ -100,7 +96,7 @@ site_warning:
 # You can't edit it.qwq.
 
 footer:
-  left: 'Copyright ©2018-2021 cieu. All rights reserved.'
+  left: 'Copyright ©2019-2021 cieu. All rights reserved.'
   right: 'Theme is <a href="https://github.com/yz-hs/yzpheme">yzpheme</a>,by cieu.'
 
 # 8:copyright
@@ -158,18 +154,9 @@ colored_eggs:
   santa: true
   reverse: true
 
-# first page
-# When somebody visit your blog,it sets the first page(your custom page).
-# Chinese: 你应当在通过这个页面访问你的 Blog 的链接上加入 `?cieu_is_cute`，否则会不停地加载这个页面。
-# 请参看 ./_doc/first_page_demo.index .
-first_page: /blog
-
-# run server url
-hs_url: localhost:4000
-
 # color schemes
-# value: white | wcolor | night | std | red | none (default std; "none" is very spacial)
-color_schemes: wcolor
+# value: white | trans | night | std | red | none (default std; "none" is very spacial)
+color_schemes: trans
 
 # spacial
 # value: none | grayscale | invert | opacity (default: none)
@@ -179,6 +166,8 @@ spacial: none
 # background image url
 
 bg-url: /img/new-bgp.jpg
+
+time_format: "YYYY 年 MM 月 DD 日"
 
 # END:note
 
@@ -195,26 +184,7 @@ bg-url: /img/new-bgp.jpg
 
 
 
-
 #! ---------------------------------------------------------------
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
 #! ---------------------------------------------------------------
-
-menu_name:
-  Archives:
-    name: Archives
-  tags:
-    name: tags
-  categories:
-    name: categories
-  about:
-    name: about
-  留言:
-    name: 留言
-  链接:
-    name: 链接
-  项目:
-    name: 项目
-  yznazo:
-    name: yznazo

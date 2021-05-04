@@ -6,22 +6,28 @@
   <meta http-equiv='content-language' content='zh-cn'>
   <link rel="stylesheet" type="text/css" href="/css/style.css">
   <title>
-  	<% if(page.title){ %>
-  		<%= page.title %> | <%= config.title %>
-  	<% }else if(page.category){ %>
-  		<%= page.category %> | <%= config.title %>
-  	<% }else if (page.tag) { %>
-  	    <%= page.tag %> | <%= config.title %>
-  	<% }else{ %>
-  		<%= config.title %>
+  	<% if (page.current>1) { %>
+  	    <%= _p('Pages',page.current) %> |
   	<% } %>
+
+    <% if(page.title){ %>
+  		<%= page.title %> |
+  	<% }else if(page.category){ %>
+  		<%= __('Menu.Categories') %> <%= page.category %> |
+  	<% }else if (page.tag) { %>
+  	  <%= __('Menu.Tags') %> <%= page.tag %> |
+  	<% }else if (page.archive) { %>
+  	  <%= __('Menu.Archives') %> |
+  	<% }else{} %>
+
+  	<%= config.title %>
   </title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
   <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/animejs/3.2.1/anime.min.js"></script>
   <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
   <script src="https://www.desmos.com/api/v1.5/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
   <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=<%- theme.font %>" rel="stylesheet">
+  <link href="https://fonts.loli.net/css?family=<%- theme.font %>" rel="stylesheet">
 </head>

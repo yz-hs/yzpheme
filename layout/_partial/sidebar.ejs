@@ -4,22 +4,22 @@
   </div>
   <div class="sidebar-author">
     <%= config.author %><br />
-    <div class="mini-text" id="binft"><%= theme.short_des %></div>
+    <span class="mini-text" id="binft"><%= theme.short_des %></span><span class="mini-text">.</span>
   </div>
   <div class="sidebar-list-container">
-  <div class="mini-text">导航</div><br>
+  <div class="mini-text"><%= __('Sidebar_list') %></div><br>
   <div class="list-group">
-  	<% for (name in theme.menu) { %>
-  	 <% if(url_for(page.path)==url_for(theme.menu[name])) { %>
-  	   <a class="list-group-item-current" href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %>
+  	<% for (name in theme.Menu) { %>
+  	 <% if(url_for(page.path)==url_for(theme.Menu[name])) { %>
+  	   <a class="list-group-item-current" href="<%- url_for(theme.Menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %>
   	 <% }else{ %>
-  	   <a class="list-group-item" href="<%- url_for(theme.menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %>
+  	   <a class="list-group-item" href="<%- url_for(theme.Menu[name]) %>"><i class="fa <%= theme.icon[name] %> fa-fw" aria-hidden="true"></i>&nbsp; <%- __('Menu.' + name) %>
   	 <% } %>
-  	    <% if(theme.menu_name[name].name=="Archives"){ %>
+  	    <% if(name=="Archives"){ %>
   	    	<div class="badge"><%= site.posts.length %></div>
-  	    <% }else if(theme.menu_name[name].name=="tags"){ %>
+  	    <% }else if(name=="Tags"){ %>
   	    	<div class="badge"><%= site.tags.length %></div>
-  	    <% }else if(theme.menu_name[name].name=="categories"){ %>
+  	    <% }else if(name=="Categories"){ %>
   	    	<div class="badge"><%= site.categories.length %></div>
   	    <% }else{} %>
       </a>
@@ -34,14 +34,14 @@
   </div>
   </div>
   <div class="sidebar-footer">
-  	<div class="item">
-  		<a href="#back-to-top"><i class="fa fa-hand-o-up" aria-hidden="true"></i><div class="mini-text">顶部</div></a>
+  	<div class="item" id="backtop">
+  		<i class="fa fa-hand-o-up" aria-hidden="true"></i><div class="mini-text">顶部</div>
   	</div>
   	<div class="item">
   		<a href="/atom.xml"><i class="fa fa-feed" aria-hidden="true"></i><div class="mini-text">RSS</div></a>
   	</div>
   	<div class="item">
-  		<a href="javascript:(function(){window.open(&quot;<%= config.url %>&quot;)})()" onclick="swal('提示','请把图标拖动到书签栏','warning');return false;"><i class="fa fa-bookmark" aria-hidden="true"></i><div class="mini-text">收藏</div></a>
+  		<a href="javascript:(function(){window.open(&quot;<%= config.url %>&quot;)})()" onclick="swal.fire('提示','请把图标拖动到书签栏','warning');return false;"><i class="fa fa-bookmark" aria-hidden="true"></i><div class="mini-text">收藏</div></a>
   	</div>
   </div>
 </div>
