@@ -64,16 +64,16 @@ comments:
   # You can get your uid from https://livere.com/insight/myCode (General web site)
   livere:
     enable: false
-    uid: MTAyMC80Njg5MS8yMzM5Mg==
+    uid: 
   # gitalk comments system
   # see: https://github.com/gitalk/gitalk
   gitalk:
     enable: true
-    clientID: "'eee39c8ef2391d17d829'"
-    clientSecret: "'c9e42cc511159cc40a9afae6755952c55f098df5'"
-    repo: "'no-code'"
-    owner: "'yz-hs'"
-    admin: "['yz-hs']"
+    clientID: "''"
+    clientSecret: "''"
+    repo: "''"
+    owner: "''"
+    admin: "['']"
 
 # 5:responsive
 #If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.
