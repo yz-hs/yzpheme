@@ -1,5 +1,4 @@
-<div class="post">
-  <div class="header">
+<div class="header">
     <h1 class="title"><%= page.title %></h1>
     <div class="meta">
 	  <span><i class="fa fa-user" aria-hidden="true"></i> <%= config.author %></span>
@@ -12,17 +11,17 @@
         <span><i class="fa fa-lock" aria-hidden="true"></i> <%= __('Posts.Password') %></span>
       <% } %>
     </div>
-  </div>
-  <div class="breadcrumb">
+</div>
+<div class="breadcrumb">
     <div class="url">
       <a href="/"><i class="fa fa-home" aria-hidden="true"></i> <%= __('Menu.Home') %></a> / <%= page.title %>
     </div>
     <div class="share">
       <%= __('Posts.Share') %> <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=<%= page.permalink %>&title=<%= page.title %>&site=<%= config.url %>"><i class="fa fa-qq" aria-hidden="true"></i></a>
     </div>
-  </div>
-  <% if(page.bgimg) { %>
-  <div class="post-text" style="padding:0;background-image: url(<%= page.bgimg %>);background-size: cover;">
+</div>
+<% if(page.bgimg) { %>
+<div class="post-text" style="padding:0;background-image: url(<%= page.bgimg %>);background-size: cover;">
   	<% if(page.height){ %>
 		<% for(var i=1;i<=page.height;i++) { %>
 			<br />
@@ -31,13 +30,13 @@
 	<% }else{ %>
 		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 	<% } %>
-  </div>
-  <% } %>
-  <div class="post-text">
+</div>
+<% } %>
+<div class="post-text">
     <%- page.content %>
     <%- partial('_partial/end-post') %>
-  </div>
-  <% if(is_post()){ %>
+</div>
+<% if(is_post()){ %>
     <div class="prevnext">
   	  <% if(page.prev){ %>
   	  	  <a class="prev" href="<%= url_for(page.prev.path) %>"><%= __('Paginator.Prev') %></a>
@@ -45,6 +44,5 @@
   		  <a class="next" href="<%= url_for(page.next.path) %>"><%= __('Paginator.Next') %></a>
   	  <% } %>
     </div>
-  <% } %>
-  <%- partial('_partial/comments') %>
-</div>
+<% } %>
+<%- partial('_partial/comments') %>

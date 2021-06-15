@@ -5,29 +5,19 @@
 	position: sticky;
 	top: 0px;
 	z-index: $topbar-z-index;
+	display: flex;
+	justify-content: space-between;
 	
 	.topbar-title {
-		font-size: 20px;
 		font-weight: 700;
 	}
 
-	.topbar-comments {
-		float: right;
-		font-size: 20px;
-	}
-
-	.topbar-url {
-		float: right;
-		font-size: 20px;
-		font-weight: 700;
+	.topbar-menu {
 		display: none;
 	}
 
-	.topbar-full-url {
+	.topbar-title,.topbar-comments,.topbar-menu {
 		font-size: 20px;
-		font-weight: 700;
-		display: none;
-		text-align: center;
 	}
 
 	a {
@@ -35,24 +25,8 @@
 	}
 }
 
-@media screen and (max-width: $pc_pe_dividing_2) {
-    .topbar {
-		.topbar-comments {
-			display: none;
-		}
-		.topbar-url {
-			display: block;
-		}
-	}
-}
-
 @media screen and (max-width: $pc_pe_dividing_3) {
-    .topbar {
-		.topbar-url,.topbar-title {
-			display: none;
-		}
-		.topbar-full-url {
-			display: block;
-		}
+	.topbar-menu {
+		display: block !important;
 	}
 }

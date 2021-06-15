@@ -1,6 +1,5 @@
-<div class="post">
-  <div class="header">
-  	  <h1 class="title">
+<div class="header">
+  	<h1 class="title">
   	    <% if (page.category) { %>
   	      <%= page.category %>
   	    <% }else if (page.tag) { %>
@@ -8,8 +7,8 @@
   	    <% }else{ %>
   	      <div><%= __('Menu.Archives') %></div>
   	    <% } %>
-  	  </h1>
-  	  <div class="meta">
+  	</h1>
+  	<div class="meta">
   	    <% if (page.category) { %>
   	      <div><%= _p('Archives.Categories',page.category) %></div>
   	    <% }else if (page.tag) { %>
@@ -17,10 +16,9 @@
   	    <% }else{ %>
   	      <div><%= _p('Archives.Archives',site.posts.length)%></div>
   	    <% } %>
-  	  </div>
-  </div>
-  
-  <div class="post-text">
+  	</div>
+</div>
+<div class="post-text">
   	<ol class="timeline">
   	<% var lastyear=0,lastmonth=0; %>
     <% page.posts.each(function (post) { %>
@@ -39,8 +37,5 @@
       </li>
     <% }) %>
     </ol>
-  </div>
-
-  <%- partial('_partial/paginator') %>
-  
 </div>
+<%- partial('_partial/paginator') %>

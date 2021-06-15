@@ -12,23 +12,13 @@
 @media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}
 </style>
 <div class="topbar">
+	<a onclick="$('.sidebar').toggleClass('sidebar-display');$('meting-js').toggleClass('hide');$('.santa-container').toggleClass('appear');" class="topbar-menu">
+		<i class="fa fa-bars" aria-hidden="true"></i>
+	</a>
 	<a href="/" class="topbar-title">
 		<i class="fa fa-home" aria-hidden="true"></i> <%= theme.title %>
 	</a>
-	<div class="topbar-url">
-	  <% for (name in theme.Menu) { %>
-            <a href="<%- url_for(theme.Menu[name]) %>"><i class="fa <%= theme.icon[name] %>" aria-hidden="true"></i></a>
-      <% } %>
-      <a href="<%- url_for(theme.Topbar) %>"><i class="fa <%= theme.icon.Topbar %>" aria-hidden="true"></i></a>
-    </div>
 	<a href="<%- url_for(theme.Topbar) %>" class="topbar-comments">
 		<i class="fa <%= theme.icon.Topbar %>" aria-hidden="true"></i>
-	</a>
-	<div class="topbar-full-url">
-		<a href="/"><i class="fa fa-home" aria-hidden="true"></i></a>
-		<% for (name in theme.Menu) { %>
-            <a href="<%- url_for(theme.Menu[name]) %>"><i class="fa <%= theme.icon[name] %>" aria-hidden="true"></i></a>
-        <% } %>
-        <a href="<%- url_for(theme.Topbar) %>"><i class="fa <%= theme.icon.Topbar %>" aria-hidden="true"></i></a>
-	</div>
+	</a>	
 </div>

@@ -1,25 +1,19 @@
-<div class="post">
-	<% if(theme.site_warning.enable){ %>
-		<div class="text-alert <%= theme.site_warning.type %>" style="padding: 15px; margin: 0px; border-radius: 0px;<% if(theme.site_warning.bgcolor){ %>background-color: #<%- theme.site_warning.bgcolor %> <% } %> <% if(theme.site_warning.color){ %>color: #<%- theme.site_warning.color %> <% } %> ">
-		<%- theme.site_warning.text %>
-		</div>
-	<% } %>
-	<div class="header">
-		<h1 class="title"><%= theme.title %></h1>
-		<div class="meta"><%= config.subtitle %></div>
-	</div>
-	<% page.posts.each(function (post) { %>
-	  <% if(post.bgimg){ %>
+<div class="header">
+	<h1 class="title"><%= theme.title %></h1>
+	<div class="meta"><%= config.subtitle %></div>
+</div>
+<% page.posts.each(function (post) { %>
+	<% if(post.bgimg){ %>
 		<div class="post-bgimg-item" style="background-image: url(<%= post.bgimg %>);">
 			<% if(post.height){ %>
 				<% for(var i=1;i<=post.height;i++) { %>
 					<br />
 				<% } %>
-				<div class="inner" style="<%if(post.color){%>color:#<%-post.color%><%}%>">
-			<% }else{ %>
-				<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><div class="inner" style="<%if(post.color){%>color:#<%-post.color%><%}%>">
-			<% } %>
-	  <% }else{ %>
+			<div class="inner" style="<%if(post.color){%>color:#<%-post.color%><%}%>">
+		<% }else{ %>
+			<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><div class="inner" style="<%if(post.color){%>color:#<%-post.color%><%}%>">
+		<% } %>
+	<% }else{ %>
 		<div class="post-item" style="<%if(post.color){%>color:#<%-post.color%><%}%>"><div>
 			<% if(post.disfa){}else{ %>
 				<% if(post.faname){ %>
@@ -28,47 +22,43 @@
 			  		<i class="fa fa-file-text fa-2x fa-pull-left fa-border fa-fw" aria-hidden="true"></i>
 			  	<% } %>
 			<% } %>
-	  <% } %>
-	  		
-			<h2 class="title">
-				<a href="<%- url_for(post.path) %>"><%= post.title %></a>
-			</h2>
-			<div>
-				<% if(theme.post_excerpt.mode=="noexcerpt"){ %>
-					<% if(theme.post_excerpt.ifdefault){ %>
-						<%- theme.post_excerpt.post_default_excerpt %>
-					<% }else{ %>
-						<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
-					<% } %>
+		<% } %>
+		<h2 class="title">
+			<a href="<%- url_for(post.path) %>"><%= post.title %></a>
+		</h2>
+		<div>
+			<% if(theme.post_excerpt.mode=="noexcerpt"){ %>
+				<% if(theme.post_excerpt.ifdefault){ %>
+					<%- theme.post_excerpt.post_default_excerpt %>
 				<% }else{ %>
-					<% if(post.excerpt){ %>
-						<% if(theme.post_excerpt.display=="html"){ %>
-							<%- post.excerpt %>
-						<% }else{ %>
-							<%- strip_html(post.excerpt) %>
-						<% } %>
-					<% }else if(theme.post_excerpt.ifdefault){ %>
-						<%- theme.post_excerpt.post_default_excerpt %>
-					<% }else{ %>
-						<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
-					<% } %>
+					<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
 				<% } %>
-			</div>    
-			<hr />
-			<div class="meta">
-				<span><i class="fa fa-user" aria-hidden="true"></i> <%= config.author %></span>
-				<span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= date(post.date,theme.time_format) %></span>
-				<% if(post.top){ %>
-            		<span><i class="fa fa-thumb-tack" aria-hidden="true"></i> <%= __('Posts.Top') %></span>
-        		<% } %>
-        		<% if(post.password){ %>
-        			<span><i class="fa fa-lock" aria-hidden="true"></i> <%= __('Posts.Password') %></span>
-      			<% } %>
-      		</div>
-		</div>
+			<% }else{ %>
+				<% if(post.excerpt){ %>
+					<% if(theme.post_excerpt.display=="html"){ %>
+						<%- post.excerpt %>
+					<% }else{ %>
+						<%- strip_html(post.excerpt) %>
+					<% } %>
+				<% }else if(theme.post_excerpt.ifdefault){ %>
+					<%- theme.post_excerpt.post_default_excerpt %>
+				<% }else{ %>
+					<%- truncate(strip_html(post.content),{length:theme.post_excerpt.length_excerpt}) %>
+				<% } %>
+			<% } %>
+		</div>    
+		<hr />
+		<div class="meta">
+			<span><i class="fa fa-user" aria-hidden="true"></i> <%= config.author %></span>
+			<span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= date(post.date,theme.time_format) %></span>
+			<% if(post.top){ %>
+           		<span><i class="fa fa-thumb-tack" aria-hidden="true"></i> <%= __('Posts.Top') %></span>
+       		<% } %>
+      		<% if(post.password){ %>
+      			<span><i class="fa fa-lock" aria-hidden="true"></i> <%= __('Posts.Password') %></span>
+   			<% } %>
+   		</div>
 	</div>
-	<% }) %>
-
-	<%- partial('_partial/paginator') %>
-
 </div>
+<% }) %>
+<%- partial('_partial/paginator') %>

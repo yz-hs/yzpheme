@@ -2,9 +2,10 @@
 	z-index: $toolbar-z-index;
 	border: 1px solid $toolbar-border-color;
 	background-color: $toolbar-bg-color;
-	width: 220px;
+	width: $toolbar-width-1;
 	height: 100%;
 	display: table-cell;
+	box-sizing: border-box;
 
 	.item {
 		padding: 12px;
@@ -123,6 +124,14 @@
 
 @media screen and (max-width: $pc_pe_dividing_1) {
     .toolbar {
-        display: none !important;
+        width: $toolbar-width-2 !important;
+    }
+}
+
+@media screen and (max-width: $pc_pe_dividing_2) {
+    .toolbar {
+        display: block !important;
+        width: 100% !important;
+        padding: 10px;
     }
 }

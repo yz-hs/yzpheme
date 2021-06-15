@@ -18,7 +18,7 @@ var binft = function (r) {
       }
       var l = "",
 
-      o = [document.getElementById('binft').innerHTML].map(function (r) {
+      o = [document.getElementById('binft').innerText].map(function (r) {
       return r + ""
       }),
       a = 2,

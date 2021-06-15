@@ -64,29 +64,33 @@ comments:
   # You can get your uid from https://livere.com/insight/myCode (General web site)
   livere:
     enable: false
-    uid: 
+    uid: MTAyMC80Njg5MS8yMzM5Mg==
   # gitalk comments system
   # see: https://github.com/gitalk/gitalk
   gitalk:
     enable: true
-    clientID: "''"
-    clientSecret: "''"
-    repo: "''"
-    owner: "''"
-    admin: "['']"
+    clientID: "'eee39c8ef2391d17d829'"
+    clientSecret: "'c9e42cc511159cc40a9afae6755952c55f098df5'"
+    repo: "'no-code'"
+    owner: "'yz-hs'"
+    admin: "['yz-hs']"
 
 # 5:responsive
 #If the screen width is less than this value, the page layout will change to suit different screens.The unit is px.
 
-responsive:
-  dividing_1: 1200 # hide toolbar
-  dividing_2: 800 # hide sidebar
-  dividing_3: 480 # change topbar and margin/padding
+responsive: # It influences "responsive" and width of body.
+  # normal  (PC)
+  dividing_1: 1230
+  # thiner  (PC)
+  dividing_2: 970
+  # toolbar (Pad)
+  dividing_3: 750
+  # sidebar (PE)
 
 # 6:display site warning
 
 site_warning:
-  enable: true
+  enable: root   # You can set it none|root|all , or default(none).
   text: '<i class="fa fa-volume-up" aria-hidden="true"></i> 欢迎来到 cieu 的博客！希望我们能相互交流，共同进步～'
   type: success  # You can set it danger|warning|info|success , or default.
   bgcolor:       # If it's set,the color will be changed.
@@ -97,7 +101,7 @@ site_warning:
 
 footer:
   left: 'Copyright ©2019-2021 cieu. All rights reserved.'
-  right: 'Theme is <a href="https://github.com/yz-hs/yzpheme">yzpheme</a>,by cieu.'
+  right: 'Theme is <a href="https://github.com/yz-hs/cieuka">cieuka</a>,by cieu.'
 
 # 8:copyright
 
@@ -161,7 +165,7 @@ color_schemes: trans
 # spacial
 # value: none | grayscale | invert | opacity (default: none)
 # 注：   没有  |  白事用   | 阴间特效 |   小透明
-spacial: none
+spacial:
 
 # background image url
 
@@ -178,6 +182,7 @@ time_format: "YYYY 年 MM 月 DD 日"
 # (5) "blog-encrypt" requires `hexo-blog-encrypt` plugin to use. Please run `npm install --save hexo-blog-encrypt`.
 # (6) Setting your 'path-to-your-blog/_config.yml'.per_page 0 is recommended.
 # (7) hexo-neat   hexo-generator-sitemap   ...
+# (8) If you want to set Tags/Categories page, please set these pages' type. (type: Tags/Categories)
 
 
 
@@ -188,3 +193,5 @@ time_format: "YYYY 年 MM 月 DD 日"
 #! DO NOT EDIT THE FOLLOWING SETTINGS
 #! UNLESS YOU KNOW WHAT YOU ARE DOING
 #! ---------------------------------------------------------------
+
+# Nothing.

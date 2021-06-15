@@ -138,7 +138,7 @@ function Readdata(key) {
     	$('.chaffle').chaffle();
     });
     displaytime();
-	$(document).pjax('a[target!=_blank][pjax!="no"]', '#main-container', {fragment:'#main-container', timeout:6000});
+	$(document).pjax('a[target!=_blank][pjax!="no"]', '#pjax', {fragment:'#pjax', timeout:6000});
 	$(document).on('pjax:complete', function() {
 		MathJax.typeset();
 		document.querySelectorAll('pre code').forEach((block) => {
