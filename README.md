@@ -2,7 +2,7 @@
 
 ## 介绍
 
-![](../tree/master/_doc/intro.png)
+![](/yz-hs/cieuka/tree/master/_doc/intro.png)
 
 cieuka  是一个 hexo 主题。本主题由 [cieu](https://github.com/yz-hs/) 制作，外观借鉴了 [handsome 主题](https://www.ihewro.com/archives/489/)，部分代码借鉴自 [mkBlog](https://mkblog.cn/)。本主题可在此获取。
 
