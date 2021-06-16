@@ -1,41 +1,5 @@
-<div class="header">
-  	<h1 class="title">
-  	    <% if (page.category) { %>
-  	      <%= page.category %>
-  	    <% }else if (page.tag) { %>
-  	      <%= page.tag %>
-  	    <% }else{ %>
-  	      <div><%= __('Menu.Archives') %></div>
-  	    <% } %>
-  	</h1>
-  	<div class="meta">
-  	    <% if (page.category) { %>
-  	      <div><%= _p('Archives.Categories',page.category) %></div>
-  	    <% }else if (page.tag) { %>
-  	      <div><%= _p('Archives.Tags',page.tag) %></div>
-  	    <% }else{ %>
-  	      <div><%= _p('Archives.Archives',site.posts.length)%></div>
-  	    <% } %>
-  	</div>
-</div>
-<div class="post-text">
-  	<ol class="timeline">
-  	<% var lastyear=0,lastmonth=0; %>
-    <% page.posts.each(function (post) { %>
-      <li>
-      	<% var year=post.date.year(),month=post.date.month(); %>
-      	<% if(lastyear != year){ %>
-      		<h1><%= year %></h1>
-      		<% lastyear=year; %>
-      	<% } %>
-      	<% if(lastmonth != month){ %>
-      		<h2><%= month+1 %></h2>
-      		<% lastmonth=month; %>
-      	<% } %>
-        <b class="date"><%= date(post.date, "YYYY-MM-DD") %></b>
-        <a class="title" href="<%- url_for(post.path) %>"><%= post.title %></a>
-      </li>
-    <% }) %>
-    </ol>
-</div>
-<%- partial('_partial/paginator') %>
+<% if(theme.WHITE=="WHITE"){ %>
+	<%- partial('_WHITE/archive') %>
+<% }else{ %>
+	<%- partial('_MAIN/archive') %>
+<% } %>

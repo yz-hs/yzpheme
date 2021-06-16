@@ -1,89 +1,13 @@
-hexo-config-uq(config) {
-    $ret = hexo-config(config);
-    $ret = unquote($ret);
-    return $ret;
-}
+hexo-config-uq(config)
+    $ret = hexo-config(config)
+    $ret = unquote($ret)
+    return $ret
 
 @import "_variable/main";
-@import "_partial/main";
 @import "_other/main";
 
-body {
-	background-color: rgb(239,239,239);
-	color: $text-color;
-	font-family: hexo-config-uq('font');
-	font-size: 16.5px;
-	-webkit-font-smoothing: antialiased;
-	font-weight: 100;
-	background-image: url(hexo-config('bg-url'));
-	background-attachment: fixed;
-  	background-repeat: no-repeat;
-  	background-position: 50% 50%;
-  	background-size: cover;
-  	margin: 0 auto;
-	box-shadow: 0 0 40px $body-shadow-color;
-	height: auto;
-	width: $pc_pe_dividing_1;
-}
-
-*::selection {
-	background: $selection-bg-color; 
-	color: $selection-color;
-}
-
-.article {
-	margin-left: $dis-sidebar-1;
-	width: $article-width-1 !important;
-	min-height: 800px;
-	display: table;
-	table-layout: fixed;
-	background-color: $post-bg-color;
-}
-
-.article-cell-body {
-	display: table-cell;
-	vertical-align: top;
-}
-
-.fa-border {
-	border-color: $fa-border-color !important;
-}
-
-@media screen and (max-width: $pc_pe_dividing_1) {
-    .article {
-    	margin-left: $dis-sidebar-2;
-        width: $article-width-2 !important;
-        display: table;
-    }
-    body{
-    	width: $pc_pe_dividing_2;
-    }
-}
-
-@media screen and (max-width: $pc_pe_dividing_2) {
-    .article {
-        margin-left: $dis-sidebar-3;
-        width: $article-width-3 !important;
-        display: block;
-    }
-    .article-cell-body {
-    	display: block;
-    }
-	body {
-    	width: $pc_pe_dividing_3;
-	}
-}
-
-@media screen and (max-width: $pc_pe_dividing_3) {
-    .article {
-        margin: auto;
-        width: $article-width-4 !important;
-        display: block;
-    }
-    .santa-container {
-    	display: none;
-    }
-    body {
-    	width: 100%;
-	}
-}
+if hexo-config-uq('WHITE')=="WHITE"
+    @import "_WHITE/main";
+else
+    @import "_partial/main";
+    @import "main";

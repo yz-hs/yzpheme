@@ -1,7 +1,5 @@
-<% if (is_category()||page.type=="categories") { %>
-	<%- partial('_partial/category') %>
-<% } else if (is_tag()||page.type=="tags") { %>
-	<%- partial('_partial/tags') %>
-<% } else { %>
-	<%- partial('post') %>
+<% if(theme.WHITE=="WHITE"){ %>
+	<%- partial('_WHITE/page') %>
+<% }else{ %>
+	<%- partial('_MAIN/page') %>
 <% } %>

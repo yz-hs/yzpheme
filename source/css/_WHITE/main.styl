@@ -1,0 +1,160 @@
+body {
+	font-weight: 100;
+	font-family: "Montserrat", sans-serif;
+	background-color: #f7f7f7;
+	color: rgba(51,51,51,0.77);
+}
+
+.top-empty {
+	color: #f7f7f7;
+	font-size: 50px;
+	margin: 30px;
+
+	a {
+		border: none;
+		color: #f7f7f7;
+		font-family: "Tangerine", sans-serif;
+	}
+}
+
+.main-container {
+	margin-right: auto;
+    margin-left: auto;
+    width: 950px;
+}
+
+.main {
+	width: 950px;
+	display: table;
+    table-layout: fixed;
+}
+
+.sidebar-container {
+	display: table-cell;
+	padding: 30px;
+	width: 225px;
+	margin-right: auto;
+    margin-left: auto;
+    vertical-align: top;
+}
+
+.sidebar {
+	margin-bottom: 30px;
+	padding: 30px;
+	background-color: #fff;
+
+	a {
+		border: none;
+		display: block;
+	}
+
+	li {
+		padding: 10px 0;
+    	border-bottom: 1px solid #ddd;
+
+    	&:last-child {
+    		border: none;
+    	}
+	}
+
+	ul {
+		list-style-type: none;
+    	margin-block-start: 0;
+    	margin-inline-start: 0;
+    	padding-inline-start: 0;
+	}
+}
+
+.post-container {
+	display: table-cell;
+	padding: 30px;
+	width: 600px;
+	margin-right: auto;
+    margin-left: auto;
+    vertical-align: top;
+}
+
+.post {
+	padding: 30px;
+	background-color: #fff;
+
+	li {
+		padding: 5px 0;
+	}
+
+	p {
+		word-break: break-all;
+	}
+}
+
+.paginator {
+
+	a {
+		border: none;
+	}
+
+	a:after,span:after {
+		content: '，';
+	}
+
+	a:last-child:after {
+		content: '。';
+	}
+
+	.current {
+		color: #000;
+
+		&:after {
+			content: '（当前页）';
+		}
+	}
+}
+
+.footer {
+	text-align: center;
+	margin-top: 100px;
+	margin-bottom: 40px;
+	font-size: 10px;
+
+	p {
+    	margin-top: 5px;
+    	margin-bottom: 5px;
+    	line-height: 1.7;
+	}
+}
+
+h1,h2,h3,h4,h5,h6,p,a {
+	color: rgba(51,51,51,0.77);
+    font-weight: 100;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+
+a {
+	text-decoration: none;
+  	border-bottom: 1px solid rgba(51,51,51,0.77);
+
+  	&:hover {
+  		color: rgb(51,51,51);
+  	}
+}
+
+@media screen and (max-width: $pc_pe_dividing_2) {
+	.main-container,.sidebar-container,.post-container,.main {
+		width: 100%;
+		box-sizing: border-box;
+	}
+	.main-container,.sidebar-container,.post-container {
+		padding: 15px 5px;
+	}
+	.sidebar,.post {
+		padding: 15px;
+	}
+	.sidebar-container,.post-container {
+		display: block;
+	}
+}

@@ -1,0 +1,11 @@
+<div>
+    <h1>标签</h1>
+    <p>目前共有 <%= site.tags.length %> 个标签。</p>
+
+    <p>
+    <% site.tags.each(function (tag) { %>
+      <a href="/tags/<%= tag.name %>"><%= tag.name %></a>，
+    <% }) %>
+    就这些。
+	</p>
+</div>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<%- partial('head') %>
+	<body>
+		<div class="main-container">
+		<div class="top-empty"><a href="/"><%= config.title %></a></div>
+		<div class="main">
+			<div class="sidebar-container">
+				<div><%- partial('sidebar') %></div>
+			</div>
+			<div class="post-container" id="pjax">
+				<div class="post" id="main-container"><%- body %></div>
+			</div>
+		</div>
+		<%- partial('back2top') %>
+		</div>
+		<%- partial('footer') %>
+  	</body>
+</html>

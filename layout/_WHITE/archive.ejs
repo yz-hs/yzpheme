@@ -1,0 +1,32 @@
+<div>
+  	    <% if (page.category) { %>
+  	      <h1><%= page.category %></h1>
+  	    <% }else if (page.tag) { %>
+  	      <h1><%= page.tag %></h1>
+  	    <% }else{ %>
+  	      <h1>归档</h1>
+  	    <% } %>
+  	    <% if (page.category) { %>
+  	      <p>分类 “<%= page.category %>” 下有以下文章。 </p>
+  	    <% }else if (page.tag) { %>
+  	      <p>标签 “<%= page.tag %>” 下有以下文章。 </p>
+  	    <% }else{ %>
+  	      <p>目前 <%= config.author %> 写了 <%= site.posts.length %> 篇文章。 继续努力。</p>
+  	    <% } %>
+  
+  	<% var lastyear=0,lastmonth=0; %>
+    <% page.posts.each(function (post) { %>
+      	<% var year=post.date.year(),month=post.date.month(); %>
+      	<% if(lastyear != year){ %>
+      		<p>在 <%= year %> 年时，<%= config.author %> 写了以下文章：</p>
+      		<% lastyear=year; %>
+      	<% } %>
+      	<% if(lastmonth != month){ %>
+      		<p> <%= month+1 %> 月，她写了这些：</p>
+      		<% lastmonth=month; %>
+      	<% } %>
+        <p>在本月的 <%= date(post.date, "DD") %> 日，写了一篇“
+        <a href="<%- url_for(post.path) %>"><%= post.title %></a>”。</p>
+    <% }) %>
+
+</div>

@@ -1,0 +1,221 @@
+<div class="footer">
+<p>Theme is <a href="https://github.com/yz-hs/yzwheme">yzwheme</a>.</p>
+<p>This Site : Copyright ©2018-2020 yz-hs. All rights reserved.</p>
+</div>
+
+<!-- 
+!#                                                 #!
+!#                     MathJax                     #!
+!#                                                 #!
+-->
+
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+<!-- 
+!#                                                 #!
+!#                 首次访问reverse                  #!
+!#                                                 #!
+-->
+
+<% if(theme.colored_eggs.reverse) { %>
+<script>  
+if (!Readdata("fool")) {
+    document.body.classList.add('reverse-coloregg');
+    window.setTimeout(function () {
+        Savedata("fool", "fool");
+        swal("你可以正常访问 Blog 啦！你还可以通过删除 Cookie 再体验一次！呵呵^_^");
+        document.body.classList.remove('reverse-coloregg');  
+    }, 10000);
+}  
+   
+function Savedata(key, data) {  
+    key = 'yz_' + key;  
+    data = JSON.stringify(data);  
+    if (window.localStorage) {  
+        localStorage.setItem(key, data);  
+    }  
+}  
+  
+function Readdata(key) {  
+    if (!window.localStorage) return '';  
+    key = 'yz_' + key;  
+    return JSON.parse(localStorage.getItem(key));  
+}  
+</script>  
+<style>  
+.reverse-coloregg {  
+    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);  
+    -moz-transform: matrix(-1, 0, 0, 1, 0, 0);  
+    transform: matrix(-1, 0, 0, 1, 0, 0);  
+    -o-transform: skew(0deg, 180deg) scale(-1, 1);  
+    filter:progid: DXImageTransform.Microsoft.BasicImage(mirror=1); 
+}  
+
+/*本部分代码来自 https://mkblog.cn/1469/*/
+</style>  
+<% } %>
+
+
+<!-- 
+!#                                                 #!
+!#                  看板圣诞老人                    #!
+!#                                                 #!
+-->
+
+
+<% if(theme.colored_eggs.santa){ %>
+
+<a class="santa-container" id="santa-colored-egg">
+  <div class="santa" onclick="santacoloredegg()">
+    <div class="santa-body">
+        <div class="santa-head">
+            <div class="santa-ear"></div>
+            <div class="santa-ear"></div>
+            <div class="santa-hat"></div>
+            <div class="santa-eye"></div>
+            <div class="santa-eye"></div>
+            <div class="santa-nose"></div>
+            <div class="santa-mouth"></div>
+        </div>
+    </div>
+  </div>
+</a>
+
+<script type="text/javascript">
+    function santacoloredegg() {
+        document.getElementById("santa-colored-egg").innerHTML = 
+        "<div class=\"santa\" onclick=\"santaremove()\">"+
+        "<div class=\"santa-body\" style=\"font-size: 500px;\">"+
+        "<div class=\"santa-head\">"+
+        "<div class=\"santa-ear\"></div>"+
+        "<div class=\"santa-ear\"></div>"+
+        "<div class=\"santa-hat\"></div>"+
+        "<div class=\"santa-eye\"></div>"+
+        "<div class=\"santa-eye\"></div>"+
+        "<div class=\"santa-nose\"></div>"+
+        "<div class=\"santa-mouth\"></div>"+
+        "</div></div></div>";
+        swal.fire("注意","由于你触碰了圣诞老人，他快气炸了！\n快快刷新让他平静下来！\n若再触碰，他会气炸的 qwq！");
+    }
+
+    function santaremove() {
+        document.getElementById("santa-colored-egg").innerHTML = "";
+        swal.fire("注意","圣诞老人已气炸。 R.I.P.\n同时页面效果清除一些。")
+        $("canvas").hide();
+        $("meting-js").hide();
+    }
+</script>
+<% } %>
+
+
+<!-- 
+!#                                                 #!
+!#                      其他                        #!
+!#                                                 #!
+-->
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+<script src="/js/SmoothScroll.js"></script>
+<script type="text/javascript" src="/js/chaffle.min.js"></script>
+<link href="https://cdn.bootcdn.net/ajax/libs/highlight.js/10.5.0/styles/vs2015.min.css" rel="stylesheet">
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/limonte-sweetalert2/10.12.5/sweetalert2.all.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/sketch.js/1.1/sketch.min.js"></script>
+<script type="text/javascript">
+    hljs.initHighlighting();
+    $(document).ready(function() {
+        $('.chaffle').chaffle();
+    });
+    //displaytime();
+    $(document).pjax('a[target!=_blank][pjax!="no"]', '#pjax', {fragment:'#pjax', timeout:6000});
+    $(document).on('pjax:complete', function() {
+        MathJax.typeset();
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+        });
+        $('.chaffle').chaffle();
+        displaytime();
+        binft(document.getElementById('binft'));
+
+        var back = document.getElementById('backtop')
+        back.style.display ='none'
+        document.onscroll = function(){
+            if (document.documentElement.scrollTop > 100){
+                back.style.display = 'block'
+            }else{
+                back.style.display = 'none'
+            }
+        };
+        back.onclick = function(){
+            document.documentElement.scrollTop = 0
+        }//back2top
+
+    });//pjax
+</script>
+
+<script>
+    var back = document.getElementById('backtop')
+    back.style.display ='none'
+    document.onscroll = function(){
+        if (document.documentElement.scrollTop > 100){
+            back.style.display = 'block'
+        }else{
+            back.style.display = 'none'
+        }
+    };
+    back.onclick = function(){
+        document.documentElement.scrollTop = 0
+    }//back2top for no pjax
+</script>
+
+<!-- 
+!#                                                 #!
+!#                     页面效果                     #!
+!#                                                 #!
+-->
+
+<!--<script type="text/javascript" src="/js/binft.js"></script> sidebar的“short description”的滚动效果，加入`id="#binft"`即可。-->
+
+<script type="text/javascript" src="/js/ctitle.js"></script> <!--标题改动-->
+
+<!--<script type="text/javascript" src="/js/clicklove.js"></script>--> <!--点击爱心-->
+
+<script type="text/javascript" src="/js/colored-egg.js"></script> <!--控制台输出彩蛋-->
+
+<!--<script type="text/javascript" src="/js/snow.js"></script>--> <!--前景下雪  注：与“点击烟花”冲突-->
+
+<!--<script type="text/javascript" src="/js/snow-2.js"></script>--> <!--前景下雪——样式二（其实这个版本飘什么都行）-->
+
+<!--<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 99999;pointer-events: none;" ></canvas> 
+<script type="text/javascript" src="/js/firework.js"></script> 点击烟花-->
+
+<div id="clickCanvas" style=" position: fixed;left: 0;top: 0;z-index: 99999;pointer-events: none;"></div>
+<script type="text/javascript" src="/js/clickple.js"></script> <!--点击烟花2-->
+
+<!--<script type="text/javascript" src="/js/values.js"></script>--> <!--点击社会主义核心价值观-->
+
+<!--<script type="text/javascript" src="/js/particle.js"></script>--> <!--背景粒子-->
+
+<!--<script type="text/javascript" src="/js/sakura.js"></script> 前景樱花-->
+
+<script src="/js/activate-power-mode.js"></script>
+<script>
+ POWERMODE.colorful = true; // 控制开启/开启礼花特效  
+ POWERMODE.shake = true; // 控制开启/关闭屏幕震动特效  
+ document.body.addEventListener('input', POWERMODE);
+</script> <!--文字输入特效-->
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2.0.1/dist/Meting.min.js"></script>

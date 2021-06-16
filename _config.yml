@@ -6,7 +6,7 @@
 # 0:white-theme
 # A special theme.
 
-WHITE: false
+WHITE:   # WHITE | MAIN (default MAIN)
 
 # 1:menu
 # Don't add root.

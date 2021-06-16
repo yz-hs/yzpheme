@@ -1,0 +1,32 @@
+<div>
+    <h1><%= page.title %></h1>
+    <p>
+	  作者：<%= config.author %>。
+	  本文章共有 <%= wordcount(page.content) %> 字。
+	  本文写于 <%= date(page.date, "YYYY 年 MM 月 DD 日") %> 。
+      <% if(page.top){ %>
+       本文章被置顶了。
+      <% } %>
+      <% if(page.password){ %>
+       本文章需要密码才能查看 qwq。
+      <% } %>
+    </p>
+
+  <div>
+    <%- page.content %>
+  </div>
+
+  <% if(is_post()){ %>
+    <p>
+    	还想阅读更多文章？你可以
+  	  <% if(page.prev){ %>
+  	  	  <a href="<%= url_for(page.prev.path) %>">阅读上一篇</a>
+  	  <% }if(page.next){ %>
+  		  <% if(page.prev){ %>，也可以 <% } %><a href="<%= url_for(page.next.path) %>">阅读下一篇</a>
+  	  <% } %>。
+    </p>
+  <% } %>
+
+  <%- partial('comments') %>
+
+</div>

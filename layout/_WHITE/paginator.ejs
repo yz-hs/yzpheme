@@ -1,0 +1,8 @@
+<% if (page.total > 1){ %>
+  <p class="paginator">本页面有多个分页面：
+    <%- paginator({
+      prev_text: "上一页",
+      next_text: "下一页"
+    }) %>
+  </p>
+<% } %>

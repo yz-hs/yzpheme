@@ -1,0 +1,13 @@
+<div class="sidebar">
+  <ul>
+  	<% for (name in theme.Menu) { %>
+  	   <li><a href="<%- url_for(theme.Menu[name]) %>"><%- __('Menu.' + name)%></a></li>
+    <% } %>
+  </ul>
+</div>
+
+<div class="sidebar">
+	<h2>公告板</h2>
+	<p>本博客支持 Pjax。</p>
+	<meting-js server="netease" type="playlist" id="2948937407" mini="true"></meting-js> <!-- 播放器 -->
+</div>
