@@ -10,6 +10,8 @@ cieuka 是一个 hexo 主题。本主题由[ cieu ](https://github.com/yz-hs/)�
 
 复杂的、华丽的界面，以及简洁的界面，这个主题都可以做到！
 
+**主题所有功能已完善完毕，现停止更新，若有 Bug 可 Issue、PR 或在 <http://yz-hs.tk/somepage/chat/> 评论。**
+
 ## 历史
 
 曾用名 `yzpheme`。
