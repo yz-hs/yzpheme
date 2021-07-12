@@ -34,7 +34,7 @@ if (!Readdata("fool")) {
     document.body.classList.add('reverse-coloregg');
     window.setTimeout(function () {
         Savedata("fool", "fool");
-        swal("你可以正常访问 Blog 啦！你还可以通过删除 Cookie 再体验一次！呵呵^_^");
+        swal.fire("你可以正常访问 Blog 啦！你还可以通过删除 Cookie 再体验一次！呵呵^_^");
         document.body.classList.remove('reverse-coloregg');  
     }, 10000);
 }  
@@ -94,26 +94,14 @@ function Readdata(key) {
 
 <script type="text/javascript">
 	function santacoloredegg() {
-		document.getElementById("santa-colored-egg").innerHTML = 
-		"<div class=\"santa\" onclick=\"santaremove()\">"+
-		"<div class=\"santa-body\" style=\"font-size: 500px;\">"+
-		"<div class=\"santa-head\">"+
-		"<div class=\"santa-ear\"></div>"+
-		"<div class=\"santa-ear\"></div>"+
-		"<div class=\"santa-hat\"></div>"+
-		"<div class=\"santa-eye\"></div>"+
-		"<div class=\"santa-eye\"></div>"+
-		"<div class=\"santa-nose\"></div>"+
-		"<div class=\"santa-mouth\"></div>"+
-		"</div></div></div>";
-		swal.fire("注意","由于你触碰了圣诞老人，他快气炸了！\n快快刷新让他平静下来！\n若再触碰，他会气炸的 qwq！");
+		$(".santa").attr("onclick","santaremove()");
+        $(".santa-body").attr("style","font-size: 500px;");
+		swal.fire("注意","由于你触碰了圣诞老人，他快气炸了！\n若再触碰，他会气炸的 qwq！");
 	}
 
 	function santaremove() {
 		document.getElementById("santa-colored-egg").innerHTML = "";
-		swal.fire("注意","圣诞老人已气炸。 R.I.P.\n同时页面效果清除一些。")
-		$("canvas").hide();
-		$("meting-js").hide();
+		swal.fire("注意","圣诞老人已气炸。 R.I.P.");
 	}
 </script>
 <% } %>
@@ -146,7 +134,6 @@ function Readdata(key) {
     	});
 		$('.chaffle').chaffle();
 		displaytime();
-		binft(document.getElementById('binft'));
 
 		var back = document.getElementById('backtop')
     	back.style.display ='none'
@@ -200,8 +187,8 @@ function Readdata(key) {
 <!--<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 99999;pointer-events: none;" ></canvas> 
 <script type="text/javascript" src="/js/firework.js"></script> 点击烟花-->
 
-<div id="clickCanvas" style=" position: fixed;left: 0;top: 0;z-index: 99999;pointer-events: none;"></div>
-<script type="text/javascript" src="/js/clickple.js"></script> <!--点击烟花2-->
+<!--<div id="clickCanvas" style=" position: fixed;left: 0;top: 0;z-index: 99999;pointer-events: none;"></div>
+<script type="text/javascript" src="/js/clickple.js"></script> 点击烟花2-->
 
 <!--<script type="text/javascript" src="/js/values.js"></script>--> <!--点击社会主义核心价值观-->
 
@@ -209,12 +196,12 @@ function Readdata(key) {
 
 <!--<script type="text/javascript" src="/js/sakura.js"></script> 前景樱花-->
 
-<script src="/js/activate-power-mode.js"></script>
+<!--<script src="/js/activate-power-mode.js"></script>
 <script>
  POWERMODE.colorful = true; // 控制开启/开启礼花特效  
  POWERMODE.shake = true; // 控制开启/关闭屏幕震动特效  
  document.body.addEventListener('input', POWERMODE);
-</script> <!--文字输入特效-->
+</script> 文字输入特效-->
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>

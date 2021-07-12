@@ -1,7 +1,6 @@
 <div class="comments">
-  <div class="inner">
 	<% if(page.discomments){ %>
-      <div class="big-font"><%= __('Comments.Unable') %></div>
+      <%= __('Comments.Unable') %>
 	<% }else if(theme.comments.livere.enable) { %>
         <script type="text/javascript">
           (function(d, s) {
@@ -27,7 +26,6 @@
           gitalk.render('gitalk-container')
         </script>
     <% }else{ %>
-    	<div class="big-font"><%= _p('Comments.Unopen',config.author) %></div>
+    	<%= _p('Comments.Unopen',config.author) %>
     <% } %>
-  </div>
 </div>

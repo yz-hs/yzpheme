@@ -16,7 +16,7 @@
 		orderby: 'random',
 		style: 'block',
 		separator: '<hr class="separator" />',
-		amount: 6,
+		amount: 7,
 		transform(str) {
     		return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true" style="height: 30px;border: none;"></i> '+str;
   		}
@@ -31,7 +31,7 @@
 		orderby: 'updated',
 		style: 'block',
 		separator: '<hr class="separator" />',
-		amount: 6,
+		amount: 7,
 		transform(str) {
     		return '<i class="fa fa-file-text fa-fw fa-pull-left fa-border" aria-hidden="true" style="height: 30px;border: none;"></i> '+str;
   		}
@@ -92,7 +92,7 @@
   <% }else{ %>
     <div class="item">
       <div class="title">标签云</div>
-      <div class="toolbar-tag-cloud"><%- tagcloud({min_font: 15, max_font: 35, amount: 200, color: true, start_color: theme.tag_cloud.from,  end_color: theme.tag_cloud.to}) %></div>
+      <div class="toolbar-tag-cloud"><%- tagcloud({min_font: 15, max_font: 50, amount: 200, color: true, start_color: theme.tag_cloud.from,  end_color: theme.tag_cloud.to}) %></div>
     </div>
   <% } %> 
   <script>

@@ -75,21 +75,20 @@ img {
     opacity: 1;
 }
 
-/* 列表 */
-
-@media screen and (max-width: $pc_pe_dividing_3) {
-    ol,ul {
-    	padding-inline-start: 15px;
-    }
-}
-
 /*  链接  */
 
 a {
 	word-break: break-all;
 	text-decoration: none;
 	color: $a-color;
-	transition: 0.6s all;
+}
+
+/* 列表 */
+
+@media screen and (max-width: $pc_pe_dividing_3) {
+    ol,ul {
+    	padding-inline-start: 15px;
+    }
 }
 
 /*  分鸽线  */
@@ -107,9 +106,6 @@ img,figure,canvas,iframe,video{
 	max-height: 100%;
 	max-width: 100%;
 	overflow: auto;
-}
-p {
-	word-wrap: break-word;
 }
 pre,code {
 	background-color: #eee;

@@ -6,7 +6,7 @@
 # 0:white-theme
 # A special theme.
 
-WHITE:   # WHITE | MAIN (default MAIN)
+WHITE:  # WHITE | MAIN (default MAIN)
 
 # 1:menu
 # Don't add root.
@@ -38,6 +38,7 @@ Topbar: somepage/吐槽/index.html
 # disfa: true                      # Used to disable Font Awesome in post card.
 # faname: [string]                 # Set Font Awesome in post card. Default "fa-file-text".
 # tocd: [number]                   # Set toc depth.
+# author: [string]                 # Set author. Default config_.yml.
 # ---
 #
 # Note: "bgimg" conflicts with "faname", and "bgimg" has higher priority.
@@ -90,9 +91,9 @@ responsive: # It influences "responsive" and width of body.
 # 6:display site warning
 
 site_warning:
-  enable: root   # You can set it none|root|all , or default(none).
+  enable: all   # You can set it none|root|all , or default(none).
   text: '<i class="fa fa-volume-up" aria-hidden="true"></i> 欢迎来到 cieu 的博客！希望我们能相互交流，共同进步～'
-  type: success  # You can set it danger|warning|info|success , or default.
+  type: warning  # You can set it danger|warning|info|success , or default.
   bgcolor:       # If it's set,the color will be changed.
   color:
 
@@ -128,7 +129,7 @@ post_excerpt:
                        # text: HTML tags will not remain.
 
   post_default_excerpt: '<i class="fa fa-warning" aria-hidden="true"></i> 本文章无可提供的摘要qwq。'
-  length_excerpt: 100   # The length of "part of content".Default 30.
+  length_excerpt: 150   # The length of "part of content".Default 30.
 
   # !WARNING!: If display part of content and HTML tags remain, there will be some wrong. 
 
@@ -163,15 +164,19 @@ colored_eggs:
 color_schemes: trans
 
 # spacial
-# value: none | grayscale | invert | opacity (default: none)
-# 注：   没有  |  白事用   | 阴间特效 |   小透明
+# value: none | grayscale | invert  (default: none)
+# 注：   没有  |  白事用   | 阴间特效
 spacial:
 
 # background image url
 
 bg-url: /img/new-bgp.jpg
 
-time_format: "YYYY 年 MM 月 DD 日"
+# http://momentjs.cn/docs/#/parsing/string-format/
+time_format: "YYYY-MM-DD, HH:mm:ss"
+
+# opacity 0~1
+opacity: 1
 
 # END:note
 

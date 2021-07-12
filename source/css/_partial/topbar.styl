@@ -1,28 +1,17 @@
 .topbar {
 	background-color: $topbar-bg-color;
-	box-shadow: 0px 0px 5px $topbar-shadow-color;
+	box-shadow: 0 0 5px $topbar-shadow-color;
 	padding: 15px;
 	position: sticky;
-	top: 0px;
+	top: 0;
 	z-index: $topbar-z-index;
 	display: flex;
 	justify-content: space-between;
-	
-	.topbar-title {
-		font-weight: 700;
-	}
-
-	.topbar-menu {
-		display: none;
-	}
-
-	.topbar-title,.topbar-comments,.topbar-menu {
-		font-size: 20px;
-	}
-
-	a {
-		color: $topbar-link-color;
-	}
+	.topbar-title { font-weight: 700; }
+	.topbar-menu { display: none; }
+	.topbar-title,.topbar-comments,.topbar-menu
+	{ font-size: 20px; }
+	a { color: $topbar-link-color; }
 }
 
 @media screen and (max-width: $pc_pe_dividing_3) {

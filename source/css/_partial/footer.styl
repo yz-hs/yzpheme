@@ -1,10 +1,10 @@
 .footer {
 	background-color: $footer-bg-color;
 	border: 1px solid $footer-border-color;
-	padding: 17px;
-	height: 15px;
-	font-size: 15px;
+	padding: 15px;
 	margin-left: $dis-sidebar-1;
+	display: flex;
+	justify-content: space-between;
 
 	* { color: $footer-color; }
 
@@ -16,9 +16,6 @@
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
-
-	.text-left { float: left; }
-	.text-right { float: right; }
 }
 
 @media screen and (max-width: $pc_pe_dividing_1) {

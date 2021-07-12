@@ -10,7 +10,7 @@
 <br />
 <blockquote>
 	<br />
-	<%= __('Posts.Author') %><%= config.author %>
+	<%= __('Posts.Author') %><% if(page.author){ %><%= page.author %><% }else{ %><%= config.author %><% } %>
 	<br /><br />
     <%= __('Posts.Link') %><%= page.permalink %>
     <br /><br />
